@@ -1,0 +1,385 @@
+{
+  "state": "Alabama",
+  "abbreviation": "AL",
+  "research_date": "2026-02-14",
+  "researcher_notes": "Alabama uses an open-access public search model with no formal 'authorized searcher' program. The Alabama Secretary of State's UCC Division handles all state-level UCC filings. Free basic search is available to the general public via the state's online index. Advanced searches with document images are available through Alabama Interactive (a state-contracted portal operator) with optional subscriber accounts for convenience billing. No special authorization, certification, or approval is required to search or file UCC records.",
+
+  "filing_office": {
+    "agency_name": "Alabama Secretary of State, UCC Division",
+    "description": "The Uniform Commercial Code Division within the Alabama Secretary of State's office operates the filing and retrieval center for UCC financing statements at the state level. The office maintains over 500,000 documents on file and processes approximately 300-500 statements daily. All filings are given an exclusive filing number and are filed alphabetically and numerically per federal and state law. NOTE: UCC filings fixed to real property (land) are recorded at the county level through the County Probate Office, not the Secretary of State.",
+    "statutory_authority": "Code of Alabama 1975, Section 7-9A-501 et seq.",
+    "administrative_rules": "Alabama Administrative Code, Chapter 820-4-3",
+    "confidence": "High",
+    "sources": [
+      "https://www.sos.alabama.gov/business-services/ucc-home",
+      "https://www.sos.alabama.gov/government-records/ucc-records",
+      "https://www.law.cornell.edu/regulations/alabama/Ala-Admin-Code-r-820-4-3-.01"
+    ]
+  },
+
+  "contact_information": {
+    "agency_full_name": "Alabama Secretary of State, Uniform Commercial Code Division",
+    "secretary_of_state": "Wes Allen",
+    "physical_address": "770 Washington Avenue, Suite 580, Montgomery, AL 36104",
+    "mailing_address": "PO Box 5616, Montgomery, AL 36103-5616",
+    "phone_ucc_division": "(334) 353-0203",
+    "phone_general_sos": "(334) 242-7200",
+    "fax": "(334) 242-4993",
+    "email_business_services": "business.services@sos.alabama.gov",
+    "email_webmaster": "webmaster@sos.alabama.gov",
+    "website_sos_main": "https://www.sos.alabama.gov/",
+    "website_ucc_home": "https://www.sos.alabama.gov/business-services/ucc-home",
+    "website_ucc_records": "https://www.sos.alabama.gov/government-records/ucc-records",
+    "website_ucc_search_simple": "https://arc-sos.state.al.us/CGI/UCCNAME.MBR/INPUT",
+    "website_ucc_filing_portal": "https://www.alabamainteractive.org/ucc_filing/",
+    "website_ucc_downloads_forms": "https://www.sos.alabama.gov/business-services/ucc-downloads",
+    "website_ucc_fees": "https://www.sos.alabama.gov/business-services/filing-fees",
+    "alabama_interactive_support_phone": "(866) 353-3468",
+    "alabama_interactive_support_email": "support@alabamainteractive.org",
+    "alabama_interactive_policy_phone": "(334) 242-5324",
+    "confidence": "High",
+    "sources": [
+      "https://www.sos.alabama.gov/business-services/ucc-home",
+      "https://www.sos.alabama.gov/node/84",
+      "https://www.alabamainteractive.org/ucc_filing/"
+    ]
+  },
+
+  "authorization_model": {
+    "model_type": "Open Public Access (No Formal Authorized Searcher Program)",
+    "summary": "Alabama has NO formal 'authorized searcher' or 'certified searcher' program. UCC search access is open to the general public through multiple channels: (1) a free basic online search portal for debtor name and file number lookups, (2) an advanced online portal through Alabama Interactive with document images (requires per-search fees), and (3) paper-based UCC-11 Information Request forms submitted by mail. No registration, certification, or approval is required for any of these methods. An optional Alabama Interactive subscriber account provides billing convenience (ACH auto-pay) but is not required to search or file.",
+    "formal_authorized_searcher_program": false,
+    "public_portal_available": true,
+    "free_search_available": true,
+    "free_search_limitations": "The free basic search (arc-sos.state.al.us) provides index results by debtor name or file number but does NOT include document images. Images are only available through the Alabama Interactive advanced search portal for a fee.",
+    "confidence": "High",
+    "sources": [
+      "https://www.sos.alabama.gov/government-records/ucc-records",
+      "https://arc-sos.state.al.us/CGI/UCCNAME.MBR/INPUT",
+      "https://www.alabamainteractive.org/ucc_filing/"
+    ]
+  },
+
+  "requirements_for_authorization": {
+    "summary": "Since Alabama has no formal authorized searcher program, there are no authorization requirements. Any person or entity can search and file UCC records. The only optional step is creating an Alabama Interactive subscriber account for billing convenience.",
+    "application_forms": "None required. No application or approval process exists for searching UCC records. Filing and searching are open to the public.",
+    "entity_eligibility": "Open to any individual, business, or entity. No restrictions on who can search or file.",
+    "required_documents": "None for searching. For filing a UCC-1, the filer must submit the standard national UCC form with required debtor/secured party information.",
+    "background_checks": "None required",
+    "technology_requirements": "Web browser with internet access for online searches. No special software or technical setup required.",
+    "training": "None required. No mandatory training or certification program exists.",
+    "insurance_bonding": "None required",
+    "optional_subscriber_account": {
+      "description": "Alabama Interactive offers an optional subscriber account that provides automated ACH billing instead of per-transaction credit card payments. This is a convenience feature, NOT a requirement.",
+      "annual_fee": "$120.00/year (listed as $95.00/year in some references; may have been updated)",
+      "users_per_subscription": "Up to 10 active users per subscription fee",
+      "payment_method": "ACH auto-debit from bank account",
+      "approval_process": "Some subscription services may require agency approval and supporting documentation. Approval typically takes no longer than 2 business days.",
+      "cancellation": "Accounts auto-renew annually unless cancellation is requested before renewal date",
+      "additional_subscriptions": "Available by emailing subscriptions@alabamainteractive.org with customer account number",
+      "registration_url": "https://www.alabamainteractive.org/subscriber_registration/",
+      "confidence": "Medium -- fee amount ($95 vs $120) has conflicting sources; recommend confirming with Alabama Interactive"
+    },
+    "optional_prepaid_account": {
+      "description": "The UCC Division offers a Prepaid Account for frequent paper/in-person filers. Deposit funds in advance and the account is debited per transaction.",
+      "minimum_deposit": "$500.00",
+      "setup_form": "Prepaid Account Setup Slip (available at https://www.sos.alabama.gov/business-services/ucc-downloads)",
+      "confidence": "High"
+    },
+    "optional_credit_card_on_file": {
+      "description": "Frequent filers can place a credit card on file with the UCC Division for convenient payment of mail-in filings and searches.",
+      "setup_form": "On-File Credit Card Set-Up Form (available at https://www.sos.alabama.gov/business-services/ucc-downloads)",
+      "notes": "A convenience fee of 2%-5% may be charged by the card service provider. The office cannot search credit card/prepaid transactions to help balance accounts.",
+      "confidence": "High"
+    },
+    "confidence": "High",
+    "sources": [
+      "https://www.sos.alabama.gov/business-services/ucc-home",
+      "https://www.sos.alabama.gov/business-services/ucc-downloads",
+      "https://www.alabamainteractive.org/ucc_filing/",
+      "https://www.alabamainteractive.org/subscriber_registration/"
+    ]
+  },
+
+  "access_methods": {
+    "online_search_free": {
+      "name": "Simple Search (No Images)",
+      "url": "https://arc-sos.state.al.us/CGI/UCCNAME.MBR/INPUT",
+      "description": "Free public search of the UCC index by debtor name (format: last name, first name) or by filing number. Returns index listings but does NOT include document images. No login or account required.",
+      "search_types": [
+        "Search by debtor name (personal or organization)",
+        "Search by filing number"
+      ],
+      "record_type_filters": [
+        "All Records",
+        "Business",
+        "Farm",
+        "Child Support",
+        "Federal Tax",
+        "State Tax",
+        "Agricultural",
+        "Industrial Relations"
+      ],
+      "cost": "Free",
+      "account_required": false,
+      "confidence": "High"
+    },
+    "online_search_advanced": {
+      "name": "Advanced Search (With Images)",
+      "url": "https://www.alabamainteractive.org/ucc_filing/",
+      "description": "Full-featured search through Alabama Interactive portal. Includes document images in results. Requires per-search fees. Available to both subscribers (ACH billing) and non-subscribers (credit card payment).",
+      "cost_search_by_name": "$15.00 per search + $1.00 per page for copies",
+      "cost_search_by_file_number": "$0.00 search fee + $1.00 per page for copies",
+      "electronic_access_fee": "$9.75 per transaction",
+      "efficiency_fee_subscriber": "$4.50 per transaction",
+      "efficiency_fee_nonsubscriber": "$5.50 per transaction",
+      "account_required": false,
+      "subscriber_benefits": "Automated ACH billing; slightly lower efficiency fee ($4.50 vs $5.50)",
+      "payment_methods_nonsubscriber": ["Visa", "MasterCard", "Discover", "American Express"],
+      "payment_methods_subscriber": ["ACH auto-debit"],
+      "confidence": "High"
+    },
+    "mail_search": {
+      "name": "UCC-11 Information Request (Mail)",
+      "description": "Submit a UCC-11 Information Request form by mail to request a search conducted by the UCC Division staff. The search is performed by debtor name. Results and copies are mailed back to the requesting party.",
+      "form": "UCC-11 (National UCC Information Request) -- available for download at https://www.sos.alabama.gov/business-services/ucc-downloads",
+      "mailing_address": "PO Box 5616, Montgomery, AL 36103",
+      "cost_debtor_name_search": "$20.00",
+      "cost_certified_search": "$20.00 (name search) + $1.00/page + $5.00/file number",
+      "cost_copies": "$1.00 per page",
+      "cost_expedited": "$100.00 additional per search",
+      "accepted_payment_methods": [
+        "Check (personal, cashier's, or money order)",
+        "Prepaid account (minimum $500 deposit)",
+        "Credit card on file",
+        "Cash (in-person only)"
+      ],
+      "confidence": "High"
+    },
+    "in_person": {
+      "name": "Personal Delivery / Walk-In",
+      "description": "UCC filings and search requests can be delivered in person to the UCC Division at the physical address. Filing time is when delivery is accepted. Cash payment is only accepted for in-person transactions.",
+      "address": "770 Washington Avenue, Suite 580, Montgomery, AL 36104",
+      "confidence": "High"
+    },
+    "electronic_filing": {
+      "name": "Online UCC Filing (Alabama Interactive)",
+      "url": "https://www.alabamainteractive.org/ucc_filing/",
+      "description": "Electronic filing of UCC-1, UCC-3, UCC-5, and related forms through the Alabama Interactive portal. Available to both subscribers and non-subscribers.",
+      "filing_fee_online": "$15.00 per filing (base) + $9.75 electronic access fee + efficiency fee ($4.50/$5.50)",
+      "manufactured_home_filing": "$10.00 per filing",
+      "confidence": "High"
+    },
+    "xml_electronic_filing": {
+      "name": "XML B2B Filing (IACA Standard)",
+      "description": "Alabama has formally adopted the IACA (International Association of Commercial Administrators) XML standard for electronic UCC record transmission. Authorized XML remitters can submit filings programmatically via the XML format. This is a direct B2B integration channel for bulk filers and service companies.",
+      "standard": "IACA XML Format (versions supported available upon request from the filing officer)",
+      "access_requirements": "Must be an approved XML remitter. Contact the UCC Division for the jurisdiction-specific implementation guide.",
+      "electronic_access_fee": "$9.75 per transaction (in addition to filing fees)",
+      "statutory_reference": "Alabama Admin. Code Rule 820-4-3-.01(4)",
+      "confidence": "High",
+      "sources": [
+        "https://www.law.cornell.edu/regulations/alabama/Ala-Admin-Code-r-820-4-3-.01"
+      ]
+    },
+    "third_party": {
+      "description": "No formal authorized third-party searcher program exists. However, third-party filing/search companies can freely access both the free public search portal and the Alabama Interactive advanced portal to conduct searches on behalf of clients. Many national UCC service companies (e.g., CSC, CT Corporation, Wolters Kluwer) offer Alabama UCC search services using these public access methods.",
+      "confidence": "High"
+    }
+  },
+
+  "fee_schedule": {
+    "filing_fees_paper": {
+      "ucc1_business_lien": "$20.00 (first 2 pages); $2.00 per additional page",
+      "ucc1_manufactured_home": "$10.00",
+      "ucc1_transmitting_utility": "$20.00 (first 2 pages); $2.00 per additional page",
+      "ucc1_agricultural_lien": "$20.00 (first 2 pages); $2.00 per additional page",
+      "ucc3_continuation_amendment_assignment": "$20.00 (first 2 pages); $2.00 per additional page",
+      "ucc3_manufactured_home": "$20.00 (first 2 pages); $2.00 per additional page",
+      "ucc3_all_terminations": "No charge",
+      "ucc5_correction_statement": "$20.00 (first 2 pages); $2.00 per additional page",
+      "non_standard_form_surcharge": "$5.00",
+      "farm_lien_ucc1f": "$20.00 (first 2 pages); $2.00 per additional page",
+      "farm_continuation_ucc3f": "$20.00 (first 2 pages); $2.00 per additional page",
+      "farm_termination_ucc3f": "No charge",
+      "farm_registry_ucc20": "$100.00"
+    },
+    "filing_fees_online": {
+      "ucc_filing": "$15.00 per filing",
+      "manufactured_home_filing": "$10.00 per filing",
+      "electronic_access_fee": "$9.75 per transaction",
+      "efficiency_fee_subscriber": "$4.50 per transaction",
+      "efficiency_fee_nonsubscriber": "$5.50 per transaction"
+    },
+    "search_fees_paper": {
+      "debtor_name_search": "$20.00",
+      "certified_search": "$20.00 (name search) + $1.00/page + $5.00/file number",
+      "copy_request_by_file_number": "$1.00 per page",
+      "expedited_search": "$100.00 additional per search"
+    },
+    "search_fees_online": {
+      "search_by_name": "$15.00 + $1.00/page",
+      "search_by_file_number": "$0.00 search + $1.00/page",
+      "electronic_access_fee": "$9.75 per transaction",
+      "efficiency_fee_subscriber": "$4.50",
+      "efficiency_fee_nonsubscriber": "$5.50"
+    },
+    "confidence": "High",
+    "sources": [
+      "https://www.sos.alabama.gov/business-services/filing-fees",
+      "https://www.alabamainteractive.org/ucc_filing/"
+    ]
+  },
+
+  "search_logic": {
+    "description": "Alabama uses standardized automated search logic as prescribed by Alabama Administrative Code Rule 820-4-3-.07. Human judgment does not play a role in determining search results.",
+    "rules": [
+      "No distinction between upper and lower case letters",
+      "Punctuation marks and accents are disregarded",
+      "Ending noise words are disregarded per IACA standards",
+      "'The' is treated as disregardable when at name boundaries",
+      "Spaces within names are disregarded in matching",
+      "For individuals, initials function as equivalents for all names beginning with those letters (e.g., 'J' matches 'John', 'James', etc.)",
+      "No limit to the number of matches that may be returned",
+      "Search is processed using the name in the exact form submitted"
+    ],
+    "optional_filters": [
+      "Debtor address",
+      "Debtor city",
+      "Filing date or date range"
+    ],
+    "limited_search_disclaimer": "A report created in response to a limited/filtered search shall contain a statement that a limited search may not reveal all filings against the debtor searched and the searcher bears the risk of relying on such a search.",
+    "statutory_authority": "Code of Alabama 1975, Section 7-9A-526",
+    "administrative_rule": "Alabama Admin. Code Rule 820-4-3-.07",
+    "confidence": "High",
+    "sources": [
+      "https://www.law.cornell.edu/regulations/alabama/Ala-Admin-Code-r-820-4-3-.07"
+    ]
+  },
+
+  "payment_methods": {
+    "in_person": ["Cash", "Check", "Money order", "Cashier's check", "Credit/debit card", "Prepaid account"],
+    "mail": ["Check (personal, cashier's, money order)", "Prepaid account", "Credit card on file"],
+    "online_subscriber": ["ACH auto-debit"],
+    "online_nonsubscriber": ["Visa", "MasterCard", "Discover", "American Express"],
+    "electronic_funds_transfer": "Available under NACHA rules for approved remitters",
+    "notes": [
+      "The filing office may reject checks from remitters whose checks have previously been returned",
+      "The filing office will not refund overpayments of $5.00 or less",
+      "Underpaid submissions are returned to the remitter",
+      "Credit card convenience fees of 2%-5% may be charged by the card service provider",
+      "Prepaid account minimum deposit is $500.00"
+    ],
+    "confidence": "High",
+    "sources": [
+      "https://www.law.cornell.edu/regulations/alabama/Ala-Admin-Code-r-820-4-3-.01",
+      "https://www.sos.alabama.gov/business-services/ucc-downloads"
+    ]
+  },
+
+  "items_requiring_outreach": [
+    {
+      "item": "Alabama Interactive subscriber fee discrepancy ($95 vs $120/year)",
+      "detail": "The Alabama Interactive subscriber FAQ references $95/year, while the services page lists $120/year. Need to confirm the current annual subscription fee.",
+      "contact_method": "Call (866) 353-3468 or email support@alabamainteractive.org",
+      "priority": "Low"
+    },
+    {
+      "item": "XML B2B filing implementation guide",
+      "detail": "Alabama has adopted the IACA XML standard for electronic filing but the jurisdiction-specific implementation guide is not publicly posted. Need to request the guide to understand API endpoints, authentication, and testing requirements.",
+      "contact_method": "Call UCC Division at (334) 353-0203 or email business.services@sos.alabama.gov",
+      "priority": "Medium"
+    },
+    {
+      "item": "Bulk data access / data licensing",
+      "detail": "Alabama does not publicly advertise bulk UCC data downloads or a data licensing/subscription program. If bulk data access is needed (e.g., for building a commercial search product), a public records request or direct inquiry is required.",
+      "contact_method": "Call UCC Division at (334) 353-0203 or submit a public records request to the Secretary of State's office",
+      "priority": "Medium"
+    },
+    {
+      "item": "Alabama Interactive subscriber approval requirements for UCC service",
+      "detail": "The subscriber registration process notes that 'some subscriptions require agency approval' and may require documentation. Need to confirm whether the UCC Filing and Search service specifically requires any approval or documentation, or if it is auto-approved upon registration.",
+      "contact_method": "Call (866) 353-3468 or email support@alabamainteractive.org",
+      "priority": "Low"
+    },
+    {
+      "item": "Turnaround time for mail-based UCC-11 searches",
+      "detail": "The standard processing time for mail-submitted UCC-11 Information Requests is not documented on the website. Expedited search ($100 additional) provides priority processing, but the standard timeline is unknown.",
+      "contact_method": "Call UCC Division at (334) 353-0203",
+      "priority": "Low"
+    },
+    {
+      "item": "Online search database freshness / update frequency",
+      "detail": "The free search portal shows 'Filings completed through 12-29-2025' as of the research date, suggesting there may be a lag. Need to confirm how frequently the public search index is updated.",
+      "contact_method": "Call UCC Division at (334) 353-0203 or email webmaster@sos.alabama.gov",
+      "priority": "Low"
+    }
+  ],
+
+  "notable_differences_from_other_states": [
+    "Alabama has an OPEN access model -- no formal 'authorized searcher' program exists (unlike Delaware, which requires all searches to go through certified authorized searchers)",
+    "Free basic search is available to the general public at no cost and with no account required (via arc-sos.state.al.us)",
+    "Online filing and advanced search is provided through Alabama Interactive (alabamainteractive.org), a state-contracted third-party portal operator, NOT directly by the Secretary of State's own web application",
+    "There are TWO separate fee schedules: one for paper/mail transactions (through the UCC Division directly) and one for online transactions (through Alabama Interactive), with different base amounts",
+    "Paper filing fees ($20) are higher than online filing fees ($15 base) but online fees include additional per-transaction surcharges (electronic access fee + efficiency fee)",
+    "Alabama accepts UCC-3 termination filings at no charge (both paper and online)",
+    "The $500 minimum prepaid account deposit is relatively high compared to some other states",
+    "Alabama has adopted the IACA XML standard for B2B electronic filing, enabling direct system integration for bulk filers",
+    "County-level UCC filings exist ONLY for filings fixed to real property (land), which go through the County Probate Office -- all other UCCs are at the state level through the Secretary of State"
+  ],
+
+  "sources": [
+    {
+      "title": "Alabama Secretary of State - UCC Home Page",
+      "url": "https://www.sos.alabama.gov/business-services/ucc-home"
+    },
+    {
+      "title": "Alabama Secretary of State - UCC Records (Government Records)",
+      "url": "https://www.sos.alabama.gov/government-records/ucc-records"
+    },
+    {
+      "title": "Alabama Secretary of State - Free UCC Search Portal",
+      "url": "https://arc-sos.state.al.us/CGI/UCCNAME.MBR/INPUT"
+    },
+    {
+      "title": "Alabama Interactive - UCC Filing and Search System",
+      "url": "https://www.alabamainteractive.org/ucc_filing/"
+    },
+    {
+      "title": "Alabama Secretary of State - UCC Filing Fees",
+      "url": "https://www.sos.alabama.gov/business-services/filing-fees"
+    },
+    {
+      "title": "Alabama Secretary of State - UCC Downloads (Forms)",
+      "url": "https://www.sos.alabama.gov/business-services/ucc-downloads"
+    },
+    {
+      "title": "Alabama Secretary of State - UCC-11 Information Request",
+      "url": "https://www.sos.alabama.gov/node/84"
+    },
+    {
+      "title": "Alabama Administrative Code Rule 820-4-3-.01 - General Provisions",
+      "url": "https://www.law.cornell.edu/regulations/alabama/Ala-Admin-Code-r-820-4-3-.01"
+    },
+    {
+      "title": "Alabama Administrative Code Rule 820-4-3-.07 - Search Requests and Reports",
+      "url": "https://www.law.cornell.edu/regulations/alabama/Ala-Admin-Code-r-820-4-3-.07"
+    },
+    {
+      "title": "Alabama Administrative Code Chapter 820-4-3 (Full PDF)",
+      "url": "https://www.sos.alabama.gov/sites/default/files/form-files/Chapter-820-4-3.pdf"
+    },
+    {
+      "title": "Alabama Interactive - Subscriber Registration",
+      "url": "https://www.alabamainteractive.org/subscriber_registration/"
+    },
+    {
+      "title": "Alabama Interactive - Subscriber FAQ (PDF)",
+      "url": "https://www.alabama.gov/PDFs/AI_SubscriberFAQ.pdf"
+    },
+    {
+      "title": "Alabama Secretary of State - Prepaid Account Setup Slip",
+      "url": "https://www.sos.alabama.gov/node/1925"
+    }
+  ]
+}

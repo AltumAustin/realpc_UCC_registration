@@ -1,0 +1,261 @@
+{
+  "state": "Connecticut",
+  "abbreviation": "CT",
+  "research_date": "2026-02-14",
+  "researcher": "claude-opus-4-6",
+  "overall_confidence": "High",
+
+  "filing_office": {
+    "agency_name": "Connecticut Secretary of the State — Business Services Division",
+    "sub_unit": "Commercial Recording Division (historically; now merged into Business Services Division)",
+    "confidence": "High",
+    "notes": "Connecticut's Secretary of the State is the central filing office for all UCC filings statewide. The former CONCORD system was retired on June 17, 2021 and replaced by the business.ct.gov portal (launched June 21, 2021)."
+  },
+
+  "contact_information": {
+    "physical_address": "Secretary of the State, Business Services Division, 165 Capitol Avenue, Suite 1000, Hartford, CT 06106",
+    "mailing_address": "Secretary of the State, Business Services Division, P.O. Box 150470, Hartford, CT 06115-0470",
+    "legacy_delivery_address": "Commercial Recording Division, 30 Trinity Street, Hartford, CT 06106",
+    "phone_general": "860-509-6000",
+    "phone_ucc": "860-509-6002",
+    "email_business_services": "bsd@ct.gov",
+    "email_commercial_recording": "crd@ct.gov",
+    "support_ticket_url": "https://ctservice.freshdesk.com/support/tickets/new",
+    "hours": "8:30 AM - 4:00 PM (Eastern)",
+    "website_main": "https://portal.ct.gov/sots/business-services/bsd",
+    "website_business_portal": "https://business.ct.gov",
+    "website_lien_search": "https://service.ct.gov/business/s/onlineenquiry?language=en_US",
+    "website_ucc_forms_fees": "https://business.ct.gov/knowledge-base/articles/uniform-commercial-code-forms-and-fees",
+    "website_file_ucc": "https://business.ct.gov/manage/all-business-filings/file-ucc-liens",
+    "confidence": "High"
+  },
+
+  "authorization_model": {
+    "model_type": "Open Public Access",
+    "formal_authorized_searcher_program": false,
+    "description": "Connecticut does NOT have a formal 'authorized searcher' or 'registered searcher' program. UCC searching and filing is open to the general public through the state's online portal. Anyone can search at no cost. Anyone can file by creating a free Business.CT.gov account. There are no special credentials, background checks, or certifications required.",
+    "account_requirement": "A free CT.gov / Business.CT.gov account is required for filing UCC documents and requesting certified copies. Searching the lien records database does NOT require an account.",
+    "subscription_services": {
+      "ucc_image_subscription": {
+        "available": true,
+        "cost": "$1,000/year",
+        "description": "Provides access to a SharePoint site containing PDF images of each UCC volume created and finished during the previous month. Requires a subscription form.",
+        "subscription_form_url": "https://portal.ct.gov/-/media/businessonestop/brs-forms/bulk-data-subscription---form.pdf",
+        "info_url": "https://business.ct.gov/knowledge-base/articles/sots/ucc-image-subscription"
+      }
+    },
+    "confidence": "High",
+    "notes": "No evidence of any formal 'authorized searcher' program, subscription-only access tier, or credentialing requirements. The state uses an open-access model."
+  },
+
+  "requirements_for_authorization": {
+    "summary": "No formal authorization is required. The state uses an open-access model.",
+    "application_forms": "None required for searching. A free Business.CT.gov account is required for filing.",
+    "fees_for_authorization": "None. Account creation is free.",
+    "entity_eligibility": "No restrictions. Open to individuals, businesses, and service companies alike.",
+    "required_documents": "None for search access. Standard UCC forms (UCC-1, UCC-3) are required for filings.",
+    "background_checks": "None",
+    "technology_requirements": "Web browser with internet access. The portal (business.ct.gov) is a Salesforce-based web application.",
+    "training": "None required",
+    "insurance_bonding": "None required",
+    "confidence": "High"
+  },
+
+  "access_methods": {
+    "online_search": {
+      "available": true,
+      "free": true,
+      "url": "https://service.ct.gov/business/s/onlineenquiry?language=en_US",
+      "login_required": false,
+      "search_fields": [
+        "Debtor name (individual)",
+        "Debtor name (organization)",
+        "Lien number / Filing number"
+      ],
+      "results_include": [
+        "Lien type",
+        "IRS number",
+        "Filing type",
+        "Filing number",
+        "Filing date",
+        "Lapse date",
+        "Number of pages",
+        "Debtor name",
+        "Debtor address"
+      ],
+      "notes": "Free informal searches. Not an official certified search. Results can be extracted/exported."
+    },
+    "online_filing": {
+      "available": true,
+      "url": "https://business.ct.gov/manage/all-business-filings/file-ucc-liens",
+      "login_required": true,
+      "account_type": "Free Business.CT.gov account",
+      "payment_methods": ["Mastercard", "Visa", "Discover", "American Express"],
+      "notes": "Preferred filing method. Faster processing, fewer rejections, ability to save progress and view filing history. All UCC lien types can be filed online."
+    },
+    "mail_filing": {
+      "available": true,
+      "address": "Commercial Recording Division, P.O. Box 150470, Hartford, CT 06115-0470",
+      "delivery_address": "30 Trinity Street, Hartford, CT 06106",
+      "notes": "Strongly discouraged by the office. Much longer turnaround. Expedited service is NOT available for mail or hand-delivered filings. Payment by check payable to 'Secretary of the State'.",
+      "paper_online_option": "As of January 2025, paper UCC filings can be submitted through the online portal (scanned upload), which is preferred over physical mail."
+    },
+    "in_person": {
+      "available": true,
+      "address": "165 Capitol Avenue, Suite 1000, Hartford, CT 06106",
+      "notes": "Available but strongly discouraged. Same slow processing as mail. No expedited service."
+    },
+    "bulk_data_api": {
+      "available": true,
+      "free": true,
+      "platform": "Connecticut Open Data Portal (Socrata)",
+      "dataset_url": "https://data.ct.gov/Business/Uniform-Commercial-Code-UCC-Lien-Filings/xfev-8smz",
+      "api_endpoint": "https://data.ct.gov/resource/xfev-8smz.json",
+      "api_docs": "https://dev.socrata.com/foundry/data.ct.gov/xfev-8smz",
+      "formats": ["JSON", "CSV", "API (SODA)"],
+      "update_frequency": "Nightly",
+      "scope": "All active UCC and other liens filed with the office. Active means not lapsed. Terminated/released liens remain for one year after termination.",
+      "notes": "Completely free. No subscription required. Data.ct.gov is the sole source (no more SharePoint or FTP). Contact crd@ct.gov for questions about the dataset."
+    },
+    "certified_search": {
+      "available": true,
+      "request_method": "Through Business.CT.gov account",
+      "notes": "Official search certificates can be ordered from the Secretary of State for legal due diligence. Requires a Business.CT.gov account."
+    },
+    "third_party_platforms": [
+      {
+        "name": "CT Corporation (Wolters Kluwer)",
+        "url": "https://www.wolterskluwer.com/en/solutions/ct-corporation/connecticut-ucc-filing-search-services",
+        "services": "UCC-1 filing, UCC-3 amendments, UCC searches, filing management"
+      },
+      {
+        "name": "CSC Global",
+        "url": "https://www.cscglobal.com/",
+        "services": "UCC search, filing, management, and monitoring"
+      }
+    ]
+  },
+
+  "fees": {
+    "search_fees": {
+      "online_informal_search": "$0 (free)",
+      "certified_copy_of_lien": "$55",
+      "plain_copy_of_lien": "$40"
+    },
+    "filing_fees": {
+      "ucc1_financing_statement": "$50",
+      "ucc3_financing_statement_amendment": "$50",
+      "information_statement": "$50",
+      "notice_of_aircraft_lien": "$50",
+      "notice_of_vessel_lien": "$50",
+      "release_of_aircraft_lien": "$50",
+      "release_of_attachment": "$50",
+      "release_of_vessel_lien": "$50",
+      "request_for_information": "$50"
+    },
+    "subscription_fees": {
+      "ucc_image_subscription": "$1,000/year"
+    },
+    "bulk_data": "$0 (free via data.ct.gov)",
+    "notes": "All UCC filing types are uniformly $50 as of the current fee schedule. Expedited service is NOT available for UCC filings under any method. Fee discrepancies exist in older third-party sources; the official CT.gov page confirms $50 per filing.",
+    "fee_schedule_url": "https://business.ct.gov/knowledge-base/articles/uniform-commercial-code-forms-and-fees",
+    "confidence": "High"
+  },
+
+  "legacy_system": {
+    "name": "CONCORD",
+    "url": "https://www.concord-sots.ct.gov/CONCORD/online?sn=PublicInquiry&eid=9755",
+    "status": "Retired / Decommissioned",
+    "shutdown_date": "June 17, 2021",
+    "replacement": "business.ct.gov (launched June 21, 2021)",
+    "notes": "CONCORD was the legacy Windows-style web application for business and UCC filings. Some URLs still resolve but redirect or show limited functionality. All services are now on business.ct.gov."
+  },
+
+  "key_statutes": {
+    "ucc_article_9": "Connecticut has adopted UCC Article 9 (Secured Transactions).",
+    "financing_statement_duration": "5 years from filing date, renewable via continuation statement",
+    "notes": "Standard UCC Article 9 provisions apply."
+  },
+
+  "items_needing_verification": [
+    {
+      "item": "Exact current filing fees",
+      "reason": "Multiple third-party sources cite different amounts ($20, $35, $40, $50). The official CT.gov page lists $50 for all UCC filing types, but some sources suggest recent fee changes. Recommend confirming with the office.",
+      "recommended_action": "Call 860-509-6002 or email bsd@ct.gov to confirm the current UCC fee schedule.",
+      "priority": "Medium"
+    },
+    {
+      "item": "UCC Image Subscription form and current availability",
+      "reason": "The subscription form PDF link may or may not be active. The info page was last updated November 2021.",
+      "recommended_action": "Email bsd@ct.gov to confirm the UCC Image Subscription is still $1,000/year and request the current subscription form.",
+      "priority": "Low"
+    },
+    {
+      "item": "Certified search request procedure",
+      "reason": "The process for ordering an official certified UCC search (as opposed to a certified copy of a specific filing) is not fully documented online.",
+      "recommended_action": "Call 860-509-6002 or email bsd@ct.gov to ask about ordering a certified UCC search (search certificate listing all filings against a debtor name).",
+      "priority": "Medium"
+    },
+    {
+      "item": "Whether any account tier or bulk filing arrangement exists for high-volume filers",
+      "reason": "No evidence found of volume-based accounts or special arrangements, but this is common in some states and may exist informally.",
+      "recommended_action": "Ask during outreach whether there are any volume filing accounts or arrangements for service companies.",
+      "priority": "Low"
+    }
+  ],
+
+  "sources": [
+    {
+      "title": "CT Secretary of State - Business Services Division",
+      "url": "https://portal.ct.gov/sots/business-services/bsd"
+    },
+    {
+      "title": "Business.CT.gov - Main Portal",
+      "url": "https://business.ct.gov"
+    },
+    {
+      "title": "CT Lien Records Search (Online Enquiry)",
+      "url": "https://service.ct.gov/business/s/onlineenquiry?language=en_US"
+    },
+    {
+      "title": "CT UCC Forms and Fees",
+      "url": "https://business.ct.gov/knowledge-base/articles/uniform-commercial-code-forms-and-fees"
+    },
+    {
+      "title": "CT File UCC Forms",
+      "url": "https://business.ct.gov/manage/all-business-filings/file-ucc-liens"
+    },
+    {
+      "title": "CT Bulk Data and Image Services",
+      "url": "https://business.ct.gov/knowledge-base/articles/sots/bulk-data-and-images"
+    },
+    {
+      "title": "CT UCC Image Subscription",
+      "url": "https://business.ct.gov/knowledge-base/articles/sots/ucc-image-subscription"
+    },
+    {
+      "title": "CT Open Data Portal - UCC Lien Filings Dataset",
+      "url": "https://data.ct.gov/Business/Uniform-Commercial-Code-UCC-Lien-Filings/xfev-8smz"
+    },
+    {
+      "title": "Socrata API Documentation for CT UCC Data",
+      "url": "https://dev.socrata.com/foundry/data.ct.gov/xfev-8smz"
+    },
+    {
+      "title": "CT Bulk Data Subscription Form (PDF)",
+      "url": "https://portal.ct.gov/-/media/businessonestop/brs-forms/bulk-data-subscription---form.pdf"
+    },
+    {
+      "title": "CT Secretary of State - Contact Us (Commercial Recording)",
+      "url": "https://portal.ct.gov/SOTS/General/Contact-Us/Contact-Us---Commercial-Recording"
+    },
+    {
+      "title": "CT Corporation (Wolters Kluwer) - CT UCC Services",
+      "url": "https://www.wolterskluwer.com/en/solutions/ct-corporation/connecticut-ucc-filing-search-services"
+    },
+    {
+      "title": "Data.gov Catalog - CT UCC Lien Filings",
+      "url": "https://catalog.data.gov/dataset/uniform-commercial-code-ucc-lien-filings-rev3-2020"
+    }
+  ]
+}

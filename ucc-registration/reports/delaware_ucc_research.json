@@ -1,0 +1,285 @@
+{
+  "state": "Delaware",
+  "abbreviation": "DE",
+  "research_date": "2026-02-14",
+  "researcher_notes": "Delaware has a unique UCC search model among US states. It does NOT offer a public search portal. All UCC debtor searches (except 'search to reflect') must be conducted through a state-certified Authorized Searcher. The application process to become an Authorized Searcher is NOT publicly documented and appears to be a closed/invitation-only program for entities with established relationships with the state.",
+
+  "filing_office": {
+    "agency_name": "Delaware Division of Corporations (under the Delaware Department of State)",
+    "description": "The Division of Corporations within the Delaware Department of State handles all UCC filings and maintains the UCC index.",
+    "confidence": "High",
+    "sources": [
+      "https://corp.delaware.gov/ucc/",
+      "https://corp.delaware.gov/uccsearch/"
+    ]
+  },
+
+  "contact_information": {
+    "agency_full_name": "Delaware Department of State, Division of Corporations",
+    "physical_address": "John G. Townsend Building, 401 Federal Street, Suite 4, Dover, DE 19901",
+    "mailing_address": "Division of Corporations, PO Box 898, Dover, DE 19903",
+    "phone_general": "(302) 739-3073",
+    "phone_ucc_option": "(302) 739-3073, option 4",
+    "phone_appointments": "(302) 739-3077",
+    "fax": "(302) 739-3812",
+    "fax_alt": "(302) 739-3813",
+    "email_general": "corp@delaware.gov",
+    "email_ucc": "DOSDOC_ucc@delaware.gov",
+    "email_tech_support": "DosDoc_Tech_Support@delaware.gov",
+    "website": "https://corp.delaware.gov/",
+    "ucc_main_page": "https://corp.delaware.gov/ucc/",
+    "ucc_search_info_page": "https://corp.delaware.gov/uccsearch/",
+    "ucc_authorized_searchers_page": "https://corp.delaware.gov/uccauthsrch/",
+    "ucc_authorized_filers_page": "https://corp.delaware.gov/uccauthfilers/",
+    "ucc_efiling_portal": "https://icis.corp.delaware.gov/ecorp/ucc.aspx",
+    "ucc_fees_page": "https://corp.delaware.gov/uccfeessept09/",
+    "ucc_forms_page": "https://corp.delaware.gov/uccform/",
+    "ucc_admin_rules_pdf": "https://corpfiles.delaware.gov/uccadminrules.pdf",
+    "ucc_noise_words_pdf": "https://corpfiles.delaware.gov/uccnoisewords.pdf",
+    "office_hours": "8:00 AM to 4:30 PM ET, Monday-Friday (excluding state holidays)",
+    "live_chat_hours": "8:30 AM to 4:00 PM ET, Monday-Friday (excluding state holidays)",
+    "document_filing_service_hours": "7:45 AM to 11:59 PM Mon-Thu; 7:45 AM to 10:30 PM Fri (excluding state holidays)",
+    "in_person_visits": "By appointment only; call (302) 739-3077 to schedule",
+    "confidence": "High",
+    "sources": [
+      "https://corp.delaware.gov/contact/"
+    ]
+  },
+
+  "authorization_model": {
+    "model_type": "Mandatory Authorized Searcher Program (Closed/Restricted Access)",
+    "description": "Delaware operates a formal 'Authorized Searcher' certification program. Effective December 1, 2001, ALL non 'Search to Reflect' UCC debtor searches must be performed by a Delaware Authorized Searcher. There is NO public search portal and NO way for the general public to directly search Delaware's UCC index. The state only provides certified searches -- there is no uncertified/plain search option. The Authorized Searcher program appears to be a closed program limited to Registered Agents, Service Companies, and Law Firms that have an established long-standing relationship with the state.",
+    "key_distinctions": {
+      "authorized_searchers": "Entities certified by the Division of Corporations to perform UCC debtor searches against the state's UCC Information System. There are currently approximately 25 authorized searchers.",
+      "authorized_filers": "Entities approved by the Division of Corporations to submit UCC filings electronically on behalf of customers. There are currently approximately 28 authorized filers. Since December 2015, all UCC filings must be electronic -- paper filings can only be submitted via Authorized Filers.",
+      "search_to_reflect": "A special post-filing verification search that confirms a UCC filing was properly indexed. This is the ONLY type of search not required to go through an Authorized Searcher.",
+      "direct_e_ucc_filing": "Any party can file UCC documents directly through the state's e-UCC web application or via XML submitters. Authorized Filers are only needed if submitting paper documents."
+    },
+    "public_portal_available": false,
+    "free_search_available": false,
+    "confidence": "High",
+    "sources": [
+      "https://corp.delaware.gov/uccsearch/",
+      "https://corp.delaware.gov/uccauthsrch/",
+      "https://corp.delaware.gov/uccauthfilers/"
+    ]
+  },
+
+  "requirements_for_authorization": {
+    "formal_application_published": false,
+    "application_form_url": null,
+    "description": "The Delaware Division of Corporations does NOT publish a formal application form, checklist, or public process for becoming an Authorized Searcher or Authorized Filer. The state website only states that authorized entities 'have had a long-standing relationship with the State of Delaware and have been Certified by the Delaware Division of Corporations.' This strongly suggests a closed/invitation-only program rather than an open application process.",
+    "known_eligibility_criteria": {
+      "entity_types": "Registered Agents, Service Companies, and Law Firms",
+      "relationship_requirement": "Long-standing relationship with the State of Delaware",
+      "certification": "Must be 'Certified by the Delaware Division of Corporations in performing online UCC filings and UCC searches'",
+      "competency": "Demonstrated competence in performing online UCC filings and searches"
+    },
+    "unknown_requirements": {
+      "application_fees": "Not publicly documented",
+      "background_checks": "Not publicly documented",
+      "insurance_or_bonding": "Not publicly documented",
+      "technology_requirements": "Not publicly documented (likely access to the UCC Information System)",
+      "training_program": "Not publicly documented",
+      "minimum_years_in_business": "Not publicly documented but 'long-standing relationship' language is used",
+      "ongoing_compliance": "Not publicly documented"
+    },
+    "administrative_rules_document": "https://corpfiles.delaware.gov/uccadminrules.pdf (PDF could not be parsed; may contain additional detail)",
+    "recommended_outreach": "Contact the Division of Corporations UCC unit directly at DOSDOC_ucc@delaware.gov or (302) 739-3073 option 4 to inquire about the process and eligibility requirements for becoming an Authorized Searcher.",
+    "confidence": "Medium -- The eligibility criteria are partially documented but the actual application/certification process is opaque and not publicly available",
+    "sources": [
+      "https://corp.delaware.gov/uccauthsrch/",
+      "https://corp.delaware.gov/uccauthfilers/",
+      "https://corp.delaware.gov/uccsearch/"
+    ]
+  },
+
+  "access_methods": {
+    "ucc_searching": {
+      "primary_method": "Through a Delaware Authorized Searcher (mandatory for all debtor searches except 'search to reflect')",
+      "online_public_portal": "None -- Delaware does NOT offer a free or paid public UCC search portal",
+      "in_person": "Not available for searches -- must use Authorized Searcher",
+      "mail": "Not available for searches -- must use Authorized Searcher",
+      "search_logic": "Exact name match (strict). Delaware adheres to exact name search logic with the exception of a few noise words. No name variations are included in search results. Searchers must manually input every name variation to generate a comprehensive certified listing.",
+      "noise_words_reference": "https://corpfiles.delaware.gov/uccnoisewords.pdf",
+      "search_type": "Certified only -- no uncertified/plain search option exists",
+      "search_form": "UCC-11 (National Information Request)"
+    },
+    "ucc_filing": {
+      "primary_method": "Electronic filing via the state's e-UCC web application",
+      "e_ucc_portal": "https://icis.corp.delaware.gov/ecorp/ucc.aspx",
+      "xml_submission": "Available through various UCC XML submitters",
+      "paper_filing": "Only accepted through Authorized UCC Filers who submit electronically on behalf of the customer (since December 1, 2015)",
+      "direct_mail_fax_courier": "NOT accepted since December 1, 2015"
+    },
+    "confidence": "High",
+    "sources": [
+      "https://corp.delaware.gov/uccsearch/",
+      "https://corp.delaware.gov/ucc/",
+      "https://corp.delaware.gov/uccauthsrch/"
+    ]
+  },
+
+  "fee_schedule": {
+    "search_fees": {
+      "ucc_certification_search": "$25.00 per debtor name",
+      "mandatory_24hr_expedited_service": "$25.00 per search",
+      "total_minimum_search_cost": "$50.00 per debtor (search fee + mandatory expedite fee)",
+      "ucc_11_expedited_fee": "$25.00 (next day -- only expedited option for UCC-11)"
+    },
+    "copy_fees": {
+      "plain_copies": "$10.00 first page + $2.00 each additional page",
+      "certified_copies": "$25.00 certification fee + $10.00 first page + $2.00 each additional page"
+    },
+    "filing_fees": {
+      "ucc1_ucc3_via_authorized_filer": "$100.00 for 1-4 pages; $100.00 + $2.00 per page exceeding 4 pages",
+      "ucc1_ucc3_via_web": "$50.00 flat fee (no additional page charges)",
+      "additional_debtor_names": "$25.00 per debtor name when more than two debtor names",
+      "public_finance_or_manufactured_home": "$20.00 additional"
+    },
+    "expedited_filing_fees": {
+      "next_day": "$100.00 (in addition to filing fee)",
+      "same_day": "$200.00 (in addition to filing fee)",
+      "two_hour": "$500.00 (in addition to filing fee)",
+      "one_hour": "$1,000.00 (in addition to filing fee)"
+    },
+    "note": "Authorized Searchers and Filers also charge their own service fees on top of state fees. These vary by vendor.",
+    "confidence": "High",
+    "sources": [
+      "https://corp.delaware.gov/uccfeessept09/"
+    ]
+  },
+
+  "current_authorized_searchers": {
+    "count": 25,
+    "list": [
+      "American Incorporators",
+      "Capitol Services, Inc.",
+      "Cogency Global Inc.",
+      "Computershare Entity Solutions (Delaware) LTD",
+      "Corp1 Inc.",
+      "Corporate Consulting Ltd.",
+      "Corporation Service Company",
+      "The Corporation Trust Company",
+      "CT Corporation System",
+      "Delaware Business Incorporators, Inc.",
+      "Delaware Corporate Services, Inc.",
+      "The Delaware Corporation Agency, Inc.",
+      "Delaware Corporation Organizers, Inc.",
+      "First Corporate Solutions, Inc.",
+      "First State Corporate Services, Inc.",
+      "Incorporating Services, Ltd.",
+      "The Incorporators Ltd.",
+      "National Registered Agents, Inc.",
+      "Paracorp Incorporated",
+      "Platinum Filings LLC",
+      "Registered Agents Legal Services, LLC",
+      "Registered Agent Solutions, Inc.",
+      "TAQ Incorporated",
+      "United Corporate Services, Inc.",
+      "YCS&T Services LLC"
+    ],
+    "source": "https://corp.delaware.gov/uccauthsrch/",
+    "confidence": "High"
+  },
+
+  "key_dates": {
+    "2001-12-01": "All non 'Search to Reflect' UCC searches must be performed by Authorized Searchers",
+    "2015-09-08": "Secured Party Assignment filings appear as 'Added' in search results; removals no longer separately indexed",
+    "2015-12-01": "All UCC filings must be submitted electronically; paper filings no longer accepted directly"
+  },
+
+  "items_requiring_outreach": [
+    {
+      "item": "Application process to become an Authorized Searcher",
+      "detail": "No public application form or documented process exists. Must contact the Division directly.",
+      "contact_method": "Email DOSDOC_ucc@delaware.gov or call (302) 739-3073 option 4",
+      "priority": "High"
+    },
+    {
+      "item": "Application process to become an Authorized Filer",
+      "detail": "Similarly not publicly documented. Same outreach needed.",
+      "contact_method": "Email DOSDOC_ucc@delaware.gov or call (302) 739-3073 option 4",
+      "priority": "High"
+    },
+    {
+      "item": "Whether new Authorized Searcher applications are being accepted",
+      "detail": "The language about 'long-standing relationship' suggests this may be a closed program. Need to confirm if new entrants are accepted.",
+      "contact_method": "Email DOSDOC_ucc@delaware.gov or call (302) 739-3073 option 4",
+      "priority": "High"
+    },
+    {
+      "item": "UCC Administrative Rules PDF content",
+      "detail": "The PDF at corpfiles.delaware.gov/uccadminrules.pdf could not be parsed during research and may contain additional certification requirements or eligibility criteria.",
+      "contact_method": "Request a copy from the Division or attempt direct PDF download",
+      "priority": "Medium"
+    },
+    {
+      "item": "Technology/system access requirements for Authorized Searchers",
+      "detail": "Authorized Searchers have 'special access to the state's internal lien index' but the technical requirements are not documented publicly.",
+      "contact_method": "Email DOSDOC_ucc@delaware.gov or call (302) 739-3073 option 4",
+      "priority": "Medium"
+    },
+    {
+      "item": "Fees charged by Authorized Searchers (service company markup)",
+      "detail": "Each Authorized Searcher charges their own service fees on top of state fees. These vary and are not regulated by the state.",
+      "contact_method": "Contact individual Authorized Searchers for pricing",
+      "priority": "Low"
+    }
+  ],
+
+  "sources": [
+    {
+      "title": "Delaware Division of Corporations - UCC Main Page",
+      "url": "https://corp.delaware.gov/ucc/"
+    },
+    {
+      "title": "Delaware UCC Search Information",
+      "url": "https://corp.delaware.gov/uccsearch/"
+    },
+    {
+      "title": "Delaware UCC Authorized Searcher List",
+      "url": "https://corp.delaware.gov/uccauthsrch/"
+    },
+    {
+      "title": "Delaware UCC Authorized Filers List",
+      "url": "https://corp.delaware.gov/uccauthfilers/"
+    },
+    {
+      "title": "Delaware UCC Filing & Expedited Fee Schedule",
+      "url": "https://corp.delaware.gov/uccfeessept09/"
+    },
+    {
+      "title": "Delaware UCC Filing Requirements",
+      "url": "https://corp.delaware.gov/uccreq/"
+    },
+    {
+      "title": "Delaware UCC Forms",
+      "url": "https://corp.delaware.gov/uccform/"
+    },
+    {
+      "title": "Delaware Division of Corporations - Contact Information",
+      "url": "https://corp.delaware.gov/contact/"
+    },
+    {
+      "title": "Delaware UCC Administrative Rules (PDF)",
+      "url": "https://corpfiles.delaware.gov/uccadminrules.pdf"
+    },
+    {
+      "title": "Delaware UCC Noise Words List (PDF)",
+      "url": "https://corpfiles.delaware.gov/uccnoisewords.pdf"
+    },
+    {
+      "title": "First Corporate Solutions - Delaware UCC Search Options",
+      "url": "https://ficoso.com/ucc/delaware-ucc-search-options/"
+    },
+    {
+      "title": "CLAS Information Services - UCC Search to Reflect Explained",
+      "url": "https://www.clasinfo.com/index.php/2015/10/22/a-ucc-search-to-reflect-what-is-it-why-do-i-need-it/"
+    },
+    {
+      "title": "Wolters Kluwer - Delaware UCC Filing & Search Services",
+      "url": "https://www.wolterskluwer.com/en/solutions/ct-corporation/delaware-ucc-filing-search-services"
+    }
+  ]
+}
