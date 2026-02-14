@@ -1769,9 +1769,31 @@
     {
       "state": "Massachusetts",
       "abbreviation": "MA",
-      "status": "in_progress",
-      "research_date": null,
-      "notes": "Research in progress"
+      "status": "researched",
+      "research_date": "2026-02-14",
+      "filing_office": {
+        "name": "Massachusetts Secretary of the Commonwealth, Corporations Division",
+        "phone": "617-727-9640",
+        "email": "cis@sec.state.ma.us",
+        "website": "https://www.sec.state.ma.us/cor/corpweb/corucc/corucc.htm",
+        "confidence": "High"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "summary": "Open public access. Free UCC search portal. No authorized searcher program.",
+        "formal_authorized_searcher_program": false,
+        "public_portal": true,
+        "free_search_available": true,
+        "confidence": "High"
+      },
+      "fee_schedule": {
+        "online_search": "Free",
+        "ucc1_filing": "$10",
+        "ucc3_amendment": "$10"
+      },
+      "sources": [
+        "https://www.sec.state.ma.us/cor/corpweb/corucc/corucc.htm"
+      ]
     },
     {
       "state": "Michigan",

@@ -2,7 +2,7 @@
   "description": "State-by-state UCC searcher/filing access requirements database for RealPC Real Finance, Inc.",
   "last_updated": "2026-02-14",
   "total_jurisdictions": 51,
-  "jurisdictions_researched": 50,
+  "jurisdictions_researched": 51,
   "states": [
     {
       "state": "Alabama",
@@ -1336,6 +1336,66 @@
         "https://egov.maryland.gov/SDAT/UCCFiling/UCCsubscriberInfo.aspx",
         "https://search-sos.org/how-to-do-a-maryland-ucc-search/",
         "https://www.myshyft.com/blog/ucc-financing-statement-filing-guide-baltimore-maryland/"
+      ]
+    },
+    {
+      "state": "Massachusetts",
+      "abbreviation": "MA",
+      "research_date": "2026-02-14",
+      "data_confidence": "high",
+      "filing_office": {
+        "agency": "Massachusetts Secretary of the Commonwealth, Corporations Division",
+        "division": "UCC Section",
+        "physical_address": "One Ashburton Place, 17th Floor, Boston, MA 02108",
+        "phone": "617-727-9640",
+        "phone_toll_free": "1-800-392-6090",
+        "email": "cis@sec.state.ma.us",
+        "website": "https://www.sec.state.ma.us/cor/corpweb/corucc/corucc.htm"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "Open public access. Free UCC search portal available to anyone without registration. No formal authorized searcher program. Filing available online, by fax, mail, or walk-in."
+      },
+      "requirements": {
+        "application_forms": "None for searching",
+        "fees_for_access": "Free for online searches",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://corp.sec.state.ma.us/corpweb/UCCSearch/UCCSearch.aspx",
+          "description": "Free UCC search by debtor name, secured party, or file number",
+          "account_required": false,
+          "cost": "Free"
+        },
+        "online_filing": {
+          "url": "https://www.sec.state.ma.us/divisions/corporations/filing-by-subject/ucc/corporations-ucc-forms-file-online.htm",
+          "description": "Online UCC filing portal"
+        },
+        "mail": {
+          "available": true,
+          "address": "One Ashburton Place, 17th Floor, Boston, MA 02108"
+        },
+        "in_person": {
+          "available": true,
+          "address": "One Ashburton Place, 17th Floor, Boston, MA 02108"
+        }
+      },
+      "fee_schedule": {
+        "online_search": "Free",
+        "ucc1_filing": "$10",
+        "ucc3_amendment": "$10",
+        "certified_copy": "$12-20"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://www.sec.state.ma.us/cor/corpweb/corucc/corucc.htm",
+        "https://corp.sec.state.ma.us/corpweb/UCCSearch/UCCSearch.aspx",
+        "https://www.sec.state.ma.us/divisions/corporations/filing-by-subject/ucc/corporations-ucc-forms-file-online.htm"
       ]
     },
     {
