@@ -1,0 +1,467 @@
+{
+  "state": "Florida",
+  "abbreviation": "FL",
+  "research_date": "2026-02-14",
+  "researcher_notes": "Florida's UCC system is unique among US states in being fully PRIVATIZED since October 1, 2001. The filing office operations are run by Image API, LLC (now Docufree) / FloridaUCC, LLC under contract with the Florida Department of State per F.S. 679.527. Despite privatization, the system is statutorily required to be publicly accessible via the internet. There is NO authorized searcher program -- searching is free and open to all. Florida's non-standard search logic means ALL debtor name errors are fatal per Florida Supreme Court precedent. The fee schedule page at floridaucc.com requires JavaScript and could not be scraped; however, statutory fees were confirmed from F.S. 679.525 (2025 Florida Statutes).",
+
+  "filing_office": {
+    "statutory_authority": "Florida Department of State, Division of Corporations",
+    "statutory_reference": "Florida Statutes Chapter 679 (Uniform Commercial Code: Secured Transactions), specifically F.S. 679.527 (Florida Secured Transaction Registry)",
+    "division": "Division of Corporations (Sunbiz)",
+    "operational_note": "While the Division of Corporations is the statutory filing office, ALL operational functions have been privatized since October 1, 2001 to Image API, LLC (now Docufree). FloridaUCC, LLC, in partnership with the Florida Bankers Association, operates the Florida Secured Transaction Registry (FSTR) under contract with the Department of State.",
+    "private_operator": {
+      "entity_name": "Image API, LLC (now Docufree) / FloridaUCC, LLC",
+      "partner": "Florida Bankers Association",
+      "contract_start": "2001-10-01",
+      "responsibilities": "All filings, forms, photocopy and certification requests, and database availability"
+    },
+    "state_retained_rights": [
+      "Sole and exclusive ownership of all materials and records in the registry",
+      "Oversight and compliance audit authority",
+      "Right to immediately reclaim control if contractor fails to perform or faces insolvency",
+      "Authority to develop performance standards ensuring accuracy, completeness, and good user service"
+    ],
+    "fixture_filings_note": "Fixture filings and filings related to timber, minerals, and crops are filed with the Clerk of the Circuit Court in the relevant county, NOT with the state filing office",
+    "confidence": "High",
+    "sources": [
+      "https://dos.fl.gov/sunbiz/other-services/ucc-information/",
+      "https://www.flsenate.gov/Laws/Statutes/2024/679.527",
+      "https://floridaucc.com/"
+    ]
+  },
+
+  "contact_information": {
+    "statutory_authority": {
+      "agency_name": "Florida Department of State, Division of Corporations",
+      "website": "https://dos.fl.gov/sunbiz/other-services/ucc-information/",
+      "website_alternate": "https://sunbiz.org",
+      "note": "The Division of Corporations (Sunbiz) UCC information page redirects all UCC inquiries to the private operator (FloridaUCC, LLC)"
+    },
+    "private_operator": {
+      "entity_name": "FloridaUCC, LLC / Image API, LLC (now Docufree)",
+      "mailing_address": "Image API, LLC, UCC Filings, P.O. Box 5588, Tallahassee, FL 32314",
+      "physical_address": "2002 Old St. Augustine Rd., Bldg. D, Tallahassee, FL 32301",
+      "phone": "850-222-8526",
+      "email": "help@FLORIDAUCC.com",
+      "website": "https://floridaucc.com",
+      "website_legacy": "https://www.floridaucc.com/uccweb/",
+      "office_hours": "8:00 AM - 5:00 PM EST, weekdays, excluding state holidays"
+    },
+    "confidence": "High",
+    "sources": [
+      "https://dos.fl.gov/sunbiz/other-services/ucc-information/",
+      "https://floridaucc.com/"
+    ]
+  },
+
+  "authorization_model": {
+    "model_type": "Open Public Access (No Authorized Searcher Program)",
+    "description": "Florida has NO formal 'authorized searcher' program. The Florida Secured Transaction Registry (FSTR) is statutorily required to be 'open to the public and accessible through the Internet' under F.S. 679.527. Searching the UCC database is completely free and does not require an account, login, or registration of any kind. Filing UCC documents online requires creating a free account on the FSTR portal. The system is self-service only -- as of April 17, 2005, FloridaUCC, LLC staff no longer perform searches on behalf of users.",
+    "key_characteristics": {
+      "formal_authorized_searcher_program": false,
+      "public_portal_available": true,
+      "free_search_available": true,
+      "account_required_for_search": false,
+      "account_required_for_filing": true,
+      "filing_account_cost": "Free",
+      "subscription_model": false,
+      "staff_assisted_search": false,
+      "staff_search_discontinued": "2005-04-17"
+    },
+    "comparison_to_other_states": {
+      "vs_delaware": "Unlike Delaware, which has a mandatory Authorized Searcher program with no public portal, Florida is fully open to the public",
+      "vs_georgia": "Unlike Georgia, which requires at minimum a free Limited-Use account to search, Florida requires no account at all for searching",
+      "vs_alabama": "Similar to Alabama in having open access, but Florida's system is privatized while Alabama's is operated directly by the Secretary of State"
+    },
+    "confidence": "High",
+    "sources": [
+      "https://floridaucc.com/search",
+      "https://www.flsenate.gov/Laws/Statutes/2024/679.527",
+      "https://dos.fl.gov/sunbiz/other-services/ucc-information/"
+    ]
+  },
+
+  "requirements_for_authorization": {
+    "for_searching": {
+      "application_forms": "None required -- searching is free and open to the public without any account",
+      "fees": "FREE for online index/image searches via the FSTR portal",
+      "entity_eligibility": "Open to the public -- any individual or entity",
+      "required_documents": "None",
+      "background_checks": "None",
+      "technology_requirements": "Web browser with JavaScript enabled (the FSTR portal at floridaucc.com is a JavaScript-rendered single-page application)",
+      "training": "None required. Help documentation available at https://floridaucc.com/help",
+      "insurance_bonding": "None required"
+    },
+    "for_online_filing": {
+      "application_forms": "Online self-service registration at https://www.floridaucc.com/OnlineFiling/Account/Register/",
+      "registration_requirements": "Email address (used as login credential)",
+      "fees": "No registration fee. Standard filing fees apply per transaction.",
+      "entity_eligibility": "Open to the public -- any individual or entity",
+      "required_documents": "None beyond registration form fields",
+      "background_checks": "None",
+      "technology_requirements": "Web browser with JavaScript enabled",
+      "training": "None required",
+      "insurance_bonding": "None required",
+      "approval_process": "Self-service; instant; no approval step required"
+    },
+    "for_ach_debit_account": {
+      "description": "Frequent filers may establish an ACH Debit Account with FloridaUCC, LLC for streamlined payment processing",
+      "required_documents": [
+        "Completed 'Authorization Agreement for Automatic Debits' form",
+        "Voided check from the designated bank account"
+      ],
+      "approval_process": "Submit form and voided check to FloridaUCC, LLC",
+      "minimum_balance": "Unknown -- needs outreach to confirm",
+      "form_url": "https://www.floridaucc.com/uccweb/ach.aspx (JavaScript-rendered; may need to request form directly)"
+    },
+    "for_xml_api_access": {
+      "description": "Programmatic filing access via UCC XML API for bulk/automated electronic filing",
+      "documentation": "UCC XML API Implementation Guide (PDF published by Florida Department of State)",
+      "technical_details": {
+        "method": "HTTP POST to /FilingAsync endpoint",
+        "submission_format": "XML filing document submitted as string parameter",
+        "response": "Returns DocumentReceiptID on successful queuing",
+        "authentication": "Requires Web User Account Username",
+        "http_statuses": {
+          "200": "Successfully queued for processing",
+          "400": "Failed - check returned error details",
+          "500": "Internal server error"
+        },
+        "filing_statuses": ["InvalidXml", "InProcess", "InternalProcessingError", "OK"]
+      },
+      "enrollment_process": "Not fully documented publicly -- contact FloridaUCC, LLC at help@FLORIDAUCC.com or 850-222-8526 for details"
+    },
+    "confidence": "High for search/filing basics; Medium for ACH and API details",
+    "sources": [
+      "https://floridaucc.com/search",
+      "https://www.floridaucc.com/OnlineFiling/Account/Register/",
+      "https://floridaucc.com/help"
+    ]
+  },
+
+  "access_methods": {
+    "online_search": {
+      "url_current": "https://floridaucc.com/search",
+      "url_legacy": "https://www.floridaucc.com/uccweb/search.aspx",
+      "system_name": "Florida Secured Transaction Registry (FSTR)",
+      "search_types": [
+        "Debtor name (individual or organization)",
+        "Secured party name",
+        "Document/filing number"
+      ],
+      "cost": "Free",
+      "account_required": false,
+      "database_coverage": "UCC financing statement images and index data from January 1997 to present",
+      "search_logic": "NON-STANDARD -- Florida does NOT use standard UCC search logic per IACA guidelines. The system displays the entire alphabetical database index and positions results at the point where the searched name would appear. Results show 20 entries per page and the user navigates forward/backward through the index. A 'browse' feature allows users to explore the database when unsure of exact debtor name. CRITICAL: All debtor name errors are fatal per the Florida Supreme Court (1944 Beach Blvd., LLC v. Live Oak Banking Co.).",
+      "search_logic_legal_impact": "Because Florida's filing office has no 'standard search logic,' the UCC section 9-506(c) safe harbor from debtor name errors does NOT apply. An empirical study found that under the Florida Supreme Court's zero-tolerance test, 32% of UCC filings against registered organizations (over 230,000 filings) are potentially ineffective by reason of name errors alone.",
+      "technology_note": "The FSTR portal is a JavaScript-rendered single-page application. It will NOT work with JavaScript disabled or with basic web scrapers.",
+      "staff_search": "NOT AVAILABLE -- discontinued April 17, 2005. All searches are self-service only.",
+      "confidence": "High"
+    },
+    "online_filing": {
+      "url": "https://floridaucc.com/onlinefiling/login",
+      "registration_url": "https://www.floridaucc.com/OnlineFiling/Account/Register/",
+      "account_required": true,
+      "account_cost": "Free",
+      "supported_filings": ["UCC-1 (Initial Financing Statement)", "UCC-3 (Amendment, Continuation, Termination, Assignment)"],
+      "processing_time": "Electronic filings typically processed immediately",
+      "payment_methods": ["Credit card (via online portal)", "ACH Debit Account (for frequent filers)"],
+      "confidence": "High"
+    },
+    "xml_api_filing": {
+      "available": true,
+      "description": "UCC XML API for programmatic/bulk electronic filing via HTTP POST",
+      "account_required": true,
+      "documentation": "UCC XML API Implementation Guide (PDF)",
+      "confidence": "Medium -- API exists but full enrollment process not publicly documented"
+    },
+    "mail": {
+      "available": true,
+      "address": "Image API, LLC, UCC Filings, P.O. Box 5588, Tallahassee, FL 32314",
+      "supported_items": ["UCC-1 filings", "UCC-3 filings", "UCC-11 Information Request (certified search)", "Photocopy and certification requests"],
+      "processing_time": "Paper filings typically 3-5 business days",
+      "confidence": "High"
+    },
+    "courier_in_person": {
+      "available": true,
+      "address": "Image API, LLC, UCC Filings, 2002 Old St. Augustine Rd., Bldg. D, Tallahassee, FL 32301",
+      "hours": "8:00 AM - 5:00 PM EST, weekdays, excluding state holidays",
+      "confidence": "High"
+    },
+    "fax": {
+      "available": "Unknown -- no fax number found during research",
+      "confidence": "Low"
+    },
+    "forms": {
+      "url": "https://floridaucc.com/forms",
+      "url_legacy": "https://www.floridaucc.com/uccweb/forms.aspx",
+      "standard_forms_used": ["UCC-1 (National form)", "UCC-1Ad (Addendum)", "UCC-3 (National form)", "UCC-3Ad (Addendum)", "UCC-5 (Information Statement)", "UCC-11 (Information Request)"],
+      "confidence": "High"
+    },
+    "confidence": "High",
+    "sources": [
+      "https://floridaucc.com/search",
+      "https://floridaucc.com/",
+      "https://dos.fl.gov/sunbiz/other-services/ucc-information/"
+    ]
+  },
+
+  "fee_schedule": {
+    "statutory_authority": "Florida Statutes section 679.525 (Processing fees)",
+    "important_note": "The fees listed below are from the statutory text of F.S. 679.525 (2025 Florida Statutes). The official FSTR fee page at https://floridaucc.com/fees requires JavaScript and could not be independently confirmed via web scraping. The vendor (FloridaUCC, LLC) may charge additional service fees beyond statutory amounts. All fees are NONREFUNDABLE.",
+
+    "filing_fees": {
+      "ucc_1_initial_financing_statement": {
+        "base_fee": "$25.00 (first page -- includes cost of filing a termination statement)",
+        "general_revenue_surcharge": "$10.00 (additional fee on first page of UCC-1, deposited to state General Revenue Fund, not included in contractor compensation calculation)",
+        "effective_total_first_page": "$35.00 ($25 base + $10 surcharge)",
+        "additional_pages": "$3.00 per additional page",
+        "additional_debtor_secured_party_assignee_names": "$3.00 per additional name indexed",
+        "nonapproved_form_surcharge": "$5.00",
+        "statutory_reference": "F.S. 679.525(1)(a), (c), (d), (e), (h)",
+        "confidence": "High"
+      },
+      "ucc_3_amendment": {
+        "base_fee": "$12.00 (first page)",
+        "additional_pages": "$3.00 per additional page",
+        "additional_names": "$3.00 per additional name indexed",
+        "nonapproved_form_surcharge": "$5.00",
+        "statutory_reference": "F.S. 679.525(1)(b), (c), (d), (e)",
+        "confidence": "High"
+      },
+      "ucc_3_continuation": {
+        "fee": "Same as amendment fee structure ($12.00 base)",
+        "timing": "Must be filed within 6 months before the 5-year expiration of the original financing statement",
+        "confidence": "High"
+      },
+      "ucc_3_termination": {
+        "fee": "Included in original UCC-1 filing fee (no additional charge)",
+        "statutory_reference": "F.S. 679.525(1)(a) -- UCC-1 fee 'shall include the cost of filing a termination statement'",
+        "confidence": "High"
+      },
+      "fixture_filings": {
+        "note": "Filed with Clerk of Circuit Court, NOT state filing office. Fees per Chapter 28 (not F.S. 679.525)",
+        "confidence": "High"
+      }
+    },
+
+    "search_fees": {
+      "online_index_search": {
+        "fee": "FREE -- no charge",
+        "description": "Self-service search via floridaucc.com/search portal",
+        "confidence": "High"
+      },
+      "ucc_11_certified_information_request": {
+        "fee": "Approximately $15-20 per request (exact amount needs verification from floridaucc.com/fees)",
+        "description": "Formal certified search via UCC-11 Information Request form",
+        "note": "The older statute F.S. 15.091 set the search fee at $20 per debtor name, but this statute predates privatization. Current vendor fee may differ.",
+        "confidence": "Medium -- exact current amount needs verification"
+      }
+    },
+
+    "copy_and_certification_fees": {
+      "certified_copies": {
+        "fee": "$30.00",
+        "statutory_reference": "F.S. 679.525(1)(f)",
+        "confidence": "High"
+      },
+      "photocopies": {
+        "fee": "$1.00 per page or fraction thereof",
+        "statutory_reference": "F.S. 679.525(1)(g)",
+        "confidence": "High"
+      }
+    },
+
+    "other_fees": {
+      "expedited_processing": {
+        "fee": "$10.00 surcharge for same-day processing (reported by community sources; not confirmed in statute)",
+        "confidence": "Low -- needs verification"
+      },
+      "nonapproved_form": {
+        "fee": "$5.00",
+        "statutory_reference": "F.S. 679.525(1)(d)",
+        "confidence": "High"
+      }
+    },
+
+    "refund_policy": "All UCC fees are nonrefundable processing fees. No refunds issued by FloridaUCC, LLC for UCC documents that cannot be filed.",
+
+    "third_party_service_company_fees_for_reference": {
+      "source": "Florida Filing & Search Services, Inc. (third-party, NOT official state fees)",
+      "ucc_search_only": "$30.00 (company service fee, does not include state fees)",
+      "ucc_filing_via_fstr": "$30.00 (company service fee, does not include state fees)",
+      "ucc_copy_retrieval": "$20.00 + $2.00/page (company service fee)",
+      "note": "These are third-party service company fees charged ON TOP OF state filing fees. Provided for reference only."
+    },
+
+    "confidence": "High for statutory fees; Medium for vendor-specific operational fees",
+    "sources": [
+      "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0679/Sections/0679.525.html",
+      "https://www.flsenate.gov/Laws/Statutes/2024/679.525",
+      "https://floridaucc.com/fees",
+      "https://www.floridafiling.com/practice-areas.html"
+    ]
+  },
+
+  "key_legal_considerations": {
+    "non_standard_search_logic": {
+      "description": "Florida does NOT implement 'standard search logic' as defined by the IACA or UCC Revised Article 9. The FSTR displays the entire alphabetical index rather than filtering results through a defined search algorithm. This means the UCC section 9-506(c) safe harbor from debtor name errors does NOT apply in Florida.",
+      "case_law": "1944 Beach Blvd., LLC v. Live Oak Banking Co. (Florida Supreme Court) -- held that FSTR had no standard search logic, so all debtor name errors are 'seriously misleading' and render the financing statement ineffective",
+      "practical_impact": "An empirical study by Prof. Lynn M. LoPucki found that 32% of Florida UCC filings against registered organizations (over 230,000 filings) may be ineffective due to name errors alone",
+      "searcher_implication": "Searchers must use the EXACT legal name of the debtor. No nickname, abbreviation, or variation will be returned. The 'browse' feature can help, but requires manual review of adjacent entries.",
+      "confidence": "High",
+      "sources": [
+        "https://blog.cscglobal.com/florida-supreme-court-decides-there-is-zero-tolerance-for-ucc-debtor-name-errors/",
+        "https://www.floridalawreview.com/api/v1/articles/123727-the-florida-ucc-filing-system-a-concern-not-a-disaster-a-response-to-professor-lynn-m-lopucki.pdf",
+        "https://scholarship.law.ufl.edu/cgi/viewcontent.cgi?article=2281&context=facultypub"
+      ]
+    },
+    "privatization_concerns": {
+      "description": "Florida's UCC filing system has been the subject of academic debate. The privatization arrangement has been criticized for the lack of standard search logic and the resulting high error rate. However, the state retains full ownership and oversight authority.",
+      "sources": [
+        "https://scholarship.law.ufl.edu/cgi/viewcontent.cgi?article=2281&context=facultypub",
+        "https://lawpublications.barry.edu/cgi/viewcontent.cgi?article=1068&context=barrylrev"
+      ]
+    },
+    "financing_statement_duration": {
+      "effectiveness_period": "5 years from date of filing",
+      "continuation_window": "Continuation statement must be filed within 6 months before expiration to maintain the perfected security interest",
+      "lapse_consequence": "If no continuation is filed, the financing statement lapses and the security interest becomes unperfected"
+    },
+    "recording_consent": "Florida is a TWO-PARTY consent state for call recording (F.S. 934.03) -- relevant for any phone outreach to the filing office"
+  },
+
+  "items_requiring_outreach": [
+    {
+      "item": "Exact current fee schedule verification",
+      "detail": "The official fees page at https://floridaucc.com/fees requires JavaScript to render and could not be scraped during research. Statutory fees from F.S. 679.525 are confirmed, but the vendor (FloridaUCC, LLC) may charge different or additional operational fees. Secondary community sources report conflicting amounts ($20 vs $25 for electronic UCC-1 filings, which may not reflect the $10 statutory surcharge).",
+      "recommended_action": "Call 850-222-8526 or email help@FLORIDAUCC.com to request the complete current fee schedule. Alternatively, visit floridaucc.com/fees in a JavaScript-enabled browser.",
+      "priority": "High"
+    },
+    {
+      "item": "UCC-11 certified search exact fee and turnaround time",
+      "detail": "The exact fee for a UCC-11 Information Request (certified search) could not be confirmed. The older statute F.S. 15.091 set the search fee at $20, but this predates privatization. Current vendor fee may differ.",
+      "recommended_action": "Call 850-222-8526 to confirm the UCC-11 certified search fee, turnaround time, and submission process (online vs. mail only).",
+      "priority": "High"
+    },
+    {
+      "item": "UCC XML API enrollment process and eligibility",
+      "detail": "A UCC XML API Implementation Guide exists for programmatic filing, but the full enrollment/onboarding process, eligibility requirements, and any associated fees are not publicly documented. The guide mentions requiring a 'Web User Account Username' for authentication.",
+      "recommended_action": "Call 850-222-8526 or email help@FLORIDAUCC.com to inquire about XML API access enrollment, requirements, and whether it supports bulk SEARCHING in addition to filing.",
+      "priority": "Medium"
+    },
+    {
+      "item": "ACH Debit Account setup form and requirements",
+      "detail": "The ACH Debit Account option for frequent filers is referenced on the site but the actual 'Authorization Agreement for Automatic Debits' form could not be downloaded (JavaScript-rendered page).",
+      "recommended_action": "Call 850-222-8526 or email help@FLORIDAUCC.com to request the ACH Debit Account authorization form, minimum balance requirements, and setup timeline.",
+      "priority": "Medium"
+    },
+    {
+      "item": "Bulk UCC data download availability",
+      "detail": "The Division of Corporations (Sunbiz) offers data downloads for business entity data, but it is unclear whether bulk UCC filing data is available separately.",
+      "recommended_action": "Check https://dos.fl.gov/sunbiz/other-services/data-downloads/ and/or contact FloridaUCC, LLC to ask about bulk UCC data exports.",
+      "priority": "Low"
+    },
+    {
+      "item": "Fax submission availability",
+      "detail": "No fax number was found for FloridaUCC, LLC during research.",
+      "recommended_action": "Call 850-222-8526 to ask if fax filings are accepted and obtain the fax number if available.",
+      "priority": "Low"
+    }
+  ],
+
+  "sources": [
+    {
+      "title": "Florida Department of State, Division of Corporations - UCC Information Page",
+      "url": "https://dos.fl.gov/sunbiz/other-services/ucc-information/",
+      "type": "official_state_agency"
+    },
+    {
+      "title": "Florida Secured Transaction Registry (FSTR) - Home Page",
+      "url": "https://floridaucc.com/",
+      "type": "official_privatized_operator"
+    },
+    {
+      "title": "FSTR - UCC Search Portal",
+      "url": "https://floridaucc.com/search",
+      "type": "official_privatized_operator"
+    },
+    {
+      "title": "FSTR - Fee Schedule Page",
+      "url": "https://floridaucc.com/fees",
+      "type": "official_privatized_operator",
+      "note": "JavaScript-rendered; could not be scraped"
+    },
+    {
+      "title": "FSTR - Help Page",
+      "url": "https://floridaucc.com/help",
+      "type": "official_privatized_operator",
+      "note": "JavaScript-rendered; could not be scraped"
+    },
+    {
+      "title": "FSTR - Online Filing Registration",
+      "url": "https://www.floridaucc.com/OnlineFiling/Account/Register/",
+      "type": "official_privatized_operator"
+    },
+    {
+      "title": "FSTR - Forms Page",
+      "url": "https://floridaucc.com/forms",
+      "type": "official_privatized_operator"
+    },
+    {
+      "title": "Florida Statutes section 679.525 - Processing Fees (2025)",
+      "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0679/Sections/0679.525.html",
+      "type": "primary_law"
+    },
+    {
+      "title": "Florida Statutes section 679.527 - Florida Secured Transaction Registry (2024)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2024/679.527",
+      "type": "primary_law"
+    },
+    {
+      "title": "Florida Statutes section 679.515 - Duration and Effectiveness (2025)",
+      "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0679/Sections/0679.515.html",
+      "type": "primary_law"
+    },
+    {
+      "title": "CSC Global - Florida Supreme Court Decides Zero Tolerance for UCC Debtor Name Errors",
+      "url": "https://blog.cscglobal.com/florida-supreme-court-decides-there-is-zero-tolerance-for-ucc-debtor-name-errors/",
+      "type": "legal_analysis"
+    },
+    {
+      "title": "Florida Law Review - The Florida UCC Filing System: A Concern, Not a Disaster",
+      "url": "https://www.floridalawreview.com/api/v1/articles/123727-the-florida-ucc-filing-system-a-concern-not-a-disaster-a-response-to-professor-lynn-m-lopucki.pdf",
+      "type": "academic"
+    },
+    {
+      "title": "UF Law - The Florida-UCC Filing System Disaster (Prof. LoPucki)",
+      "url": "https://scholarship.law.ufl.edu/cgi/viewcontent.cgi?article=2281&context=facultypub",
+      "type": "academic"
+    },
+    {
+      "title": "Barry Law Review - Florida's UCC Filing System",
+      "url": "https://lawpublications.barry.edu/cgi/viewcontent.cgi?article=1068&context=barrylrev",
+      "type": "academic"
+    },
+    {
+      "title": "Gray-Robinson - Lien on Me (ABI Journal, May 2024)",
+      "url": "https://www.gray-robinson.com/docs/abi-journal-article-2024-May.pdf",
+      "type": "legal_analysis"
+    },
+    {
+      "title": "Florida Filing & Search Services, Inc. - Fee Schedule (third-party)",
+      "url": "https://www.floridafiling.com/practice-areas.html",
+      "type": "third_party_vendor"
+    },
+    {
+      "title": "Wolters Kluwer/CT Corporation - Florida UCC Filing & Search Services",
+      "url": "https://www.wolterskluwer.com/en/solutions/ct-corporation/florida-ucc-filing-search-services",
+      "type": "third_party_vendor"
+    },
+    {
+      "title": "Incorporated Zone - Florida UCC Search (How It Works)",
+      "url": "https://incorporated.zone/florida-ucc-search/",
+      "type": "reference"
+    }
+  ]
+}
