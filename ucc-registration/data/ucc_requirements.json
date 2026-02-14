@@ -1,0 +1,813 @@
+{
+  "description": "State-by-state UCC searcher/filing access requirements database for RealPC Real Finance, Inc.",
+  "last_updated": "2026-02-14",
+  "total_jurisdictions": 51,
+  "jurisdictions_researched": 10,
+  "states": [
+    {
+      "state": "Alabama",
+      "abbreviation": "AL",
+      "research_date": "2026-02-14",
+      "data_confidence": "high",
+      "filing_office": {
+        "agency": "Alabama Secretary of State",
+        "division": "UCC Division",
+        "physical_address": "770 Washington Avenue, Suite 580, Montgomery, AL 36104",
+        "mailing_address": "PO Box 5616, Montgomery, AL 36103-5616",
+        "phone": "(334) 353-0203",
+        "phone_general": "(334) 242-7200",
+        "fax": "(334) 242-4993",
+        "email": "business.services@sos.alabama.gov",
+        "website": "https://www.sos.alabama.gov/business-services/ucc-home"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "Alabama does NOT have a formal authorized searcher program. Free basic searches are available to anyone without an account. Advanced searches with images available through Alabama Interactive on a pay-per-search basis."
+      },
+      "requirements": {
+        "application_forms": "None required",
+        "fees_for_access": "None for basic search; optional Alabama Interactive subscriber $95-120/year",
+        "entity_eligibility": "Open to any individual or entity",
+        "required_documents": "None for searching",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "training_requirements": "None",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://arc-sos.state.al.us/CGI/UCCNAME.MBR/INPUT",
+          "description": "Free basic UCC search portal - index only, no images",
+          "account_required": false,
+          "cost": "Free"
+        },
+        "online_advanced": {
+          "url": "https://www.alabamainteractive.org/ucc_filing/",
+          "description": "Alabama Interactive - includes document images",
+          "cost": "$15/name search + $9.75 access fee + $4.50-5.50 efficiency fee + $1/page"
+        },
+        "mail": {
+          "available": true,
+          "form": "UCC-11 Information Request",
+          "cost": "$20/name search + $1/page"
+        },
+        "in_person": {
+          "available": true,
+          "address": "770 Washington Avenue, Suite 580, Montgomery, AL 36104"
+        }
+      },
+      "fee_schedule": {
+        "online_basic_search": "Free",
+        "online_name_search": "$15 + $9.75 access + efficiency fee",
+        "mail_search": "$20/name + $1/page",
+        "certified_search": "$20 + $1/page + $5/file number",
+        "expedited": "$100 additional",
+        "ucc1_filing": "Contact for current rate"
+      },
+      "turnaround_time": "Immediate for online; 5-10 business days for mail",
+      "renewal_requirements": "Annual subscriber renewal if using Alabama Interactive ($95-120/year)",
+      "outreach_needed": [
+        "Confirm Alabama Interactive subscriber fee ($95 vs $120/year)",
+        "XML B2B implementation guide availability",
+        "Bulk data access/licensing options"
+      ],
+      "sources": [
+        "https://www.sos.alabama.gov/business-services/ucc-home",
+        "https://arc-sos.state.al.us/CGI/UCCNAME.MBR/INPUT",
+        "https://www.alabamainteractive.org/ucc_filing/",
+        "https://www.sos.alabama.gov/business-services/filing-fees"
+      ]
+    },
+    {
+      "state": "Alaska",
+      "abbreviation": "AK",
+      "research_date": "2026-02-14",
+      "data_confidence": "high",
+      "filing_office": {
+        "agency": "Alaska Department of Natural Resources (DNR)",
+        "division": "State Recorder's Office, UCC Central File",
+        "physical_address": "550 West 7th Ave., Suite 108A, Anchorage, AK 99501-3564",
+        "mailing_address": "550 West 7th Ave., Suite 108A, Anchorage, AK 99501-3564",
+        "phone": "(907) 269-8873",
+        "phone_info": "(907) 269-8899",
+        "fax": "(907) 269-8945",
+        "email": "dnr.ro_contact@alaska.gov",
+        "website": "https://dnr.alaska.gov/ssd/recoff/ucc"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "Alaska has NO formal authorized searcher program. UCC records are public records. Online index searching is free and open to anyone. Online filing requires a free registration account (self-service, instant)."
+      },
+      "requirements": {
+        "application_forms": "None for searching; online self-service registration for filing",
+        "fees_for_access": "Free for online index searches",
+        "entity_eligibility": "Open to any individual or entity",
+        "required_documents": "None",
+        "background_checks": false,
+        "technology_requirements": "Web browser with internet access",
+        "training_requirements": "None",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://dnr.alaska.gov/ssd/recoff/ucc/search/",
+          "description": "Free online UCC search by debtor name, secured party name, or document/filing number",
+          "account_required": false,
+          "cost": "Free"
+        },
+        "online_filing": {
+          "url": "https://dnr.alaska.gov/ssd/recoff/ucconline",
+          "description": "Online filing portal - requires free registration",
+          "account_required": true,
+          "cost": "Per-transaction filing fees"
+        },
+        "mail": {
+          "available": true,
+          "address": "550 West 7th Ave., Suite 108A, Anchorage, AK 99501-3564"
+        },
+        "in_person": {
+          "available": true,
+          "locations": "Anchorage (907) 269-8875 and Fairbanks (907) 452-3521",
+          "hours": "Mon-Fri 8:00 AM - 3:30 PM"
+        }
+      },
+      "fee_schedule": {
+        "online_search": "Free (index search)",
+        "request_for_information": "$15 per debtor name",
+        "request_with_copy": "$25 per debtor name",
+        "individual_copy": "$2 each",
+        "certification": "$5 added to copy fee",
+        "ucc1_filing": "$20",
+        "ucc_amendment": "$10",
+        "ucc_transmitting_utility": "$50"
+      },
+      "turnaround_time": "Immediate for online searches",
+      "renewal_requirements": "None",
+      "outreach_needed": [
+        "Confirm whether free online search returns document images or index only",
+        "Verify current fee amounts (last regulation update 2018)",
+        "Ask about bulk/batch search or API access",
+        "Clarify filing types that appear only at district level"
+      ],
+      "sources": [
+        "https://dnr.alaska.gov/ssd/recoff/ucc",
+        "https://dnr.alaska.gov/ssd/recoff/ucc/search/",
+        "https://dnr.alaska.gov/ssd/recoff/ucconline",
+        "https://dnr.alaska.gov/ssd/recoff/ucc/fees"
+      ]
+    },
+    {
+      "state": "Arizona",
+      "abbreviation": "AZ",
+      "research_date": "2026-02-14",
+      "data_confidence": "high",
+      "filing_office": {
+        "agency": "Arizona Secretary of State",
+        "division": "Business Services Division, UCC Department",
+        "physical_address": "1700 W Washington St, Fl 2, Phoenix, AZ 85007-2808",
+        "mailing_address": "Secretary of State, Attn: UCC Dept., 1700 W. Washington Street, Fl. 7, Phoenix, AZ 85007-2808",
+        "phone": "602-542-6187",
+        "phone_toll_free": "1-800-458-5842",
+        "email": "Contact via website",
+        "website": "https://azsos.gov/business/ucc"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "Arizona does NOT have a formal Authorized Searcher program. Free, unrestricted online search portal available 24/7 to anyone. No registration required. For electronic filing, a prepaid account must be established."
+      },
+      "requirements": {
+        "application_forms": "None for searching; prepaid account form for electronic filing (call to request)",
+        "fees_for_access": "Free for online searching",
+        "entity_eligibility": "No restrictions",
+        "required_documents": "None for searching",
+        "background_checks": false,
+        "technology_requirements": "Web browser; PDF capability for filing uploads",
+        "training_requirements": "None",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://apps.azsos.gov/apps/ucc/search/",
+          "description": "Free public UCC search - uncertified (watermarked) results",
+          "account_required": false,
+          "cost": "Free"
+        },
+        "certified_search": {
+          "method": "UCC-11 Search Request form by mail or in-person",
+          "cost": "$3/certification + $0.10/page"
+        },
+        "electronic_filing": {
+          "url": "https://azsos.gov/apps/ucc/upload",
+          "description": "PDF upload for filing (requires prepaid account)"
+        },
+        "mail": {
+          "available": true,
+          "processing_time": "5 business days from receipt"
+        },
+        "in_person": {
+          "available": true,
+          "phoenix": "1700 W Washington St, Fl 2, Phoenix, AZ 85007-2808",
+          "tucson": "400 West Congress Street, Suite 221, Tucson, AZ 85701",
+          "hours": "Monday-Friday 8:00 AM - 5:00 PM"
+        },
+        "bulk_data": {
+          "single_issue": "$2,000",
+          "annual_subscription": "$1,800/year ($150/month)"
+        }
+      },
+      "fee_schedule": {
+        "online_search": "Free",
+        "ucc1_filing": "$5-8 (conflicting sources, confirm with office)",
+        "ucc3_amendment": "$9",
+        "certified_copies": "$3/certification + $0.10/page",
+        "bulk_single_issue": "$2,000",
+        "bulk_annual": "$1,800/year"
+      },
+      "turnaround_time": "Immediate online; 5 business days mail",
+      "renewal_requirements": "None for basic access",
+      "outreach_needed": [
+        "Exact UCC-11 certified search fee",
+        "Confirm UCC-1 filing fee ($5 vs $8)",
+        "UCC Department email address",
+        "Expedited certified search fees",
+        "Full list of 5 bulk data index options"
+      ],
+      "sources": [
+        "https://azsos.gov/business/ucc",
+        "https://apps.azsos.gov/apps/ucc/search/",
+        "https://azsos.gov/services/database-purchasing",
+        "https://azsos.gov/resources/uniform-commercial-code-filing-index-options"
+      ]
+    },
+    {
+      "state": "Arkansas",
+      "abbreviation": "AR",
+      "research_date": "2026-02-14",
+      "data_confidence": "high",
+      "filing_office": {
+        "agency": "Arkansas Secretary of State",
+        "division": "Business & Commercial Services (BCS)",
+        "physical_address": "Victory Building, 1401 W. Capitol Avenue, Suite 250, Little Rock, AR 72201",
+        "mailing_address": "Victory Building, 1401 W. Capitol Avenue, Suite 250, Little Rock, AR 72201",
+        "phone": "501-682-3409",
+        "phone_toll_free": "888-233-0325",
+        "email": "ucc@sos.arkansas.gov",
+        "email_general": "corprequest@sos.arkansas.gov",
+        "website": "https://www.sos.arkansas.gov/business-commercial-services-bcs/uniform-commercial-code-ucc"
+      },
+      "authorization_model": {
+        "type": "subscription_account",
+        "formal_authorized_searcher_program": false,
+        "description": "No formal authorized searcher program. Online access requires an INA (Information Network of Arkansas) subscriber account ($150/year). Paper searches via UCC-11 are available to the public without subscription. Per Filing Office Rules, services provided on nondiscriminatory basis."
+      },
+      "requirements": {
+        "application_forms": "Online Service Agreement during INA registration",
+        "fees_for_access": "$150/year INA subscription for online access (up to 10 users); paper searches available without subscription",
+        "entity_eligibility": "No restrictions - open to any individual or business",
+        "required_documents": "None beyond registration fields",
+        "background_checks": false,
+        "technology_requirements": "Internet connection and standard web browser",
+        "training_requirements": "None",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://www.ark.org/sos/ucc/index.php",
+          "description": "Online UCC search - requires INA subscription",
+          "account_required": true,
+          "registration_url": "https://portal.arkansas.gov/ina-subscriber-account/",
+          "cost": "$150/year subscription + $6/search"
+        },
+        "mail": {
+          "available": true,
+          "form": "UCC-11 Information Request (National form)",
+          "address": "Victory Building, 1401 W. Capitol Avenue, Suite 250, Little Rock, AR 72201",
+          "cost": "$6/search + $6 first page copy + $0.50 additional pages"
+        },
+        "in_person": {
+          "available": true,
+          "address": "Victory Building, 1401 W. Capitol Avenue, Suite 250, Little Rock, AR 72201"
+        },
+        "bulk_data": {
+          "url": "https://portal.arkansas.gov/service/ar-ucc-bulk-records-data-download/",
+          "requires_subscription": true
+        }
+      },
+      "fee_schedule": {
+        "ina_annual_subscription": "$150.00",
+        "ucc_search": "$6.00 per search",
+        "ucc1_filing": "$16.00",
+        "ucc3_amendment": "$6.00",
+        "termination_post_1995": "No charge",
+        "copies_first_page": "$6.00",
+        "copies_additional": "$0.50/page"
+      },
+      "turnaround_time": "Instant for online; unknown for mail (outreach needed)",
+      "renewal_requirements": "$150/year INA subscription renewal",
+      "outreach_needed": [
+        "Exact fields required on INA subscriber registration form",
+        "Bulk data download pricing and format",
+        "Whether $6/search fee applies in addition to subscription",
+        "Turnaround time for paper UCC-11 requests"
+      ],
+      "sources": [
+        "https://www.sos.arkansas.gov/business-commercial-services-bcs/uniform-commercial-code-ucc",
+        "https://portal.arkansas.gov/ina-subscriber-account/",
+        "https://www.ark.org/sos/ucc/index.php",
+        "https://www.law.cornell.edu/regulations/arkansas/116-00-14-Ark-Code-R-SS-001"
+      ]
+    },
+    {
+      "state": "California",
+      "abbreviation": "CA",
+      "research_date": "2026-02-14",
+      "data_confidence": "high",
+      "filing_office": {
+        "agency": "California Secretary of State",
+        "division": "Business Programs Division, Uniform Commercial Code Section",
+        "physical_address": "1500 11th Street, 3rd Floor, Sacramento, CA 95814",
+        "mailing_address": "P.O. Box 942835, Sacramento, CA 94235-0001",
+        "phone": "(916) 653-3516",
+        "phone_general": "(916) 653-6814",
+        "email": "bizfile@sos.ca.gov",
+        "website": "https://www.sos.ca.gov/business-programs/ucc"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "California does NOT have a formal authorized searcher program. UCC records are publicly accessible. Free informal searches available to anyone; certified searches require a fee. Filing requires a free bizfile Online account."
+      },
+      "requirements": {
+        "application_forms": "None for searching; free bizfile Online account for filing/certified copies",
+        "fees_for_access": "None - account creation is free",
+        "entity_eligibility": "No restrictions",
+        "required_documents": "None",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "training_requirements": "None",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://bizfileonline.sos.ca.gov/search/ucc",
+          "description": "bizfile Online - free UCC search by debtor name, secured party, or file number",
+          "account_required": false,
+          "cost": "Free for basic searches"
+        },
+        "certified_search": {
+          "method": "UCC-11 Information Request",
+          "online_cost": "$5/debtor name",
+          "mail_cost": "$10/debtor name"
+        },
+        "mail": {
+          "available": true,
+          "address": "P.O. Box 942835, Sacramento, CA 94235-0001"
+        },
+        "in_person": {
+          "available": true,
+          "address": "1500 11th Street, 3rd Floor, Sacramento, CA 95814",
+          "hours": "Monday-Friday, 8:00 AM - 5:00 PM",
+          "special_handling_fee": "$6.00"
+        }
+      },
+      "fee_schedule": {
+        "online_basic_search": "Free",
+        "certified_search_online": "$5/debtor name",
+        "certified_search_mail": "$10/debtor name",
+        "certified_copies_online": "$5/document",
+        "plain_copies_online": "Free (account required)",
+        "ucc1_filing": "$10",
+        "ucc3_filing": "$10",
+        "special_handling": "$6 additional"
+      },
+      "turnaround_time": "Immediate for online searches",
+      "renewal_requirements": "None",
+      "outreach_needed": [
+        "Prepaid customer account setup and minimum deposit",
+        "UCC-specific API access availability",
+        "Bulk UCC data availability and pricing",
+        "IACA XML electronic filing requirements"
+      ],
+      "sources": [
+        "https://www.sos.ca.gov/business-programs/ucc",
+        "https://bizfileonline.sos.ca.gov/search/ucc",
+        "https://bpd.cdn.sos.ca.gov/ucc/ucc-fee-schedule.pdf",
+        "https://www.sos.ca.gov/business-programs/ucc/faqs"
+      ]
+    },
+    {
+      "state": "Colorado",
+      "abbreviation": "CO",
+      "research_date": "2026-02-14",
+      "data_confidence": "high",
+      "filing_office": {
+        "agency": "Colorado Secretary of State",
+        "division": "Uniform Commercial Code (UCC) Division",
+        "physical_address": "1700 Broadway, Suite 550, Denver, CO 80290",
+        "mailing_address": "1700 Broadway, Suite 550, Denver, CO 80290",
+        "phone": "303-894-2200",
+        "phone_toll_free": "1-855-428-3555",
+        "fax": "303-869-4860",
+        "email": "publicucc@coloradosos.gov",
+        "website": "https://www.sos.state.co.us/pubs/UCC/uccHome.html"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "Fully open-access model. ALL UCC searches are FREE, including certified searches. No account needed for basic searches. Free optional account unlocks certified search reports. No authorized searcher program. Online-only system (no paper filings accepted)."
+      },
+      "requirements": {
+        "application_forms": "None; optional free account via self-service online registration",
+        "fees_for_access": "None - all searches free; account creation free",
+        "entity_eligibility": "No restrictions",
+        "required_documents": "None",
+        "background_checks": false,
+        "technology_requirements": "Web browser (online-only system)",
+        "training_requirements": "None required; free e-learning courses available",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://www.sos.state.co.us/ucc/",
+          "description": "Colorado SOS UCC portal - free standard, advanced, and certified searches",
+          "account_required": false,
+          "cost": "Free (all searches)",
+          "availability": "24/7 except 1:30-3:30 AM MST maintenance"
+        },
+        "mail": {
+          "available": false,
+          "note": "Paper filings NOT accepted"
+        },
+        "in_person": {
+          "available": false,
+          "note": "Not available for UCC filings/searches"
+        },
+        "bulk_data": {
+          "url": "https://data.colorado.gov/Business/Uniform-Commercial-Code-UCC-Filing-Information-in-/wffy-3uut",
+          "description": "Colorado Information Marketplace - free full UCC datasets with Socrata API",
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "all_searches": "Free (including certified)",
+        "ucc_filing": "$8.00 per filing (any type)",
+        "bulk_data": "Free via Colorado Information Marketplace"
+      },
+      "turnaround_time": "Immediate for online",
+      "renewal_requirements": "Account may be deleted after 18 months inactivity",
+      "outreach_needed": [
+        "Prepaid account minimum deposit details (low priority)",
+        "UCC master file request process and format (low priority)"
+      ],
+      "sources": [
+        "https://www.sos.state.co.us/pubs/UCC/uccHome.html",
+        "https://www.sos.state.co.us/ucc/",
+        "https://www.sos.state.co.us/pubs/info_center/fees/UCC.html",
+        "https://data.colorado.gov/Business/Uniform-Commercial-Code-UCC-Filing-Information-in-/wffy-3uut"
+      ]
+    },
+    {
+      "state": "Connecticut",
+      "abbreviation": "CT",
+      "research_date": "2026-02-14",
+      "data_confidence": "high",
+      "filing_office": {
+        "agency": "Connecticut Secretary of the State",
+        "division": "Business Services Division",
+        "physical_address": "165 Capitol Avenue, Suite 1000, Hartford, CT 06106",
+        "mailing_address": "P.O. Box 150470, Hartford, CT 06115-0470",
+        "phone": "860-509-6002",
+        "phone_general": "860-509-6000",
+        "email": "bsd@ct.gov",
+        "email_crd": "crd@ct.gov",
+        "website": "https://business.ct.gov"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "Open Public Access model. No formal authorized searcher program, no subscription required for searching. Free search available at service.ct.gov portal. Filing requires a free business.ct.gov account."
+      },
+      "requirements": {
+        "application_forms": "None for search; free CT.gov account for filing",
+        "fees_for_access": "None",
+        "entity_eligibility": "No restrictions - open to all",
+        "required_documents": "None",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "training_requirements": "None",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://service.ct.gov/business/s/onlineenquiry",
+          "description": "Free lien records search by debtor name or lien number - no login required",
+          "account_required": false,
+          "cost": "Free"
+        },
+        "online_filing": {
+          "url": "https://business.ct.gov",
+          "description": "Filing portal - requires free account",
+          "account_required": true
+        },
+        "bulk_data": {
+          "url": "https://data.ct.gov/Business/Uniform-Commercial-Code-UCC-Lien-Filings/xfev-8smz",
+          "description": "Free CT Open Data Portal with nightly updates, JSON/CSV/API (Socrata)",
+          "cost": "Free"
+        },
+        "ucc_image_subscription": {
+          "description": "Monthly PDF volumes via SharePoint",
+          "cost": "$1,000/year"
+        },
+        "mail": {
+          "available": true,
+          "note": "Discouraged in favor of online",
+          "address": "P.O. Box 150470, Hartford, CT 06115-0470"
+        },
+        "in_person": {
+          "available": true,
+          "note": "Discouraged in favor of online",
+          "address": "165 Capitol Avenue, Suite 1000, Hartford, CT 06106",
+          "hours": "8:30 AM - 4:00 PM Eastern"
+        }
+      },
+      "fee_schedule": {
+        "online_search": "Free",
+        "all_ucc_filings": "$50 each",
+        "certified_copy": "$55",
+        "plain_copy": "$40",
+        "bulk_data": "Free",
+        "image_subscription": "$1,000/year"
+      },
+      "turnaround_time": "Immediate for online searches",
+      "renewal_requirements": "None for basic access",
+      "outreach_needed": [
+        "Confirm current filing fees (third-party sources vary)",
+        "Certified search ordering procedure",
+        "UCC Image Subscription current status/pricing",
+        "Volume filing arrangements"
+      ],
+      "sources": [
+        "https://business.ct.gov",
+        "https://service.ct.gov/business/s/onlineenquiry",
+        "https://business.ct.gov/knowledge-base/articles/uniform-commercial-code-forms-and-fees",
+        "https://data.ct.gov/Business/Uniform-Commercial-Code-UCC-Lien-Filings/xfev-8smz"
+      ]
+    },
+    {
+      "state": "Delaware",
+      "abbreviation": "DE",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Delaware Department of State",
+        "division": "Division of Corporations",
+        "physical_address": "John G. Townsend Building, 401 Federal Street, Suite 4, Dover, DE 19901",
+        "mailing_address": "Division of Corporations, PO Box 898, Dover, DE 19903",
+        "phone": "(302) 739-3073",
+        "phone_ucc": "(302) 739-3073, option 4",
+        "fax": "(302) 739-3812",
+        "email": "DOSDOC_ucc@delaware.gov",
+        "email_general": "corp@delaware.gov",
+        "website": "https://corp.delaware.gov/ucc/"
+      },
+      "authorization_model": {
+        "type": "mandatory_authorized_searcher",
+        "formal_authorized_searcher_program": true,
+        "description": "MANDATORY Authorized Searcher program. No public search portal exists. Since Dec 1 2001, all UCC debtor searches must be performed by a state-certified Authorized Searcher. Currently 25 certified searchers (Registered Agents, Service Companies, Law Firms). Delaware provides certified searches ONLY. Separate Authorized Filer program (~28 entities) for paper filing submission."
+      },
+      "requirements": {
+        "application_forms": "NOT publicly documented - requires direct outreach",
+        "fees_for_access": "Unknown - application process not public",
+        "entity_eligibility": "Registered Agents, Service Companies, Law Firms with 'long-standing relationship with the State of Delaware'",
+        "required_documents": "Unknown - requires outreach",
+        "background_checks": "Unknown",
+        "technology_requirements": "Special access to state's internal lien index (details unknown)",
+        "training_requirements": "Must be 'Certified by the Delaware Division of Corporations'",
+        "insurance_bonding": "Unknown"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": null,
+          "description": "NO public search portal exists",
+          "account_required": true,
+          "cost": "Must use Authorized Searcher"
+        },
+        "authorized_searcher_list": {
+          "url": "https://corp.delaware.gov/uccauthsrch/",
+          "description": "List of 25 certified Authorized Searchers"
+        },
+        "e_filing": {
+          "url": "https://icis.corp.delaware.gov/ecorp/ucc.aspx",
+          "description": "e-UCC web application - anyone can file directly"
+        },
+        "mail": {
+          "available": false,
+          "note": "Paper filings not accepted since Dec 1, 2015"
+        },
+        "in_person": {
+          "available": false,
+          "note": "By appointment only for other matters"
+        }
+      },
+      "fee_schedule": {
+        "ucc_certification_search": "$25/debtor name (state fee)",
+        "mandatory_expedited_24hr": "$25/search",
+        "minimum_per_debtor": "$50 (search + expedited)",
+        "plain_copies": "$10 first page + $2 each additional",
+        "certified_copies": "$25 certification + $10 first page + $2 each additional",
+        "ucc1_filing_web": "$50 flat",
+        "ucc1_via_authorized_filer": "$100 (1-4 pages)",
+        "expedited_next_day": "$100",
+        "expedited_1_hour": "$1,000"
+      },
+      "turnaround_time": "24-hour standard (mandatory expedited); 1-hour expedited available",
+      "renewal_requirements": "Unknown - program details not public",
+      "outreach_needed": [
+        "HIGH: Application process for Authorized Searcher status",
+        "HIGH: Whether program is open to new applicants or closed/grandfathered",
+        "MEDIUM: Review UCC Administrative Rules PDF (corpfiles.delaware.gov/uccadminrules.pdf)",
+        "MEDIUM: Technology/system access requirements for Authorized Searchers",
+        "MEDIUM: Fees and timeline for becoming authorized"
+      ],
+      "sources": [
+        "https://corp.delaware.gov/ucc/",
+        "https://corp.delaware.gov/uccsearch/",
+        "https://corp.delaware.gov/uccauthsrch/",
+        "https://corp.delaware.gov/uccfeessept09/",
+        "https://corpfiles.delaware.gov/uccadminrules.pdf"
+      ]
+    },
+    {
+      "state": "Florida",
+      "abbreviation": "FL",
+      "research_date": "2026-02-14",
+      "data_confidence": "high",
+      "filing_office": {
+        "agency": "Florida Department of State, Division of Corporations (operations privatized)",
+        "division": "FloridaUCC, LLC / Image API, LLC (now Docufree) — private operator under F.S. 679.527",
+        "physical_address": "2002 Old St. Augustine Rd., Bldg. D, Tallahassee, FL 32301",
+        "mailing_address": "Image API, LLC, UCC Filings, P.O. Box 5588, Tallahassee, FL 32314",
+        "phone": "850-222-8526",
+        "email": "help@FLORIDAUCC.com",
+        "website": "https://floridaucc.com"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "NO formal authorized searcher program. The Florida Secured Transaction Registry (FSTR) is statutorily required to be open to the public. Searching is free, no account required. Filing requires free account creation. System privatized since Oct 1, 2001 under FloridaUCC, LLC."
+      },
+      "requirements": {
+        "application_forms": "None for searching; free online registration for filing",
+        "fees_for_access": "None - searching is free; filing account is free",
+        "entity_eligibility": "Open to public - any individual or entity",
+        "required_documents": "None for searching",
+        "background_checks": false,
+        "technology_requirements": "Web browser with JavaScript",
+        "training_requirements": "None",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://floridaucc.com/search",
+          "url_legacy": "https://www.floridaucc.com/uccweb/search.aspx",
+          "description": "Free public UCC search - no account required. Database covers Jan 1997 to present.",
+          "account_required": false,
+          "cost": "Free"
+        },
+        "online_filing": {
+          "url": "https://floridaucc.com/onlinefiling/login",
+          "registration_url": "https://www.floridaucc.com/OnlineFiling/Account/Register/",
+          "description": "Free account required for online filing",
+          "account_required": true
+        },
+        "xml_api": {
+          "description": "UCC XML API for programmatic/bulk filing via HTTP POST",
+          "account_required": true
+        },
+        "mail": {
+          "available": true,
+          "address": "Image API, LLC, UCC Filings, P.O. Box 5588, Tallahassee, FL 32314"
+        },
+        "in_person": {
+          "available": true,
+          "address": "2002 Old St. Augustine Rd., Bldg. D, Tallahassee, FL 32301",
+          "hours": "8:00 AM - 5:00 PM EST weekdays"
+        }
+      },
+      "fee_schedule": {
+        "online_search": "Free",
+        "ucc1_filing_base": "$25 first page (F.S. 679.525(1)(a)) + $10 surcharge (F.S. 679.525(1)(h)) = $35 effective total",
+        "ucc3_amendment_base": "$12 first page (F.S. 679.525(1)(b))",
+        "additional_pages": "$3/page (F.S. 679.525(1)(e))",
+        "additional_names_indexed": "$3/name (F.S. 679.525(1)(c))",
+        "nonapproved_form": "$5 (F.S. 679.525(1)(d))",
+        "termination": "Included in original UCC-1 fee",
+        "certified_copies": "$30 (F.S. 679.525(1)(f))",
+        "photocopies": "$1/page (F.S. 679.525(1)(g))",
+        "certified_search_ucc11": "~$15-20 per request (verify with office)",
+        "expedited_processing": "$10 surcharge (community-reported, not in statute)"
+      },
+      "turnaround_time": "Immediate for online searches; electronic filings processed immediately; paper 3-5 business days",
+      "renewal_requirements": "None for basic access",
+      "outreach_needed": [
+        "Verify exact current fee schedule (floridaucc.com/fees requires JavaScript)",
+        "UCC XML API enrollment process and eligibility",
+        "ACH Debit Account setup form and requirements",
+        "Certified search (UCC-11) exact fee and turnaround",
+        "Bulk data download availability for UCC records"
+      ],
+      "sources": [
+        "https://floridaucc.com/",
+        "https://floridaucc.com/search",
+        "https://dos.fl.gov/sunbiz/other-services/ucc-information/",
+        "https://www.flsenate.gov/Laws/Statutes/2024/679.527"
+      ],
+      "special_notes": "Florida UCC system is PRIVATIZED. Non-standard search logic - ALL debtor name errors are fatal per Florida Supreme Court. Staff-assisted searches discontinued April 2005."
+    },
+    {
+      "state": "Georgia",
+      "abbreviation": "GA",
+      "research_date": "2026-02-14",
+      "data_confidence": "high",
+      "filing_office": {
+        "agency": "Georgia Superior Court Clerks' Cooperative Authority (GSCCCA)",
+        "division": "N/A - GSCCCA handles UCC directly (NOT Secretary of State)",
+        "physical_address": "1875 Century Boulevard, Suite 100, Atlanta, GA 30345",
+        "mailing_address": "1875 Century Boulevard, Suite 100, Atlanta, GA 30345",
+        "phone": "(404) 327-9058",
+        "phone_toll_free": "(800) 304-5174",
+        "phone_alternate": "(800) 533-0682",
+        "fax": "(404) 327-7877",
+        "email": "help@gsccca.org",
+        "website": "https://www.gsccca.org"
+      },
+      "authorization_model": {
+        "type": "subscription_account",
+        "formal_authorized_searcher_program": false,
+        "description": "Subscription/Account Access model. No formal authorized searcher program. Any person or entity can search by creating a GSCCCA account. Free Limited-Use accounts provide basic search. Paid tiers ($14.95-29.95/month) provide image access."
+      },
+      "requirements": {
+        "application_forms": "None - self-service online registration at account.gsccca.org",
+        "fees_for_access": "Free (Limited-Use) to $29.95/month (Premium)",
+        "entity_eligibility": "Open to any individual or entity",
+        "required_documents": "None beyond basic registration info",
+        "background_checks": false,
+        "technology_requirements": "Web browser, Google reCAPTCHA support",
+        "training_requirements": "None",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://search.gsccca.org/UCC_Search/",
+          "description": "GSCCCA UCC Search Portal - name search, file number search, secured party search, certified search",
+          "account_required": true,
+          "cost": "Free with Limited-Use account; $14.95-29.95/month for image access"
+        },
+        "account_tiers": {
+          "limited_use": {"monthly": "Free", "features": "Search indexes, view summaries, no images"},
+          "single_use": {"cost": "$5 one-time", "features": "Full access for 4 hours"},
+          "regular": {"monthly": "$14.95/user", "features": "Unlimited images, $0.50/page print"},
+          "premium": {"monthly": "$29.95/user", "features": "All features + address search + maps"},
+          "certified_search": {"cost": "$15/debtor name", "features": "Official certified search reports"}
+        },
+        "in_person": {
+          "available": true,
+          "note": "Free terminals at all 159 Clerk of Superior Court offices"
+        },
+        "efiling": {
+          "url": "https://efile.gsccca.org/",
+          "description": "eFiling portal for UCC-1 and UCC-3 forms"
+        },
+        "monitoring": {
+          "url": "https://fans.gsccca.org/",
+          "description": "Filing Activity Notification System (FANS) for proactive monitoring"
+        }
+      },
+      "fee_schedule": {
+        "limited_use_account": "Free",
+        "regular_account": "$14.95/month/user",
+        "premium_account": "$29.95/month/user",
+        "certified_search": "$15/debtor name",
+        "image_print": "$0.50/page"
+      },
+      "turnaround_time": "48-hour indexing pipeline (24h clerk + 24h authority)",
+      "renewal_requirements": "Monthly subscription for paid tiers",
+      "outreach_needed": [
+        "UCC Administrative Rules full text (Rev. July 2025)",
+        "Bulk/API search access for commercial use",
+        "Mail-based UCC-11 process and fees",
+        "Escrow account setup for eFiling"
+      ],
+      "sources": [
+        "https://www.gsccca.org/",
+        "https://search.gsccca.org/UCC_Search/",
+        "https://account.gsccca.org/",
+        "https://efile.gsccca.org/",
+        "https://www.gsccca.org/learn/projects-programs/ucc-system"
+      ]
+    }
+  ]
+}
