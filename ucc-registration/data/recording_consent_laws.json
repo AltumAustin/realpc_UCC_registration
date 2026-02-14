@@ -1,7 +1,7 @@
 {
   "description": "State-by-state call recording consent classification. Two-party (all-party) consent states require all parties to consent to recording. One-party consent states only require one party (the caller) to consent.",
   "last_updated": "2026-02-14",
-  "source_notes": "Based on state wiretapping and eavesdropping statutes. This is for reference purposes — RealPC's Bland.ai agent should still proactively disclose recording in all calls as best practice.",
+  "source_notes": "Based on state wiretapping and eavesdropping statutes. This is for reference purposes — Real Finance's Bland.ai agent should still proactively disclose recording in all calls as best practice.",
   "states": {
     "AL": {"consent_type": "one_party", "statute": "Ala. Code § 13A-11-30"},
     "AK": {"consent_type": "one_party", "statute": "Alaska Stat. § 42.20.310"},

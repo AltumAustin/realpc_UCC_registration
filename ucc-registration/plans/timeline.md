@@ -1,6 +1,6 @@
 # Project Timeline — UCC Registration
 
-**Company:** RealPC Real Finance, Inc.
+**Company:** Real Finance, Inc.
 **Date:** February 14, 2026
 **Note:** Specific dates are targets, not commitments. Actual timing depends on state agency responsiveness and approval gates.
 

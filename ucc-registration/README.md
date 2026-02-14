@@ -2,11 +2,11 @@
 
 ## Overview
 
-This project manages RealPC Real Finance, Inc.'s registration as an authorized UCC (Uniform Commercial Code) searcher across all 50 U.S. states and the District of Columbia.
+This project manages Real Finance, Inc.'s registration as an authorized UCC (Uniform Commercial Code) searcher across all 50 U.S. states and the District of Columbia.
 
 ## Company Information
 
-- **Company**: RealPC Real Finance, Inc.
+- **Company**: Real Finance, Inc.
 - **Incorporated in**: Delaware
 - **Principal Office**: 9240 SW 72ND ST STE 114, MIAMI, FL 33173
 - **Authorized Representative**: Austin, Chief Legal Officer

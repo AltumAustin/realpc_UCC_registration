@@ -25,7 +25,7 @@
 
 **Option B: Partnership with Existing Authorized Searcher**
 - Identify one of the 25 existing Authorized Searchers to partner with
-- Negotiate a commercial arrangement for RealPC to submit search requests through them
+- Negotiate a commercial arrangement for Real Finance to submit search requests through them
 - Provides immediate access but adds cost and dependency
 - Examples: CT Corporation (Wolters Kluwer), CSC, National Registered Agents Inc.
 
@@ -45,7 +45,7 @@
 ### 2. Approve Email Outreach to Delaware
 
 **Draft email to be created for:** DOSDOC_ucc@delaware.gov
-**Subject:** Inquiry: Authorized UCC Searcher Registration for RealPC Real Finance, Inc.
+**Subject:** Inquiry: Authorized UCC Searcher Registration for Real Finance, Inc.
 **Purpose:** Ask whether new Authorized Searcher applications are being accepted and what the requirements are.
 
 **Action Required:** Approve email draft before sending.
@@ -68,7 +68,7 @@ The following free account registrations can be completed immediately at no cost
 - Florida FloridaUCC.com (free account)
 - Georgia GSCCCA (free Limited-Use account)
 
-**Action Required:** Confirm RealPC's preferred email address and authorized representative details for account creation.
+**Action Required:** Confirm Real Finance's preferred email address and authorized representative details for account creation.
 
 ### 5. Approve Arkansas INA Subscription ($150/year)
 

@@ -1,6 +1,6 @@
 # Delaware UCC Search Capability: Recommendation Report
 
-**Prepared for:** RealPC Real Finance, Inc.
+**Prepared for:** Real Finance, Inc.
 **Date:** February 14, 2026
 **Status:** DECISION APPROVED — Pursue Option A (direct inquiry) first, fall back to Option B (partnership)
 
@@ -82,7 +82,7 @@ Typical Delaware UCC search: **$100-$200 total per debtor** ($50 state fees + $5
 
 ## 4. Recommendation: First Corporate Solutions (FCS)
 
-**For RealPC's needs as a fintech company requiring programmatic UCC search capability, First Corporate Solutions is the strongest fit.**
+**For Real Finance's needs as a fintech company requiring programmatic UCC search capability, First Corporate Solutions is the strongest fit.**
 
 ### Why FCS:
 1. **Production-ready JSON RESTful API** designed for integration with loan origination and financial software

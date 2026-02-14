@@ -1109,7 +1109,7 @@
       ],
       "realpc_action_items": {
         "registration_needed": false,
-        "explanation": "No registration or authorization is needed to search Florida UCC records. Searches are free and open to the public. To FILE UCC documents, RealPC would create a free account at https://www.floridaucc.com/OnlineFiling/Account/Register/. For high-volume filing, an ACH Debit Account can be established. For programmatic access, the UCC XML API is available.",
+        "explanation": "No registration or authorization is needed to search Florida UCC records. Searches are free and open to the public. To FILE UCC documents, Real Finance would create a free account at https://www.floridaucc.com/OnlineFiling/Account/Register/. For high-volume filing, an ACH Debit Account can be established. For programmatic access, the UCC XML API is available.",
         "recommended_next_steps": [
           "1. Verify exact current fee schedule by calling 850-222-8526 or visiting floridaucc.com/fees",
           "2. Create a filing account at https://www.floridaucc.com/OnlineFiling/Account/Register/ if UCC filing is needed",

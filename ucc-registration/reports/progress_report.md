@@ -2,7 +2,7 @@
 ## Comprehensive Report — All 50 States + DC
 
 **Date:** February 14, 2026
-**Company:** RealPC Real Finance, Inc.
+**Company:** Real Finance, Inc.
 **Authorized Representative:** Austin, Chief Legal Officer
 
 ---

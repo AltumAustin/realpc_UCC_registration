@@ -1,6 +1,6 @@
 # Master Prerequisites Checklist — UCC Registration
 
-**Company:** RealPC Real Finance, Inc.
+**Company:** Real Finance, Inc.
 **Date:** February 14, 2026
 **Status:** Based on first 10 states; will be updated as research continues
 
@@ -20,7 +20,7 @@
   - Required for: Various account registrations
   - Status: Should be on file
 
-- [ ] **Foreign Qualification** — Check if needed for states where RealPC registers
+- [ ] **Foreign Qualification** — Check if needed for states where Real Finance registers
   - Note: Most states do NOT require foreign qualification simply to search UCC records
   - Required for: Potentially Delaware if applying as Authorized Searcher
   - States to check: Delaware (if applying for Authorized Searcher)
