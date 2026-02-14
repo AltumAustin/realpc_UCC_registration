@@ -101,10 +101,10 @@ Research is ready to proceed to states 11-20 (Hawaii through Massachusetts).
 
 | # | Decision | Status | Date | Resolution |
 |---|----------|--------|------|------------|
-| 1 | Delaware strategy | PENDING | 2026-02-14 | — |
-| 2 | Email outreach approval | PENDING | 2026-02-14 | — |
-| 3 | Phone outreach approval | PENDING | 2026-02-14 | — |
-| 4 | Tier 1 account creation | PENDING | 2026-02-14 | — |
-| 5 | Arkansas subscription | PENDING | 2026-02-14 | — |
+| 1 | Delaware strategy | **APPROVED** | 2026-02-14 | Per recommendation — pursue Option A (direct inquiry) first, fall back to Option B (partnership) if closed |
+| 2 | Email outreach approval | **APPROVED** | 2026-02-14 | Approved to send Delaware outreach email |
+| 3 | Phone outreach approval | **APPROVED** | 2026-02-14 | Approved (covered under Delaware outreach approval) |
+| 4 | Tier 1 account creation | **APPROVED** | 2026-02-14 | Approved for all 6 free account registrations |
+| 5 | Arkansas subscription | **APPROVED** | 2026-02-14 | $150/year INA subscription approved |
 | 6 | Fee verification calls | PENDING | 2026-02-14 | — |
-| 7 | Continue to states 11-20 | PENDING | 2026-02-14 | — |
+| 7 | Continue to states 11-20 | **APPROVED** | 2026-02-14 | Approved — research underway |

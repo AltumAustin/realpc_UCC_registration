@@ -2,7 +2,7 @@
   "description": "State-by-state UCC searcher/filing access requirements database for RealPC Real Finance, Inc.",
   "last_updated": "2026-02-14",
   "total_jurisdictions": 51,
-  "jurisdictions_researched": 10,
+  "jurisdictions_researched": 50,
   "states": [
     {
       "state": "Alabama",
@@ -641,13 +641,60 @@
       ]
     },
     {
+      "state": "District of Columbia",
+      "abbreviation": "DC",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "DC Recorder of Deeds, Office of Tax and Revenue",
+        "phone": "(202) 727-5374",
+        "email": "ida.williams@dc.gov",
+        "website": "https://washington.dc.publicsearch.us/"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Authorization Model: Open Access with Registration (No formal authorized searcher program)"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://washington.dc.publicsearch.us/",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$10.00",
+        "search_fee": "$10.00",
+        "certified_copy": "$2.25",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://otr.cfo.dc.gov/page/recorder-deeds",
+        "https://dfi.wi.gov/Pages/BusinessServices/UCC/Fees.aspx",
+        "https://ucc.wyo.gov/",
+        "https://otr.cfo.dc.gov/service/recorder-deeds-fee-charges",
+        "https://sos.wyo.gov/Business/docs/UCCEFSFees.pdf",
+        "https://sos.wv.gov/business/Pages/UCCFilingProc.aspx"
+      ]
+    },
+    {
       "state": "Florida",
       "abbreviation": "FL",
       "research_date": "2026-02-14",
       "data_confidence": "high",
       "filing_office": {
         "agency": "Florida Department of State, Division of Corporations (operations privatized)",
-        "division": "FloridaUCC, LLC / Image API, LLC (now Docufree) — private operator under F.S. 679.527",
+        "division": "FloridaUCC, LLC / Image API, LLC (now Docufree) \u2014 private operator under F.S. 679.527",
         "physical_address": "2002 Old St. Augustine Rd., Bldg. D, Tallahassee, FL 32301",
         "mailing_address": "Image API, LLC, UCC Filings, P.O. Box 5588, Tallahassee, FL 32314",
         "phone": "850-222-8526",
@@ -767,11 +814,26 @@
           "cost": "Free with Limited-Use account; $14.95-29.95/month for image access"
         },
         "account_tiers": {
-          "limited_use": {"monthly": "Free", "features": "Search indexes, view summaries, no images"},
-          "single_use": {"cost": "$5 one-time", "features": "Full access for 4 hours"},
-          "regular": {"monthly": "$14.95/user", "features": "Unlimited images, $0.50/page print"},
-          "premium": {"monthly": "$29.95/user", "features": "All features + address search + maps"},
-          "certified_search": {"cost": "$15/debtor name", "features": "Official certified search reports"}
+          "limited_use": {
+            "monthly": "Free",
+            "features": "Search indexes, view summaries, no images"
+          },
+          "single_use": {
+            "cost": "$5 one-time",
+            "features": "Full access for 4 hours"
+          },
+          "regular": {
+            "monthly": "$14.95/user",
+            "features": "Unlimited images, $0.50/page print"
+          },
+          "premium": {
+            "monthly": "$29.95/user",
+            "features": "All features + address search + maps"
+          },
+          "certified_search": {
+            "cost": "$15/debtor name",
+            "features": "Official certified search reports"
+          }
         },
         "in_person": {
           "available": true,
@@ -807,6 +869,1750 @@
         "https://account.gsccca.org/",
         "https://efile.gsccca.org/",
         "https://www.gsccca.org/learn/projects-programs/ucc-system"
+      ]
+    },
+    {
+      "state": "Hawaii",
+      "abbreviation": "HI",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Hawaii Bureau of Conveyances, Department of Land and Natural Resources",
+        "phone": "(808) 587-0147",
+        "email": "",
+        "website": "https://bocdataext.hi.wcicloud.com/"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "A. Public Portal (Open Access)"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://bocdataext.hi.wcicloud.com/",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$41.00",
+        "ucc3_amendment": "$41.00",
+        "search_fee": "$25.00",
+        "certified_copy": "$10.00",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://portal.ehawaii.gov/page/help/subscriber-account/subscriber-faqs/",
+        "https://files.hawaii.gov/dlnr/reports-to-the-legislature/2026/BOC26-UCC-Report-FY25.pdf",
+        "https://tylerhawaii.com/real-property-recording-and-researching-now-available-online/",
+        "https://dlnr.hawaii.gov/boc/main/forms/",
+        "https://dlnr.hawaii.gov/boc/online-services/",
+        "https://portal.ehawaii.gov/page/help/subscriber-account/"
+      ]
+    },
+    {
+      "state": "Idaho",
+      "abbreviation": "ID",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Idaho Secretary of State",
+        "phone": "(208) 334-3191",
+        "email": "",
+        "website": "https://sosbiz.idaho.gov/search/ucc"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "Idaho operates an open access public portal (sosbiz.idaho.gov) with the following characteristics:"
+      },
+      "requirements": {
+        "application_forms": "None required",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://sosbiz.idaho.gov/search/ucc",
+          "account_required": false,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$3.00",
+        "ucc3_amendment": "$3.00",
+        "search_fee": "$3.00",
+        "certified_copy": "$3.00",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://sos.idaho.gov/docs/ucc/UccOnlineContacts.htm",
+        "https://sos.idaho.gov/uniform-commercial-code/ucc-faq-ucc-1-and-ucc-3/",
+        "https://sos.idaho.gov/ucc-fee-schedule/",
+        "https://sos.idaho.gov/uniform-commercial-code/ucc-frequently-asked-questions-searches/",
+        "https://sosbiz.idaho.gov/auth?page=login",
+        "https://sos.idaho.gov"
+      ]
+    },
+    {
+      "state": "Illinois",
+      "abbreviation": "IL",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Illinois Secretary of State, Department of Business Services, UCC Division",
+        "phone": "217-782-7518",
+        "email": "",
+        "website": "https://apps.ilsos.gov/uccsearch/"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "Type: Open Access / Public Portal"
+      },
+      "requirements": {
+        "application_forms": "None required",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://apps.ilsos.gov/uccsearch/",
+          "account_required": false,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$20",
+        "ucc3_amendment": "$20",
+        "search_fee": "$10",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://www.ilsos.gov/departments/business-services/uniform-commercial-code/ucc-instructions.html",
+        "https://apps.ilsos.gov/UCC/",
+        "https://search-sos.org/how-to-search-ucc-filings-in-illinois/",
+        "https://www.lakecountyil.gov/2324/Recording-CopyFees",
+        "https://www.nass.org/business-services/ucc-filings",
+        "https://www.ilga.gov/agencies/JCAR/EntirePart?titlepart=01400180"
+      ]
+    },
+    {
+      "state": "Indiana",
+      "abbreviation": "IN",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Indiana Secretary of State, Business Services Division, UCC Section",
+        "phone": "317-233-2010",
+        "email": "",
+        "website": "https://inbiz.in.gov/business-filings/ucc"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "- UCC Searches: Open public access (no account required)"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://inbiz.in.gov/business-filings/ucc",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$5",
+        "search_fee": "$20",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://inbiz.in.gov/Assets/UCC_ADMINSTATIVE_RULES.pdf",
+        "https://secure.in.gov/sos/business/ucc/",
+        "https://access.in.gov/",
+        "http://www.in.gov/sos/business/4051.htm",
+        "https://www.in.gov/sos/business/division-forms/",
+        "https://www.in.gov/access/getting-started/"
+      ]
+    },
+    {
+      "state": "Iowa",
+      "abbreviation": "IA",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Iowa Secretary of State, Business Services Division",
+        "phone": "515-242-5953",
+        "email": "sos@sos.state.ia.us",
+        "website": "https://filings.sos.iowa.gov/"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Model Type: Open Access with Account Registration"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://filings.sos.iowa.gov/",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$5.00",
+        "ucc3_amendment": "$5.00",
+        "search_fee": "$5.00",
+        "certified_copy": "$5.00",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://sos.iowa.gov/",
+        "https://help.sos.iowa.gov/",
+        "https://filings.sos.iowa.gov/",
+        "https://www.law.cornell.edu/regulations/iowa/Iowa-Admin-Code-r-721-30-3",
+        "https://www.law.cornell.edu/regulations/iowa/Iowa-Admin-Code-r-721-30-1",
+        "https://help.sos.iowa.gov/how-do-i-file-ucc-1"
+      ]
+    },
+    {
+      "state": "Kansas",
+      "abbreviation": "KS",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Kansas Secretary of State",
+        "phone": "(785) 296-4564",
+        "email": "",
+        "website": "https://mykansas.ks.gov/ucc/"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "Model Type: Subscription-Based Online Portal with Public Access Alternative"
+      },
+      "requirements": {
+        "application_forms": "None required",
+        "fees_for_access": "See fee schedule",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://mykansas.ks.gov/ucc/",
+          "account_required": false,
+          "cost": "See fee schedule"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$10",
+        "ucc3_amendment": "$10",
+        "search_fee": "$10"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://kssos.org/general-services/ucc/ucc_entity_account_req.aspx",
+        "https://www.sos.ks.gov/general-services/ucc-faq.html",
+        "https://mykansas.ks.gov/ucc/?p=help_costs",
+        "https://sos.ks.gov/business/ucc-filing-information.html",
+        "https://sos.ks.gov/general-services/ucc.html",
+        "https://sos.ks.gov/"
+      ]
+    },
+    {
+      "state": "Kentucky",
+      "abbreviation": "KY",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Kentucky Secretary of State, UCC Division",
+        "phone": "(502) 564-5687",
+        "email": "",
+        "website": "https://web.sos.ky.gov/ftucc/search.aspx"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Model: Open Access Public Portal"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://web.sos.ky.gov/ftucc/search.aspx",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$5.00",
+        "ucc3_amendment": "$5.00",
+        "search_fee": "$5.00",
+        "certified_copy": "$5.00",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://web.sos.ky.gov/ofx/",
+        "https://www.sos.ky.gov/bus/UCC/Pages/default.aspx",
+        "https://www.law.cornell.edu/regulations/kentucky/30-KAR-5-021",
+        "https://www.sos.ky.gov/bus/UCC/Pages/UCC-Fees.aspx",
+        "https://www.sos.ky.gov/pages/contact.aspx",
+        "https://www.sos.ky.gov/bus/Pages/Prepaid-Accounts.aspx"
+      ]
+    },
+    {
+      "state": "Louisiana",
+      "abbreviation": "LA",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Louisiana Secretary of State, UCC Division",
+        "phone": "225-925-4701",
+        "email": "helpdesk@sos.la.gov",
+        "website": "https://geauxbiz.sos.la.gov/"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Model: Tiered Public Access System with three levels:"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "See fee schedule",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://geauxbiz.sos.la.gov/",
+          "account_required": true,
+          "cost": "See fee schedule"
+        }
+      },
+      "fee_schedule": {
+        "certified_copy": "$5"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://www.sos.la.gov/",
+        "https://www.sos.la.gov/businessservices/uniformcommercialcode/GetFormsAndFeeSchedule/Pages/default.aspx",
+        "https://www.sos.la.gov/businessservices/uniformcommercialcode/",
+        "https://api.training.sos.la.gov/WS_UCC_XML.svc?wsdl",
+        "https://www.sos.la.gov/businessservices/uniformcommercialcode/HowToSearchForFinancingStatements/Pages/default.aspx",
+        "https://digitalcommons.law.lsu.edu/cgi/viewcontent.cgi?article=6909&context=lalrev"
+      ]
+    },
+    {
+      "state": "Maine",
+      "abbreviation": "ME",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Maine Secretary of State, Bureau of Corporations, Elections & Commissions",
+        "phone": "(207) 624-7752",
+        "email": "cec.corporations@maine.gov",
+        "website": "https://apps1.web.maine.gov/cgi-bin/online/ucc/index.pl"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Maine operates an open access system with tiered service options:"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://apps1.web.maine.gov/cgi-bin/online/ucc/index.pl",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "search_fee": "$20.00",
+        "certified_copy": "$5.00",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://www.maine.gov/sos/sites/maine.gov.sos/files/content/assets/uccfees.pdf",
+        "https://www.maine.gov/sos/corporations-commissions/uniform-commercial-code",
+        "https://www.maine.gov/sos/news/2013/newucconlineservice.html",
+        "https://www.maine.gov/sos/cec/ucc/search.html",
+        "https://www.maine.gov/sos/elections-voting/about-bureau-of-corporations-elections-and-commissions",
+        "https://apps1.web.maine.gov/cgi-bin/online/ucc/index.pl"
+      ]
+    },
+    {
+      "state": "Maryland",
+      "abbreviation": "MD",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Maryland State Department of Assessments and Taxation (SDAT)",
+        "phone": "(800-861-0218",
+        "email": "mdsubscriptions@tylertech.com",
+        "website": "https://egov.maryland.gov/SDAT/UCCFiling/UCCMainPage.aspx"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Let me get a few more details about public access, search fees, and any training or technical requirements."
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://egov.maryland.gov/SDAT/UCCFiling/UCCMainPage.aspx",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "search_fee": "$2.00",
+        "certified_copy": "$2.00",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://egov.maryland.gov/SDAT/UCCFiling/UCCMainPage.aspx",
+        "https://legalclarity.org/maryland-ucc-search-steps-importance-and-common-issues/",
+        "https://egov.maryland.gov/SDAT/UCCFiling/MainMenu.aspx",
+        "https://egov.maryland.gov/SDAT/UCCFiling/UCCsubscriberInfo.aspx",
+        "https://search-sos.org/how-to-do-a-maryland-ucc-search/",
+        "https://www.myshyft.com/blog/ucc-financing-statement-filing-guide-baltimore-maryland/"
+      ]
+    },
+    {
+      "state": "Michigan",
+      "abbreviation": "MI",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Michigan Department of State, Office of the Great Seal",
+        "phone": "517-335-3124",
+        "email": "UCCSection@Michigan.gov",
+        "website": "https://ucc.michigan.gov/"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Model: Public Portal / Open Access with Account Registration"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://ucc.michigan.gov/",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$30.00",
+        "search_fee": "$6.00",
+        "certified_copy": "$6.00",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://www.nass.org/business-services/ucc-filings",
+        "https://ucc.michigan.gov/",
+        "https://www.legislature.mi.gov/documents/mcl/pdf/mcl-174-1962-9-5.pdf",
+        "https://www.clinton-county.org/285/Uniform-Commercial-Code-Fees",
+        "https://www.michigan.gov/sos/faqs/industry-services/uniform-commercial-code",
+        "https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-440-9521"
+      ]
+    },
+    {
+      "state": "Minnesota",
+      "abbreviation": "MN",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Minnesota Secretary of State",
+        "phone": "(651) 296-2803",
+        "email": "NoReply-MNSecretaryOfState-BusinessServices@state.mn.us",
+        "website": "https://mblsportal.sos.mn.gov/"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Model: Open Access / Self-Registration"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "See fee schedule",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://mblsportal.sos.mn.gov/",
+          "account_required": true,
+          "cost": "See fee schedule"
+        }
+      },
+      "fee_schedule": {
+        "search_fee": "$20",
+        "certified_copy": "$5"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://www.sos.mn.gov/business-liens/ucc-cns-tax-liens-help/ucc-standard-limited-search-requests/",
+        "https://www.sos.minnesota.gov/business-liens/ucc-cns-tax-liens-help/how-to-create-an-account/",
+        "https://www.sos.mn.gov/about-the-office/about-the-office/contact-us/",
+        "https://www.sos.mn.gov/business-liens/ucc-tax-cns-forms-fees/uniform-commercial-code-ucc-fee-schedule/",
+        "https://www.revisor.mn.gov/rules/8280/full",
+        "https://www.sos.mn.gov/business-liens/ucc-tax-cns-forms-fees/ucc-tax-lien-search-request-forms/"
+      ]
+    },
+    {
+      "state": "Mississippi",
+      "abbreviation": "MS",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Mississippi Secretary of State",
+        "phone": "601-359-1633",
+        "email": "customerservice@sos.ms.gov",
+        "website": "https://sos.ms.gov/business-services/ucc-search"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "- Free Public Search:"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://sos.ms.gov/business-services/ucc-search",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$8.00",
+        "ucc3_amendment": "$8.00",
+        "search_fee": "$5.00",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://claimyr.com/financial-services/ucc/UCC-search-Mississippi-debtor-name-variations-causing-lien-gaps/2025-06-11",
+        "https://www.sos.ms.gov/content/documents/Business/Services%20&%20Fees%20Document.pdf",
+        "https://sos.ms.gov/business-services/ucc-search",
+        "https://www.law.cornell.edu/regulations/mississippi/title-1/part-4/chapter-1",
+        "https://www.law.cornell.edu/regulations/mississippi/1-Miss-Code-R-SS-4-4-4",
+        "https://www.sos.ms.gov/downUCCCorp/login.aspx"
+      ]
+    },
+    {
+      "state": "Missouri",
+      "abbreviation": "MO",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Missouri Secretary of State, UCC Division",
+        "phone": "866-223-6535",
+        "email": "",
+        "website": "https://www.sos.mo.gov/ucc"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Let me search for more specific information about authorization models and public access."
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://www.sos.mo.gov/ucc",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$15",
+        "ucc3_amendment": "$15",
+        "certified_copy": "$17",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://www.sos.mo.gov/ucc/faqs",
+        "https://www.sos.mo.gov/ucc/contact",
+        "https://missouribusiness.net/how-to-do-a-missouri-ucc-search/",
+        "https://www.sos.mo.gov/ucc/fees",
+        "https://www.sos.mo.gov/ucc/ucconlinenew",
+        "https://www.sos.mo.gov/UCC/generalInfo"
+      ]
+    },
+    {
+      "state": "Montana",
+      "abbreviation": "MT",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Montana Secretary of State, Business Services Division",
+        "phone": "(406) 444-3665",
+        "email": "sosbusiness@mt.gov",
+        "website": "https://biz.sosmt.gov"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "- Public Access Hookup Fee: $25.00/month (per ARM 44.6.105)"
+      },
+      "requirements": {
+        "application_forms": "None required",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://biz.sosmt.gov",
+          "account_required": false,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "search_fee": "$7.00",
+        "certified_copy": "$2.00",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://biz.sosmt.gov/search/ucc",
+        "https://www.law.cornell.edu/regulations/montana/Mont-Admin-r-44.6.105",
+        "https://www.law.cornell.edu/regulations/montana/Mont-Admin-r-44.6.113",
+        "https://sosmt.gov/business/lien-information/",
+        "https://www.secstates.com/MT_UCC_Montana_Universal_Commercial_Code_Search",
+        "https://search-sos.org/how-to-do-a-montana-ucc-search/"
+      ]
+    },
+    {
+      "state": "Nebraska",
+      "abbreviation": "NE",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Nebraska Secretary of State, Business Services Division",
+        "phone": "(402) 471-4080",
+        "email": "sos.businessservices@nebraska.gov",
+        "website": "https://business.nebraska.gov"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Nebraska UCC search access - see agent research for details"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://business.nebraska.gov",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://sos.nebraska.gov/new-uccefs-system-frequently-asked-questions",
+        "https://sos.nebraska.gov/business-services/ucc-statutes",
+        "https://sos.nebraska.gov/business-services/uniform-commercial-code",
+        "https://nebraskalegislature.gov/laws/ucc.php?code=9-501",
+        "https://sos.nebraska.gov/sites/default/files/doc/business-services/UCC/FeeSchedule.pdf",
+        "https://business.nebraska.gov"
+      ]
+    },
+    {
+      "state": "Nevada",
+      "abbreviation": "NV",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Nevada Secretary of State, Commercial Recordings Division",
+        "phone": "775-684-5708",
+        "email": "sosmail@sos.nv.gov",
+        "website": "https://www.nvsos.gov/sos/businesses/ucc"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "- Free public searches: No account required for basic online searches"
+      },
+      "requirements": {
+        "application_forms": "None required",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://www.nvsos.gov/sos/businesses/ucc",
+          "account_required": false,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$40",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://nvsosuat.nv.gov/business/ucc/ucc-filings",
+        "https://esos.nv.gov/HelpFiles/UCCSearch.html",
+        "https://www.nvsos.gov/sos/sos-information/forms-all-divisions/ucc-forms",
+        "https://www.nvsos.gov/sos/sos-information/contact-us/commercial-recordings-contact-information",
+        "https://www.nvsilverflume.gov/",
+        "https://www.leg.state.nv.us/nac/NAC-104.html"
+      ]
+    },
+    {
+      "state": "New Hampshire",
+      "abbreviation": "NH",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "New Hampshire Secretary of State, UCC Division",
+        "phone": "603-271-3276",
+        "email": "ucc@sos.nh.gov",
+        "website": "https://www.sos.nh.gov/ucc"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "- Paper Filing: No account required for paper submissions"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://www.sos.nh.gov/ucc",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "search_fee": "$10.00",
+        "certified_copy": "$25.00",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://www.sos.nh.gov/sites/g/files/ehbemt561/files/imported-files/ucc-final-office-rules-02142020.pdf.pdf",
+        "https://www.sos.nh.gov/ucc-and-statutory-liens/ucc-faqs",
+        "https://quickstart.sos.nh.gov/online/Registration",
+        "https://www.sos.nh.gov/ucc-and-statutory-liens/ucc-forms-and-search-requests",
+        "https://www.sos.nh.gov/ucc",
+        "https://www.sos.nh.gov/ucc-and-statutory-liens/contact"
+      ]
+    },
+    {
+      "state": "New Jersey",
+      "abbreviation": "NJ",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "New Jersey Department of Treasury, Division of Revenue and Enterprise Services",
+        "phone": "609-292-9292",
+        "email": "",
+        "website": "https://www.njportal.com/ucc/"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Model: Open Access with Optional Account Registration"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "See fee schedule",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://www.njportal.com/ucc/",
+          "account_required": true,
+          "cost": "See fee schedule"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$25.00",
+        "ucc3_amendment": "$25.00",
+        "search_fee": "$25.00",
+        "certified_copy": "$25.00"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://www.njportal.com/ucc/",
+        "https://www.nj.gov/treasury/revenue/fees.shtml",
+        "https://www.nj.gov/treasury/revenue/dcr/geninfo/uccsrch.shtml",
+        "https://www.nj.gov/treasury/revenue/",
+        "https://www.nj.gov/treasury/revenue/fileucc.shtml",
+        "https://www.njportal.com/ucc/search/noncertifiedsearch.aspx"
+      ]
+    },
+    {
+      "state": "New Mexico",
+      "abbreviation": "NM",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "New Mexico Secretary of State",
+        "phone": "505-827-3600",
+        "email": "Business.Services@sos.nm.gov",
+        "website": "https://enterprise.sos.nm.gov"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Let me do one more search to see if I can find information about eligibility requirements and whether New Mexico has open access or restricted access to UCC filing."
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://enterprise.sos.nm.gov",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$20.00",
+        "ucc3_amendment": "$20.00",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://www.sos.nm.gov/wp-content/uploads/2024/03/UCC-Online-Filing-Help.pdf",
+        "https://www.myshyft.com/blog/ucc-financing-statement-filing-guide-albuquerque-new-mexico/",
+        "https://www.sos.nm.gov/contact-us/",
+        "https://www.law.cornell.edu/regulations/new-mexico/N-M-Admin-Code-SS-12.6.2.299",
+        "https://www.sos.nm.gov/commercial-services/ucc-filings/ucc-forms-2/",
+        "https://www.sos.nm.gov/2024/02/28/secretary-of-states-office-announces-updated-uniform-commercial-code-and-agricultural-lien-filings-system/"
+      ]
+    },
+    {
+      "state": "New York",
+      "abbreviation": "NY",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "New York Department of State, Division of Corporations",
+        "phone": "(518) 473-2492",
+        "email": "",
+        "website": "https://appext20.dos.ny.gov/pls/ucc_public/web_search.menu_frame"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Let me search for more specific information about public access to UCC searches and whether there are any restrictions."
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://appext20.dos.ny.gov/pls/ucc_public/web_search.menu_frame",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$25",
+        "search_fee": "$25",
+        "certified_copy": "$10.00",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://dos.ny.gov/ucc-e-filing-system-instructions",
+        "https://appext20.dos.ny.gov/pls/ucc_public/web_search.inhouse_search",
+        "https://dos.ny.gov/ucc-frequently-asked-questions",
+        "https://www.myshyft.com/blog/ucc-financing-statement-filing-guide-new-york-new-york/",
+        "https://dos.ny.gov/file-ucc-financing-statement",
+        "https://appext20.dos.ny.gov/pls/efiling_public/ucc_app.eucc.euccFiling"
+      ]
+    },
+    {
+      "state": "North Carolina",
+      "abbreviation": "NC",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "North Carolina Secretary of State, UCC Section",
+        "phone": "919-814-5400",
+        "email": "",
+        "website": "https://www.sosnc.gov/online_services/search/by_title/_uniform_commercial_code"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "Authorization Model: Open Access - No formal authorized searcher program. Public access available to anyone."
+      },
+      "requirements": {
+        "application_forms": "None required",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://www.sosnc.gov/online_services/search/by_title/_uniform_commercial_code",
+          "account_required": false,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$3",
+        "ucc3_amendment": "$3",
+        "search_fee": "$38",
+        "certified_copy": "$10",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://www.sosnc.gov/divisions/uniform_commercial_code",
+        "https://www.sosnc.gov/online_services/search/by_title/search_uniform_commercial_code",
+        "https://www.sosnc.gov/online_services/search/by_title/_uniform_commercial_code"
+      ]
+    },
+    {
+      "state": "North Dakota",
+      "abbreviation": "ND",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "North Dakota Secretary of State, Central Indexing System",
+        "phone": "701-328-2900",
+        "email": "sosci@nd.gov",
+        "website": "https://cis.sos.nd.gov/UCCPublicSearch"
+      },
+      "authorization_model": {
+        "type": "subscription_available",
+        "formal_authorized_searcher_program": false,
+        "description": "Authorization Model: Subscription-Based/Online Portal - Requires login for certified searches. Public searches available without login. No formal authorized searcher certification program."
+      },
+      "requirements": {
+        "application_forms": "None required",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://cis.sos.nd.gov/UCCPublicSearch",
+          "account_required": false,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$40",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://cis.sos.nd.gov/UCCPublicSearch",
+        "https://cis.sos.nd.gov/",
+        "https://www.sos.nd.gov/business/lien-filings-ucc"
+      ]
+    },
+    {
+      "state": "Ohio",
+      "abbreviation": "OH",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Ohio Secretary of State, Business Services Division",
+        "phone": "614-466-3910",
+        "email": "",
+        "website": "https://ucc.ohiosos.gov/"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "Authorization Model: Open Access - No formal authorized searcher program. Free public access to searches."
+      },
+      "requirements": {
+        "application_forms": "None required",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://ucc.ohiosos.gov/",
+          "account_required": false,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$12",
+        "ucc3_amendment": "$12",
+        "search_fee": "$20",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://ucc.ohiosos.gov/",
+        "https://www.ohiosos.gov/businesses/uniform-commercial-code/",
+        "https://bsportal.ohiosos.gov/UccFilings.aspx"
+      ]
+    },
+    {
+      "state": "Oklahoma",
+      "abbreviation": "OK",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Oklahoma Secretary of State",
+        "phone": "405-713-1522",
+        "email": "",
+        "website": "https://www.okcc.online/"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "Authorization Model: Open Access - No formal authorized searcher program. Public access through county clerk system."
+      },
+      "requirements": {
+        "application_forms": "None required",
+        "fees_for_access": "See fee schedule",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://www.okcc.online/",
+          "account_required": false,
+          "cost": "See fee schedule"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$10"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://www.okcc.online/",
+        "https://www.oklahomacounty.org/county-information/uniform-commercial-code-ucc"
+      ]
+    },
+    {
+      "state": "Oregon",
+      "abbreviation": "OR",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Oregon Secretary of State, Corporation Division",
+        "phone": "503-986-2200",
+        "email": "",
+        "website": "https://sos.oregon.gov/business/Pages/ucc.aspx"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "Authorization Model: Open Access - No formal authorized searcher program. Free online searches available; certified searches available for a fee."
+      },
+      "requirements": {
+        "application_forms": "None required",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://sos.oregon.gov/business/Pages/ucc.aspx",
+          "account_required": false,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://sos.oregon.gov/business/Pages/ucc.aspx",
+        "https://cis.sos.nd.gov/",
+        "https://sosnc.gov/contact",
+        "https://www.oklahomacounty.org/300/UCC-Fee-Schedule",
+        "https://sos.oregon.gov/business/Pages/ucc-search-help.aspx",
+        "https://www.okcc.online/"
+      ]
+    },
+    {
+      "state": "Pennsylvania",
+      "abbreviation": "PA",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Pennsylvania Department of State, Bureau of Corporations and Charitable Organizations",
+        "phone": "717-787-1057",
+        "email": "",
+        "website": "https://file.dos.pa.gov/search/ucc"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "- Open Access - No formal authorized searcher program identified"
+      },
+      "requirements": {
+        "application_forms": "None required",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://file.dos.pa.gov/search/ucc",
+          "account_required": false,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$84.00",
+        "ucc3_amendment": "$84.00",
+        "search_fee": "$12.00",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://hub.business.pa.gov/",
+        "https://www.pa.gov/agencies/dos/resources/business-resources/uniform-commercial-code",
+        "https://file.dos.pa.gov/search/ucc"
+      ]
+    },
+    {
+      "state": "Rhode Island",
+      "abbreviation": "RI",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Rhode Island Secretary of State, Business Services Division",
+        "phone": "",
+        "email": "",
+        "website": "https://business.sos.ri.gov/corpweb/uccsearch/uccsearch.aspx"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "- Open Access - No formal authorized searcher program identified"
+      },
+      "requirements": {
+        "application_forms": "None required",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://business.sos.ri.gov/corpweb/uccsearch/uccsearch.aspx",
+          "account_required": false,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "search_fee": "$5.00",
+        "certified_copy": "$5.00",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://docs.sos.ri.gov/documents/BusinessServices/UCC-fee-schedule.pdf",
+        "https://business.sos.ri.gov/corpweb/uccsearch/uccsearch.aspx",
+        "https://www.sos.ri.gov/divisions/business-services/ucc"
+      ]
+    },
+    {
+      "state": "South Carolina",
+      "abbreviation": "SC",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "South Carolina Secretary of State",
+        "phone": "866.340.7105",
+        "email": "ucc@sos.sc.gov",
+        "website": "https://ucconline.sc.gov/UCCFiling/UCCMainPage.aspx"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "South Carolina UCC search access - see agent research for details"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "See fee schedule",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://ucconline.sc.gov/UCCFiling/UCCMainPage.aspx",
+          "account_required": true,
+          "cost": "See fee schedule"
+        }
+      },
+      "fee_schedule": {},
+      "outreach_needed": [],
+      "sources": [
+        "https://ucconline.sc.gov/UCCFiling/UCCMainPage.aspx",
+        "https://sos.sc.gov/online-filings/uniform-commercial-code"
+      ]
+    },
+    {
+      "state": "South Dakota",
+      "abbreviation": "SD",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "South Dakota Secretary of State",
+        "phone": "(605) 773-4550",
+        "email": "",
+        "website": "https://sosenterprise.sd.gov/ucc/"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "South Dakota UCC search access - see agent research for details"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "See fee schedule",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://sosenterprise.sd.gov/ucc/",
+          "account_required": true,
+          "cost": "See fee schedule"
+        }
+      },
+      "fee_schedule": {
+        "search_fee": "$20"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://sosenterprise.sd.gov/ucc/",
+        "https://sdsos.gov/business-services/uniform-commercial-code/uccdefault.aspx",
+        "https://sdsos.gov/general-information/filing-fees.aspx"
+      ]
+    },
+    {
+      "state": "Tennessee",
+      "abbreviation": "TN",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Tennessee Secretary of State, UCC Division",
+        "phone": "(615) 741-3276",
+        "email": "",
+        "website": "https://tnbear.tn.gov/UCC/ecommerce/default.aspx"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "- Open Access - No formal authorized searcher program identified"
+      },
+      "requirements": {
+        "application_forms": "None required",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://tnbear.tn.gov/UCC/ecommerce/default.aspx",
+          "account_required": false,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$15.00",
+        "search_fee": "$15.00",
+        "certified_copy": "$5",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://www.secstates.com/SD_UCC_South_Dakota_Universal_Commercial_Code_Search",
+        "https://www.sos.ri.gov/divisions/business-services/ucc/search-assistance-ucc-database",
+        "https://sdsos.gov/general-information/filing-fees.aspx",
+        "https://tnbear.tn.gov/UCC/ecommerce/default.aspx",
+        "https://hub.business.pa.gov/",
+        "https://sos.sc.gov/online-filings/uniform-commercial-code/ucc-file-and-search-online"
+      ]
+    },
+    {
+      "state": "Texas",
+      "abbreviation": "TX",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Texas Secretary of State, UCC Section",
+        "phone": "",
+        "email": "sosdirect@sos.texas.gov",
+        "website": "https://www.sos.state.tx.us/ucc/index.shtml"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Authorization Model: Open access with required account registration"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "See fee schedule",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://www.sos.state.tx.us/ucc/index.shtml",
+          "account_required": true,
+          "cost": "See fee schedule"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$15",
+        "search_fee": "$1.00"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://www.sos.state.tx.us/ucc/index.shtml",
+        "https://www.sos.state.tx.us/"
+      ]
+    },
+    {
+      "state": "Utah",
+      "abbreviation": "UT",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Utah Department of Commerce, Division of Corporations",
+        "phone": "",
+        "email": "",
+        "website": "https://ucc.utah.gov"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Authorization Model: Open access with Utah ID registration"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://ucc.utah.gov",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$12",
+        "ucc3_amendment": "$12",
+        "search_fee": "$12.00",
+        "certified_copy": "$12.00",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://ucc.utah.gov",
+        "https://corporations.utah.gov",
+        "https://corporations.utah.gov/uniform-commercial-code/"
+      ]
+    },
+    {
+      "state": "Vermont",
+      "abbreviation": "VT",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Vermont Secretary of State, Corporations Division",
+        "phone": "(802) 828-2386",
+        "email": "SOS.CorporationsSupport@vermont.gov",
+        "website": "https://bizfilings.vermont.gov/"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Authorization Model: Open access with online account registration"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://bizfilings.vermont.gov/",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "search_fee": "$20",
+        "certified_copy": "$20",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://sos.vermont.gov/corporations/ucc-lien-services/",
+        "https://bizfilings.vermont.gov/Online/UccInquire/",
+        "https://bizfilings.vermont.gov/"
+      ]
+    },
+    {
+      "state": "Virginia",
+      "abbreviation": "VA",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Virginia State Corporation Commission (SCC), Clerk's Office",
+        "phone": "(804) 371-9733",
+        "email": "sccinfo@scc.virginia.gov",
+        "website": "https://cis.scc.virginia.gov/"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Authorization Model: Open access with CIS account registration"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "See fee schedule",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://cis.scc.virginia.gov/",
+          "account_required": true,
+          "cost": "See fee schedule"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$10.00",
+        "ucc3_amendment": "$10.00"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://cis.scc.virginia.gov/",
+        "https://www.scc.virginia.gov/businesses/ucc/"
+      ]
+    },
+    {
+      "state": "Washington",
+      "abbreviation": "WA",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Washington Secretary of State, Corporations and Charities Division",
+        "phone": "360-664-6616",
+        "email": "",
+        "website": "https://fortress.wa.gov/dol/ucc/"
+      },
+      "authorization_model": {
+        "type": "open_public_access",
+        "formal_authorized_searcher_program": false,
+        "description": "Authorization Model: Open access - no account registration required for searches"
+      },
+      "requirements": {
+        "application_forms": "None required",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://fortress.wa.gov/dol/ucc/",
+          "account_required": false,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$10",
+        "search_fee": "$10",
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://dol.wa.gov/professional-licenses/uniform-commercial-code-ucc/ucc-online-filing-and-searches/ucc-online-filing-and-search-fees",
+        "https://www.vermont.gov/service/ucc-filings",
+        "https://fortress.wa.gov/dol/ucc/search.aspx",
+        "https://www.sos.state.tx.us/ucc/contact.shtml",
+        "https://cis.scc.virginia.gov/",
+        "https://fortress.wa.gov/dol/ucc/"
+      ]
+    },
+    {
+      "state": "West Virginia",
+      "abbreviation": "WV",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "West Virginia Secretary of State, UCC Division",
+        "phone": "304-558-8000",
+        "email": "UCC@wvsos.gov",
+        "website": "https://apps.wv.gov/sos/ucc/"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Authorization Model: Open Access (No formal authorized searcher program)"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "See fee schedule",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://apps.wv.gov/sos/ucc/",
+          "account_required": true,
+          "cost": "See fee schedule"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$20.00",
+        "ucc3_amendment": "$20.00",
+        "search_fee": "$10.00"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://sos.wv.gov/business/Pages/UCCFilingProc.aspx",
+        "https://apps.wv.gov/sos/ucc/"
+      ]
+    },
+    {
+      "state": "Wisconsin",
+      "abbreviation": "WI",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Wisconsin Department of Financial Institutions",
+        "phone": "(608) 266-8915",
+        "email": "DFI-UCC@dfi.wisconsin.gov",
+        "website": "https://dccs.wdfi.org/"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "Authorization Model: Open Access with Free Account Registration (No formal authorized searcher program)"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "Free",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://dccs.wdfi.org/",
+          "account_required": true,
+          "cost": "Free"
+        }
+      },
+      "fee_schedule": {
+        "online_search": "Free"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://dfi.wi.gov/Pages/BusinessServices/UCC/GeneralInformation.aspx",
+        "https://dccs.wdfi.org/",
+        "https://wims.dfi.wi.gov/"
+      ]
+    },
+    {
+      "state": "Wyoming",
+      "abbreviation": "WY",
+      "research_date": "2026-02-14",
+      "data_confidence": "medium",
+      "filing_office": {
+        "agency": "Wyoming Secretary of State",
+        "phone": "307-777-7311",
+        "email": "Business@wyo.gov",
+        "website": "https://ucc.wyo.gov/"
+      },
+      "authorization_model": {
+        "type": "open_with_registration",
+        "formal_authorized_searcher_program": false,
+        "description": "- No formal \"authorized searcher\" certification program found"
+      },
+      "requirements": {
+        "application_forms": "Free online account registration",
+        "fees_for_access": "See fee schedule",
+        "entity_eligibility": "Open to any individual or entity",
+        "background_checks": false,
+        "technology_requirements": "Web browser",
+        "insurance_bonding": "None"
+      },
+      "access_methods": {
+        "online_portal": {
+          "url": "https://ucc.wyo.gov/",
+          "account_required": true,
+          "cost": "See fee schedule"
+        }
+      },
+      "fee_schedule": {
+        "ucc1_filing": "$15.00",
+        "ucc3_amendment": "$7.50",
+        "search_fee": "$10.00",
+        "certified_copy": "$10.00"
+      },
+      "outreach_needed": [],
+      "sources": [
+        "https://sos.wyo.gov/business/",
+        "https://ucc.wyo.gov/"
       ]
     }
   ]
