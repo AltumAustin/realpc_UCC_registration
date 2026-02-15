@@ -123,7 +123,7 @@ The ~$600K buffer can absorb:
 ### CLI Commands
 
 ```bash
-# From ucc-registration/ directory:
+# From project root:
 
 # Check which states need ingestion
 python -m ingestion status
