@@ -3,16 +3,16 @@
 **Status:** DRAFT — Awaiting human approval before sending
 **To:** DOSDOC_ucc@delaware.gov
 **From:** austin@realpc.ai
-**Subject:** Inquiry: Authorized UCC Searcher Registration for RealPC Real Finance, Inc.
+**Subject:** Inquiry: Authorized UCC Searcher Registration for Real Finance, Inc.
 **Date Drafted:** February 14, 2026
 
 ---
 
 Dear UCC Section,
 
-I am writing on behalf of RealPC Real Finance, Inc., a Delaware-incorporated financial technology company (File Number: [to be confirmed]). My name is Austin, and I serve as the company's Chief Legal Officer.
+I am writing on behalf of Real Finance, Inc., a Delaware-incorporated financial technology company (File Number: [to be confirmed]). My name is Austin, and I serve as the company's Chief Legal Officer.
 
-RealPC enables lenders to conduct UCC diligence and file UCC financing statements in connection with loan originations. As part of expanding our operations nationally, we are seeking to understand the process for becoming an Authorized UCC Searcher certified by the Division of Corporations.
+Real Finance enables lenders to conduct UCC diligence and file UCC financing statements in connection with loan originations. As part of expanding our operations nationally, we are seeking to understand the process for becoming an Authorized UCC Searcher certified by the Division of Corporations.
 
 I would greatly appreciate guidance on the following:
 
@@ -29,7 +29,7 @@ I would greatly appreciate guidance on the following:
 6. **Technology Requirements:** Are there specific technology or system requirements for Authorized Searchers to access the state's UCC index?
 
 Our company information:
-- **Company Name:** RealPC Real Finance, Inc.
+- **Company Name:** Real Finance, Inc.
 - **State of Incorporation:** Delaware
 - **Principal Office:** 9240 SW 72ND ST STE 114, MIAMI, FL 33173
 - **Contact:** Austin, Chief Legal Officer
@@ -42,7 +42,7 @@ Respectfully,
 
 Austin
 Chief Legal Officer
-RealPC Real Finance, Inc.
+Real Finance, Inc.
 9240 SW 72ND ST STE 114
 MIAMI, FL 33173
 (949) 887-5775

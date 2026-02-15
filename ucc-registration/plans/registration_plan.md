@@ -1,4 +1,4 @@
-# UCC Registration Plan — RealPC Real Finance, Inc.
+# UCC Registration Plan — Real Finance, Inc.
 
 **Date:** February 14, 2026
 **Status:** FINAL — Based on research of all 50 states + DC (Massachusetts pending)
@@ -125,8 +125,8 @@ These states require creating a free online account for search and/or filing cap
 
 ## Prerequisites for All Registrations
 
-- RealPC email: austin@realpc.ai
-- Company: RealPC Real Finance, Inc.
+- Real Finance email: austin@realpc.ai
+- Company: Real Finance, Inc.
 - EIN: 39-2451055
 - Address: 9240 SW 72ND ST STE 114, MIAMI, FL 33173
 - Authorized Rep: Austin, Chief Legal Officer
