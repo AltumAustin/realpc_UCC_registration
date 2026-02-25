@@ -67,13 +67,23 @@ def normalize_date(value: Optional[str]) -> Optional[str]:
 
     value = value.strip()
 
-    # Already in correct format
+    # Already in correct format — but validate the actual date values
     if re.match(r"^\d{4}-\d{2}-\d{2}$", value):
-        return value
+        try:
+            datetime.strptime(value, "%Y-%m-%d")
+            return value
+        except ValueError:
+            logger.debug("Invalid ISO date value: %r", value)
+            return None
 
     # Try to strip time portion from ISO datetime
     if "T" in value:
-        return value.split("T")[0]
+        date_part = value.split("T")[0]
+        try:
+            datetime.strptime(date_part, "%Y-%m-%d")
+            return date_part
+        except ValueError:
+            pass
 
     for pattern, fmt in DATE_PATTERNS:
         if re.match(pattern, value):
@@ -94,13 +104,20 @@ def normalize_date(value: Optional[str]) -> Optional[str]:
     return None  # Return None for unparseable dates instead of the invalid string
 
 
-def normalize_name(value: Optional[str]) -> Optional[str]:
-    """Normalize a name: strip whitespace, collapse multiple spaces, title case for individuals."""
+def normalize_name(value: Optional[str], uppercase: bool = False) -> Optional[str]:
+    """Normalize a name: strip whitespace and collapse multiple spaces.
+
+    Args:
+        value: Raw name string.
+        uppercase: If True, convert to uppercase (for dedup-sensitive fields).
+    """
     if not value:
         return None
     value = re.sub(r"\s+", " ", value.strip())
     if not value:
         return None
+    if uppercase:
+        return value.upper()
     return value
 
 
@@ -157,13 +174,13 @@ def normalize_filing(filing: UCCFiling) -> UCCFiling:
     filing.filing_type = normalize_filing_type(filing.filing_type)
     filing.filing_status = normalize_status(filing.filing_status)
 
-    filing.debtor_name = normalize_name(filing.debtor_name)
+    filing.debtor_name = normalize_name(filing.debtor_name, uppercase=True)
     filing.debtor_address = normalize_name(filing.debtor_address)
     filing.debtor_city = normalize_name(filing.debtor_city)
     filing.debtor_state = normalize_state_abbrev(filing.debtor_state)
     filing.debtor_zip = normalize_zip(filing.debtor_zip)
 
-    filing.secured_party_name = normalize_name(filing.secured_party_name)
+    filing.secured_party_name = normalize_name(filing.secured_party_name, uppercase=True)
     filing.secured_party_address = normalize_name(filing.secured_party_address)
     filing.secured_party_city = normalize_name(filing.secured_party_city)
     filing.secured_party_state = normalize_state_abbrev(filing.secured_party_state)

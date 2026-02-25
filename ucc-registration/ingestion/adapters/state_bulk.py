@@ -31,6 +31,24 @@ from ..models import UCCFiling
 logger = logging.getLogger(__name__)
 
 
+def _is_before_date(filing_date: Optional[str], since: str) -> bool:
+    """Check if a filing date is before the 'since' cutoff using date parsing.
+
+    Both values should be ISO 8601 (YYYY-MM-DD) after normalization, but
+    this handles edge cases where a non-ISO date survived normalization
+    by doing a proper datetime comparison instead of string comparison.
+    """
+    if not filing_date:
+        return False
+    try:
+        fd = datetime.strptime(filing_date[:10], "%Y-%m-%d")
+        sd = datetime.strptime(since[:10], "%Y-%m-%d")
+        return fd < sd
+    except ValueError:
+        # If either date can't be parsed, don't skip the record
+        return False
+
+
 # CSV column mappings per state (maps state CSV header → UCCFiling field)
 CSV_COLUMN_MAPS = {
     "KY": {
@@ -626,7 +644,7 @@ class StateBulkAdapter(BaseAdapter):
                 yield from self._parse_csv_fuzzy(filepath)
                 return
             for filing in self._parse_csv(filepath, column_map):
-                if since and filing.filing_date and filing.filing_date < since:
+                if since and _is_before_date(filing.filing_date, since):
                     continue
                 count += 1
                 yield filing
@@ -634,28 +652,28 @@ class StateBulkAdapter(BaseAdapter):
         elif self.config.data_format.value == "json":
             field_map = TX_FIELD_MAP if state == "TX" else {}
             for filing in self._parse_json_bulk(filepath, field_map):
-                if since and filing.filing_date and filing.filing_date < since:
+                if since and _is_before_date(filing.filing_date, since):
                     continue
                 count += 1
                 yield filing
 
         elif self.config.data_format.value == "xml":
             for filing in self._parse_xml_bulk(filepath):
-                if since and filing.filing_date and filing.filing_date < since:
+                if since and _is_before_date(filing.filing_date, since):
                     continue
                 count += 1
                 yield filing
 
         elif self.config.data_format.value == "tab_delimited":
             for filing in self._parse_tab_delimited(filepath):
-                if since and filing.filing_date and filing.filing_date < since:
+                if since and _is_before_date(filing.filing_date, since):
                     continue
                 count += 1
                 yield filing
 
         elif self.config.data_format.value == "fixed_width":
             for filing in self._parse_fixed_width(filepath):
-                if since and filing.filing_date and filing.filing_date < since:
+                if since and _is_before_date(filing.filing_date, since):
                     continue
                 count += 1
                 yield filing
