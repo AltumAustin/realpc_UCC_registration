@@ -7,10 +7,27 @@ import time
 from abc import ABC, abstractmethod
 from typing import Generator, Optional
 
+import requests
+
 from ..config import StateSourceConfig, IngestionSettings
 from ..models import UCCFiling
 
 logger = logging.getLogger(__name__)
+
+# HTTP status codes that are transient and worth retrying
+_RETRYABLE_STATUS_CODES = {429, 500, 502, 503, 504}
+
+
+def _is_retryable(error: Exception) -> bool:
+    """Check if an error is transient and worth retrying."""
+    # Network-level transient errors
+    if isinstance(error, (requests.ConnectionError, requests.Timeout)):
+        return True
+    # HTTP errors — only retry on transient status codes
+    if isinstance(error, requests.HTTPError) and error.response is not None:
+        return error.response.status_code in _RETRYABLE_STATUS_CODES
+    # All other exceptions (parse errors, auth errors, etc.) are not retryable
+    return False
 
 
 class BaseAdapter(ABC):
@@ -39,7 +56,10 @@ class BaseAdapter(ABC):
         ...
 
     def _retry_request(self, request_fn, max_retries: Optional[int] = None):
-        """Execute a request function with exponential backoff on failure.
+        """Execute a request function with exponential backoff on transient failure.
+
+        Only retries on transient errors (429, 5xx, ConnectionError, Timeout).
+        Fails immediately on permanent errors (401, 403, 404, parse errors).
 
         Args:
             request_fn: Callable that performs the HTTP request.
@@ -50,7 +70,8 @@ class BaseAdapter(ABC):
             The return value of request_fn on success.
 
         Raises:
-            The last exception if all retries are exhausted.
+            The last exception if all retries are exhausted, or immediately
+            for non-retryable errors.
         """
         retries = max_retries if max_retries is not None else self.settings.max_retries
         last_error = None
@@ -60,6 +81,12 @@ class BaseAdapter(ABC):
                 return request_fn()
             except Exception as e:
                 last_error = e
+                if not _is_retryable(e):
+                    logger.error(
+                        "Non-retryable error for %s: %s",
+                        self.config.abbreviation, e,
+                    )
+                    raise
                 if attempt < retries:
                     wait = self.settings.retry_backoff_seconds * (2 ** attempt)
                     logger.warning(

@@ -46,6 +46,44 @@ class IngestionScheduler:
         self.configs = get_all_source_configs()
         self.log_path = self.settings.log_path
         os.makedirs(os.path.dirname(self.log_path) or ".", exist_ok=True)
+        self._validate_config()
+
+    def _validate_config(self):
+        """Check required environment variables and log warnings at startup."""
+        # Check commercial provider config (needed for ~34 states)
+        commercial_states = [
+            s for s, c in self.configs.items()
+            if c.tier == SourceTier.COMMERCIAL and c.enabled
+        ]
+        if commercial_states:
+            if not self.settings.commercial_api_base_url:
+                logger.warning(
+                    "UCC_COMMERCIAL_API_URL not set — %d commercial-tier states "
+                    "will fail at runtime: %s",
+                    len(commercial_states), ", ".join(sorted(commercial_states)[:5]) + "...",
+                )
+            if not self.settings.commercial_api_key:
+                logger.warning(
+                    "UCC_COMMERCIAL_API_KEY not set — %d commercial-tier states "
+                    "will fail at runtime",
+                    len(commercial_states),
+                )
+
+        # Check state bulk auth vars
+        for state, config in self.configs.items():
+            if config.tier == SourceTier.STATE_BULK and config.auth_env_var and config.enabled:
+                if not os.environ.get(config.auth_env_var):
+                    logger.debug(
+                        "%s: auth env var %s not set — bulk downloads will "
+                        "require manually-placed files",
+                        state, config.auth_env_var,
+                    )
+
+        # Socrata app token (optional but recommended)
+        if not self.settings.socrata_app_token:
+            logger.debug(
+                "SOCRATA_APP_TOKEN not set — API rate limited to 1,000 req/hr"
+            )
 
     def _get_adapter(self, config: StateSourceConfig) -> BaseAdapter:
         """Create the appropriate adapter for a state's source tier."""

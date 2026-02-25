@@ -280,7 +280,11 @@ class StateBulkAdapter(BaseAdapter):
                         kwargs[filing_field] = value
 
                 if not kwargs.get("filing_number"):
-                    continue  # Skip records without a filing number
+                    logger.debug(
+                        "%s: skipping CSV row without filing_number: %s",
+                        self.config.abbreviation, {k: v[:50] for k, v in row.items() if v},
+                    )
+                    continue
                 if not kwargs.get("filing_type"):
                     kwargs["filing_type"] = "UCC"
 

@@ -6,11 +6,14 @@ consistency in the database (date formats, name casing, status
 codes, filing type codes, etc.).
 """
 
+import logging
 import re
 from datetime import datetime
 from typing import Optional
 
 from .models import UCCFiling
+
+logger = logging.getLogger(__name__)
 
 
 # Normalize filing type codes to standard labels
@@ -87,7 +90,8 @@ def normalize_date(value: Optional[str]) -> Optional[str]:
         except ValueError:
             continue
 
-    return value  # Return as-is if we can't parse it
+    logger.debug("Could not parse date value: %r", value)
+    return None  # Return None for unparseable dates instead of the invalid string
 
 
 def normalize_name(value: Optional[str]) -> Optional[str]:

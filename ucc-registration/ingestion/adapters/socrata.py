@@ -8,6 +8,7 @@ Currently supports:
 
 import json
 import logging
+import time
 from typing import Generator, Optional
 from datetime import datetime, timezone
 
@@ -147,6 +148,11 @@ class SocrataAdapter(BaseAdapter):
             f" since {since}" if since else " (full pull)",
         )
 
+        # Rate limit: Socrata allows 1,000 req/hr without app token,
+        # 4,000 req/hr with one. A 0.5s delay between pages is conservative
+        # enough for either case (most states need <5 pages).
+        page_delay = 0.5
+
         while True:
             page = self._fetch_page(offset, batch_size, since)
             if not page:
@@ -164,6 +170,7 @@ class SocrataAdapter(BaseAdapter):
             if len(page) < batch_size:
                 break
             offset += batch_size
+            time.sleep(page_delay)
 
         logger.info(
             "%s: Socrata fetch complete. %d total records.",
