@@ -1,0 +1,15 @@
+[Unit]
+Description=UCC Ingestion — Socrata Open APIs (CT, CO)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=ucc
+Group=ucc
+WorkingDirectory=/opt/ucc/ucc-registration
+ExecStart=/usr/bin/python3 /opt/ucc/deploy/fetch_secrets.py run --tier open_api
+TimeoutStartSec=1800
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=ucc-socrata

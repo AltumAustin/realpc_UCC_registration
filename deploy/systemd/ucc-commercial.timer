@@ -1,0 +1,10 @@
+[Unit]
+Description=Run UCC commercial ingestion daily at 3 AM PT
+
+[Timer]
+OnCalendar=*-*-* 10:00:00 UTC
+Persistent=true
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target
