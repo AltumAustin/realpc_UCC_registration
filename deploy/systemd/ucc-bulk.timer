@@ -1,0 +1,10 @@
+[Unit]
+Description=Run UCC state bulk ingestion daily at 2 AM PT
+
+[Timer]
+OnCalendar=*-*-* 09:00:00 UTC
+Persistent=true
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target
