@@ -51,7 +51,7 @@ Continuously ingest **every UCC filing from all 51 jurisdictions** (50 states + 
 | State | Format | Frequency | Latency | Annual Cost |
 |-------|--------|-----------|---------|-------------|
 | CA | XML | Weekly | ≤3 days | $0 (free updates) |
-| TX | JSON | Daily | 1 day | $1,350 |
+| TX | JSON | Daily | 1 day | $1,350 (Master Unload) |
 | KY | CSV | Daily | 1 day | $18,000 |
 | WV | CSV | Weekly | ≤3 days | ~$5,000 |
 | ID | Tab-delimited | Biweekly | ≤3 days | $3,250 |
@@ -72,6 +72,13 @@ Continuously ingest **every UCC filing from all 51 jurisdictions** (50 states + 
 1. Subscribe to each state's bulk data program
 2. Set up download credentials and store in `.env`
 3. For manual-download states, establish a process to place files in `data/bulk_downloads/{STATE}/`
+
+**Texas two-step process:**
+1. **Purchase Master Unload ($1,350)** — one-time purchase from the Texas SOS containing
+   all historical UCC filings. This seeds the local database with the complete SOS filing index.
+2. **Subscribe to Daily Filing Data Updates** — ongoing subscription to receive daily
+   incremental JSON files. These are downloaded and applied against the Master Unload
+   to keep the local database current with the SOS database.
 
 ### Tier 3: Commercial Provider — ~$300,000/year (estimated)
 
@@ -199,7 +206,7 @@ SQLite database at `data/ucc_filings.db` with:
 
 ### Phase 4: State Subscriptions (Weeks 4-8)
 - [ ] Subscribe to CA weekly downloads (free)
-- [ ] Subscribe to TX daily JSON ($1,350)
+- [ ] Purchase TX Master Unload ($1,350) and subscribe to Daily Filing Data Updates
 - [ ] Subscribe to remaining Tier 2 states in priority order:
   1. KY (daily, $18K/yr)
   2. FL (daily, ~$3K/yr)

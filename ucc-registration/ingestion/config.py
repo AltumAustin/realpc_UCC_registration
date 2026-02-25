@@ -82,6 +82,26 @@ TIER1_SOURCES = {
 }
 
 # Tier 2: State Bulk Data Subscriptions
+#
+# States use one of three data delivery models:
+#
+#   1. INITIAL LOAD + INCREMENTAL UPDATES (TX, CA, MN, FL)
+#      Purchase a one-time master file / initial dataset to seed the database,
+#      then subscribe to periodic (daily/weekly/quarterly) incremental updates
+#      containing only new or changed filings. Most cost-efficient for ongoing
+#      ingestion since daily downloads are small.
+#
+#   2. FULL REPLACEMENT (ID)
+#      Each extract is the COMPLETE database. No separate initial load needed,
+#      but every download replaces all prior data. Simple but less efficient
+#      for large datasets since the full file must be re-parsed each time.
+#
+#   3. TBD — DELIVERY MODEL UNVERIFIED (KY, WV, ND, AR, IN, NY, NC, SC, SD, AZ)
+#      These states offer bulk subscriptions but we have not yet confirmed
+#      whether they deliver full dumps or incremental deltas. This should be
+#      verified during subscription setup for each state. The ingestion pipeline
+#      handles both models safely via upsert (INSERT OR UPDATE on unique key).
+#
 TIER2_SOURCES = {
     "CA": StateSourceConfig(
         state="California",
@@ -92,7 +112,10 @@ TIER2_SOURCES = {
         expected_latency_days=7.0,
         annual_cost_usd=0,
         download_url="https://bpd.cdn.sos.ca.gov/ucc/",
-        notes="Free weekly XML downloads. Master file $100 (data only). Weekly updates free.",
+        notes=(
+            "Two-step process: (1) Purchase Master file ($100, data only) to seed "
+            "the database, then (2) download free weekly XML updates to stay current."
+        ),
         contact_email="UCChelp@sos.ca.gov",
     ),
     "TX": StateSourceConfig(
@@ -106,7 +129,11 @@ TIER2_SOURCES = {
         download_url="https://www.sos.state.tx.us/ucc/bulk-order.shtml",
         requires_auth=True,
         auth_env_var="TX_BULK_CREDENTIALS",
-        notes="$1,350 master file. Daily JSON updates available.",
+        notes=(
+            "Two-step process: (1) Purchase Master Unload ($1,350) to seed the "
+            "database with all historical filings, then (2) subscribe to Daily "
+            "Filing Data Updates to keep the database current with the SOS."
+        ),
         contact_phone="(512) 463-5555",
     ),
     "KY": StateSourceConfig(
@@ -120,7 +147,7 @@ TIER2_SOURCES = {
         download_url="https://www.sos.ky.gov/bus/Pages/Bulk-Data-Service.aspx",
         requires_auth=True,
         auth_env_var="KY_BULK_CREDENTIALS",
-        notes="$1,500/month plus $75 KY.gov subscription fee. Daily downloads.",
+        notes="$1,500/mo + $75 KY.gov fee. Daily downloads. Delivery model (initial+incremental vs full replacement) TBD — verify with KY SOS.",
         contact_phone="(502) 564-3490",
     ),
     "WV": StateSourceConfig(
@@ -134,7 +161,7 @@ TIER2_SOURCES = {
         download_url="https://apps.wv.gov/sos/bulkdata/",
         requires_auth=True,
         auth_env_var="WV_BULK_CREDENTIALS",
-        notes="Weekly CSV (3 files: Debtors, SecuredParties, Documents). State law requires weekly minimum.",
+        notes="Weekly CSV (3 files: Debtors, SecuredParties, Documents). State law requires weekly minimum. Delivery model TBD — verify if full replacement or incremental.",
     ),
     "ID": StateSourceConfig(
         state="Idaho",
@@ -147,7 +174,11 @@ TIER2_SOURCES = {
         download_url="https://sos.idaho.gov/ucc/subscriptions.html",
         requires_auth=True,
         auth_env_var="ID_BULK_CREDENTIALS",
-        notes="$125/extract, bi-weekly (every other Monday). Full replacement each extract. Collateral not included.",
+        notes=(
+            "Full-replacement model: $125/extract, biweekly (every other Monday). "
+            "Each extract is the COMPLETE database — no initial load needed, but "
+            "every download replaces all prior data. Collateral not included."
+        ),
     ),
     "ND": StateSourceConfig(
         state="North Dakota",
@@ -160,7 +191,7 @@ TIER2_SOURCES = {
         download_url="https://www.sos.nd.gov/business/lien-filings-ucc/data-and-report-subscriptions",
         requires_auth=True,
         auth_env_var="ND_BULK_CREDENTIALS",
-        notes="$40/month. Data on 1st and 16th of each month.",
+        notes="$40/mo. Data on 1st and 16th of each month. Delivery model TBD — verify if full replacement or incremental.",
     ),
     "MN": StateSourceConfig(
         state="Minnesota",
@@ -173,7 +204,11 @@ TIER2_SOURCES = {
         download_url="https://www.sos.mn.gov/business-liens/business-liens-data/ucc-data-available-for-purchase/",
         requires_auth=True,
         auth_env_var="MN_BULK_CREDENTIALS",
-        notes="CSV comma-delimited. Initial dataset + weekly subscription. License agreement required.",
+        notes=(
+            "Two-step process: (1) Purchase initial dataset ($2,400–$12,000 depending "
+            "on scope) to seed the database, then (2) subscribe to weekly CSV updates "
+            "to stay current. License agreement required."
+        ),
     ),
     "AR": StateSourceConfig(
         state="Arkansas",
@@ -186,7 +221,7 @@ TIER2_SOURCES = {
         download_url="https://portal.arkansas.gov/service/ar-ucc-bulk-records-data-download/",
         requires_auth=True,
         auth_env_var="AR_INA_CREDENTIALS",
-        notes="$150/year INA subscription + transaction fees.",
+        notes="$150/yr INA subscription + transaction fees. Delivery model TBD — verify if initial load + incremental or periodic full dumps.",
     ),
     "IN": StateSourceConfig(
         state="Indiana",
@@ -200,7 +235,7 @@ TIER2_SOURCES = {
         download_url="https://inbiz.in.gov/Inbiz/BulkDataServices/Index",
         requires_auth=True,
         auth_env_var="IN_INBIZ_CREDENTIALS",
-        notes="IACA v4.0 XML via INBiz portal. RESTful API.",
+        notes="IACA v4.0 XML via INBiz portal. RESTful API. Delivery model TBD — INBiz may support incremental pulls via API.",
     ),
     "NY": StateSourceConfig(
         state="New York",
@@ -213,7 +248,7 @@ TIER2_SOURCES = {
         download_url="https://appext20.dos.ny.gov/subscription/",
         requires_auth=True,
         auth_env_var="NY_SUBSCRIPTION_CREDENTIALS",
-        notes="$300/month. TIFF images available 5 business days after filing. XML bulk filing system for data.",
+        notes="$300/mo subscription. TIFF images available 5 business days after filing. XML bulk data. Delivery model TBD — verify if initial load + periodic or full replacement.",
     ),
     "NC": StateSourceConfig(
         state="North Carolina",
@@ -226,7 +261,7 @@ TIER2_SOURCES = {
         download_url="https://www.sosnc.gov/online_services/data_subscriptions",
         requires_auth=True,
         auth_env_var="NC_SUBSCRIPTION_CREDENTIALS",
-        notes="Contract-based. Contact subscription@sosnc.gov.",
+        notes="Contract-based. Contact subscription@sosnc.gov. Delivery model TBD — terms defined by contract.",
         contact_email="subscription@sosnc.gov",
     ),
     "SC": StateSourceConfig(
@@ -240,7 +275,7 @@ TIER2_SOURCES = {
         download_url="https://scdgs.sc.gov/service/secretary-state-bulk-data-images-and-notary-registration",
         requires_auth=True,
         auth_env_var="SC_BULK_CREDENTIALS",
-        notes="$4,500/month for weekly UCC filings. XML web service API also available.",
+        notes="$4,500/mo for weekly UCC filings. XML web service API also available. Delivery model TBD — verify if full replacement or incremental.",
     ),
     "SD": StateSourceConfig(
         state="South Dakota",
@@ -253,7 +288,7 @@ TIER2_SOURCES = {
         download_url="https://sdsos.gov/Business-Services/database-downloads.aspx",
         requires_auth=True,
         auth_env_var="SD_BULK_CREDENTIALS",
-        notes="Subscription-based. Contact for pricing and format details.",
+        notes="Subscription-based. Contact for pricing and format details. Delivery model TBD.",
     ),
     "AZ": StateSourceConfig(
         state="Arizona",
@@ -263,7 +298,7 @@ TIER2_SOURCES = {
         data_format=DataFormat.CSV,
         expected_latency_days=3.0,
         annual_cost_usd=2000,
-        notes="Monthly subscription or single request. 5 options for UCC Filing Index.",
+        notes="Monthly subscription or single request. 5 options for UCC Filing Index. Delivery model TBD.",
     ),
     "FL": StateSourceConfig(
         state="Florida",
@@ -273,7 +308,11 @@ TIER2_SOURCES = {
         data_format=DataFormat.FIXED_WIDTH,
         expected_latency_days=1.0,
         annual_cost_usd=3000,
-        notes="Daily + quarterly fixed-length ASCII. Public records request may be needed for UCC.",
+        notes=(
+            "Two-step process: (1) Quarterly full dump (fixed-length ASCII) provides "
+            "the complete database baseline, then (2) daily incremental files contain "
+            "only new/changed filings. Public records request may be needed for UCC."
+        ),
     ),
 }
 

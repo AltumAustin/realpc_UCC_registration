@@ -11,6 +11,18 @@ States covered in Tier 2:
   ID (tab-delimited, biweekly), ND (CSV, biweekly), MN (CSV, weekly),
   AR (CSV, weekly), IN (XML, weekly), NY (XML, weekly), NC (CSV, weekly),
   SC (CSV, weekly), SD (CSV, weekly), AZ (CSV, monthly), FL (fixed-width, daily)
+
+Data delivery models vary by state (see config.py for details):
+  - Initial load + incremental: TX, CA, MN, FL — purchase a master file
+    to seed the database, then subscribe to periodic update files.
+  - Full replacement: ID — each extract is the entire database.
+  - TBD: KY, WV, ND, AR, IN, NY, NC, SC, SD, AZ — model not yet verified.
+
+The pipeline handles all models safely via upsert (INSERT OR UPDATE on
+the unique constraint), so even full-replacement files won't create
+duplicate records. Texas has a dedicated _fetch_texas() method; other
+states with confirmed two-step models can be given similar treatment
+once their exact file formats and download mechanics are verified.
 """
 
 import csv
@@ -212,7 +224,14 @@ CSV_COLUMN_MAPS = {
     },
 }
 
-# Texas uses JSON with specific field names
+# Texas SOS bulk data uses JSON. The two-step process is:
+#   1. Master Unload — one-time purchase ($1,350) containing all historical UCC filings.
+#      This seeds the local database with the complete SOS filing index.
+#   2. Daily Filing Data Updates — subscription-based daily incremental files containing
+#      only filings recorded/amended since the previous day. Applied against the Master
+#      Unload to keep the local database current with the SOS database.
+#
+# Both the Master Unload and Daily Filing Data Updates use the same JSON schema.
 TX_FIELD_MAP = {
     "filing_number": "filing_number",
     "filing_type": "filing_type",
@@ -398,6 +417,11 @@ class StateBulkAdapter(BaseAdapter):
 
         Uses ijson for streaming when available and file is large (>10MB),
         falls back to json.load() for small files or when ijson is missing.
+
+        For Texas, this handles both the Master Unload (full historical dump)
+        and Daily Filing Data Updates (incremental daily deltas). Both use
+        the same JSON schema, so the parser is identical — the difference is
+        in which file is downloaded (see _fetch_texas).
         """
         now = datetime.now(timezone.utc).isoformat()
         file_size = os.path.getsize(filepath)
@@ -628,6 +652,83 @@ class StateBulkAdapter(BaseAdapter):
 
                 yield UCCFiling(**kwargs)
 
+    def _fetch_texas(self, since: Optional[str] = None) -> Generator[UCCFiling, None, None]:
+        """Handle the Texas SOS two-step bulk data process.
+
+        Texas uses a two-step approach:
+          1. Master Unload — One-time purchase ($1,350) of the complete SOS
+             UCC filing database. This is loaded once to seed the local
+             database with all historical filings.
+          2. Daily Filing Data Updates — Subscription-based incremental files
+             containing only filings recorded or amended since the previous
+             day. Downloaded and applied daily to keep the local database
+             current with the SOS database.
+
+        Both the Master Unload and Daily Filing Data Updates use the same
+        JSON schema (TX_FIELD_MAP), so parsing is identical — only the
+        source file differs.
+
+        Detection logic:
+          - If since is None (no prior TX data), we expect a Master Unload
+            file to be placed in the download directory.
+          - If since has a date (prior TX data exists), we look for a Daily
+            Filing Data Update file covering that date forward.
+        """
+        is_master_unload = since is None
+
+        if is_master_unload:
+            logger.info("TX: No prior data found — expecting Master Unload file")
+        else:
+            logger.info(
+                "TX: Prior data exists (since %s) — expecting Daily Filing Data Update",
+                since,
+            )
+
+        # Look for a manually-placed file first (both Master Unload and
+        # daily updates may be manually downloaded from the SOS portal)
+        filepath = self._find_latest_download()
+
+        if filepath:
+            file_label = "Master Unload" if is_master_unload else "Daily Filing Data Update"
+            logger.info("TX: Using %s file at %s", file_label, filepath)
+        elif self.config.download_url and self._get_credentials():
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            if is_master_unload:
+                filename = f"TX_master_unload_{timestamp}.json"
+            else:
+                filename = f"TX_daily_update_{timestamp}.json"
+
+            filepath = self._download_file(self.config.download_url, filename)
+            logger.info("TX: Downloaded to %s", filepath)
+        else:
+            if is_master_unload:
+                logger.warning(
+                    "TX: No Master Unload file found in %s. To initialize the "
+                    "Texas database, purchase the Master Unload from the Texas "
+                    "SOS and place the JSON file in this directory.",
+                    self.download_dir,
+                )
+            else:
+                logger.warning(
+                    "TX: No Daily Filing Data Update file found in %s and no "
+                    "download credentials configured. Place the daily update "
+                    "JSON file in this directory, or configure TX_BULK_CREDENTIALS.",
+                    self.download_dir,
+                )
+            return
+
+        count = 0
+        for filing in self._parse_json_bulk(filepath, TX_FIELD_MAP):
+            # For Daily Filing Data Updates, skip records older than our
+            # last ingestion. For Master Unload, load everything.
+            if since and filing.filing_date and filing.filing_date < since:
+                continue
+            count += 1
+            yield filing
+
+        file_label = "Master Unload" if is_master_unload else "Daily Filing Data Update"
+        logger.info("TX: Parsed %d records from %s", count, file_label)
+
     def fetch(self, since: Optional[str] = None) -> Generator[UCCFiling, None, None]:
         """Download and parse the state bulk data file.
 
@@ -636,10 +737,18 @@ class StateBulkAdapter(BaseAdapter):
         the download process is manual (e.g., requires logging into
         a portal), this expects the file to already be placed in
         the download directory.
+
+        Texas is handled separately via _fetch_texas() to implement
+        the two-step Master Unload / Daily Filing Data Update flow.
         """
         state = self.config.abbreviation
 
         logger.info("Starting bulk data fetch for %s", state)
+
+        # Texas has a dedicated two-step flow
+        if state == "TX":
+            yield from self._fetch_texas(since)
+            return
 
         # Check for manually-placed files first
         existing_files = self._find_latest_download()
