@@ -126,9 +126,10 @@ resource "aws_instance" "ucc_ingestion" {
   ami                    = data.aws_ami.amazon_linux.id
   instance_type          = var.instance_type
   key_name               = var.ssh_key_name
-  subnet_id              = var.subnet_id
-  vpc_security_group_ids = [aws_security_group.ucc_instance.id]
-  iam_instance_profile   = aws_iam_instance_profile.ucc_instance.name
+  subnet_id                   = var.subnet_id
+  vpc_security_group_ids      = [aws_security_group.ucc_instance.id]
+  iam_instance_profile        = aws_iam_instance_profile.ucc_instance.name
+  associate_public_ip_address = true
 
   root_block_device {
     volume_size = var.ebs_volume_size

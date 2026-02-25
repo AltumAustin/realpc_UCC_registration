@@ -1,12 +1,17 @@
 #!/bin/bash
 set -euo pipefail
 
+if [[ $EUID -ne 0 ]]; then
+    echo "Error: This script must be run as root (use sudo)." >&2
+    exit 1
+fi
+
 echo "=== UCC Ingestion Update — $(date -u) ==="
 
 cd /opt/ucc
 
-# Pull latest code
-git pull origin main
+# Pull latest code as ucc user (preserves file ownership)
+sudo -u ucc git pull origin main
 
 # Update dependencies
 cd ucc-registration

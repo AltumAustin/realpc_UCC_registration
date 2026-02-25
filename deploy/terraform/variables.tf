@@ -40,9 +40,3 @@ variable "ebs_volume_size" {
   type        = number
   default     = 30
 }
-
-variable "project_repo_url" {
-  description = "Git repository URL for the UCC project"
-  type        = string
-  default     = "https://github.com/AltumAustin/realpc_UCC_registration.git"
-}

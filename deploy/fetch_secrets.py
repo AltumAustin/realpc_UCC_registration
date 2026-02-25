@@ -22,9 +22,13 @@ REGION = os.environ.get("AWS_REGION", "us-west-2")
 
 def fetch_secrets() -> dict:
     """Retrieve the JSON secret from AWS Secrets Manager."""
-    client = boto3.client("secretsmanager", region_name=REGION)
-    response = client.get_secret_value(SecretId=SECRET_ID)
-    return json.loads(response["SecretString"])
+    try:
+        client = boto3.client("secretsmanager", region_name=REGION)
+        response = client.get_secret_value(SecretId=SECRET_ID)
+        return json.loads(response["SecretString"])
+    except Exception as exc:
+        print(f"FAILED to fetch secrets from {SECRET_ID}: {exc}", file=sys.stderr)
+        sys.exit(1)
 
 
 def main():
