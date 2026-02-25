@@ -7,3 +7,10 @@ __pycache__/
 *.db-wal
 data/bulk_downloads/
 .worktrees/
+
+# Terraform
+deploy/terraform/.terraform/
+deploy/terraform/*.tfstate
+deploy/terraform/*.tfstate.backup
+deploy/terraform/*.tfvars
+deploy/terraform/.terraform.lock.hcl
