@@ -121,38 +121,42 @@ class IngestionScheduler:
             if not full_refresh:
                 since = self.db.get_latest_filing_date(state)
 
-            # Fetch, normalize, and store
+            # Fetch, normalize, and store — track committed vs pending counts
             batch = []
             total_fetched = 0
-            total_new = 0
-            total_updated = 0
-            total_skipped = 0
+            committed_new = 0
+            committed_updated = 0
+            committed_skipped = 0
+            batch_errors = []
+            batch_size = self.settings.batch_size
 
             for filing in adapter.fetch(since=since):
                 normalized = normalize_filing(filing)
                 batch.append(normalized)
                 total_fetched += 1
 
-                if len(batch) >= 1000:
+                if len(batch) >= batch_size:
                     counts = self.db.upsert_filings_batch(batch)
-                    total_new += counts["new"]
-                    total_updated += counts["updated"]
-                    total_skipped += counts["skipped"]
+                    committed_new += counts["new"]
+                    committed_updated += counts["updated"]
+                    committed_skipped += counts["skipped"]
+                    batch_errors.extend(counts.get("errors", []))
                     batch = []
 
             # Flush remaining batch
             if batch:
                 counts = self.db.upsert_filings_batch(batch)
-                total_new += counts["new"]
-                total_updated += counts["updated"]
-                total_skipped += counts["skipped"]
+                committed_new += counts["new"]
+                committed_updated += counts["updated"]
+                committed_skipped += counts["skipped"]
+                batch_errors.extend(counts.get("errors", []))
 
             # Update run record
             run.completed_at = datetime.now(timezone.utc).isoformat()
             run.records_fetched = total_fetched
-            run.records_new = total_new
-            run.records_updated = total_updated
-            run.records_skipped = total_skipped
+            run.records_new = committed_new
+            run.records_updated = committed_updated
+            run.records_skipped = committed_skipped
             run.status = "completed"
             self.db.record_ingestion_run(run)
 
@@ -161,14 +165,16 @@ class IngestionScheduler:
                 "state": state,
                 "run_id": run_id,
                 "records_fetched": total_fetched,
-                "records_new": total_new,
-                "records_updated": total_updated,
-                "records_skipped": total_skipped,
+                "records_new": committed_new,
+                "records_updated": committed_updated,
+                "records_skipped": committed_skipped,
+                "record_errors": len(batch_errors),
             })
 
             logger.info(
-                "%s: ingestion complete. fetched=%d new=%d updated=%d skipped=%d",
-                state, total_fetched, total_new, total_updated, total_skipped,
+                "%s: ingestion complete. fetched=%d new=%d updated=%d skipped=%d errors=%d",
+                state, total_fetched, committed_new, committed_updated,
+                committed_skipped, len(batch_errors),
             )
 
             return {
@@ -176,14 +182,21 @@ class IngestionScheduler:
                 "run_id": run_id,
                 "state": state,
                 "records_fetched": total_fetched,
-                "records_new": total_new,
-                "records_updated": total_updated,
-                "records_skipped": total_skipped,
+                "records_new": committed_new,
+                "records_updated": committed_updated,
+                "records_skipped": committed_skipped,
+                "record_errors": len(batch_errors),
             }
 
         except Exception as e:
+            # Record partial success: batches committed before the error
+            # are already persisted, so report accurate counts.
             run.completed_at = datetime.now(timezone.utc).isoformat()
-            run.status = "failed"
+            run.records_fetched = total_fetched
+            run.records_new = committed_new
+            run.records_updated = committed_updated
+            run.records_skipped = committed_skipped
+            run.status = "partial" if committed_new + committed_updated > 0 else "failed"
             run.error_message = str(e)
             self.db.record_ingestion_run(run)
 
@@ -192,10 +205,24 @@ class IngestionScheduler:
                 "state": state,
                 "run_id": run_id,
                 "error": str(e),
+                "records_fetched": total_fetched,
+                "records_committed_new": committed_new,
+                "records_committed_updated": committed_updated,
             })
 
-            logger.error("%s: ingestion failed: %s", state, e)
-            return {"success": False, "run_id": run_id, "state": state, "error": str(e)}
+            logger.error(
+                "%s: ingestion failed: %s (partial: fetched=%d new=%d updated=%d)",
+                state, e, total_fetched, committed_new, committed_updated,
+            )
+            return {
+                "success": False,
+                "run_id": run_id,
+                "state": state,
+                "error": str(e),
+                "records_fetched": total_fetched,
+                "records_new": committed_new,
+                "records_updated": committed_updated,
+            }
 
     def run_due_states(self) -> list[dict]:
         """Run ingestion for all states that are due for a refresh.

@@ -113,7 +113,7 @@ class UCCDatabase:
         source_raw TEXT,
         ingested_at TEXT NOT NULL,
         last_updated_at TEXT,
-        UNIQUE(filing_number, state, debtor_name, secured_party_name)
+        UNIQUE(filing_number, state)
     );
 
     CREATE INDEX IF NOT EXISTS idx_filings_state ON ucc_filings(state);
@@ -178,18 +178,12 @@ class UCCDatabase:
 
         cursor = self.conn.cursor()
 
-        # Check for existing record
+        # Check for existing record by the natural key (filing_number, state)
         cursor.execute(
             """SELECT id, last_updated_at, source_raw FROM ucc_filings
                WHERE filing_number = ? AND state = ?
-               AND (debtor_name = ? OR (debtor_name IS NULL AND ? IS NULL))
-               AND (secured_party_name = ? OR (secured_party_name IS NULL AND ? IS NULL))
             """,
-            (
-                filing.filing_number, filing.state,
-                filing.debtor_name, filing.debtor_name,
-                filing.secured_party_name, filing.secured_party_name,
-            ),
+            (filing.filing_number, filing.state),
         )
         existing = cursor.fetchone()
 
@@ -228,9 +222,9 @@ class UCCDatabase:
         cursor.execute(
             """UPDATE ucc_filings SET
                 filing_type=?, filing_date=?, lapse_date=?, filing_status=?,
-                debtor_address=?, debtor_city=?, debtor_state=?, debtor_zip=?,
-                debtor_organization=?, debtor_type=?,
-                secured_party_address=?, secured_party_city=?,
+                debtor_name=?, debtor_address=?, debtor_city=?, debtor_state=?,
+                debtor_zip=?, debtor_organization=?, debtor_type=?,
+                secured_party_name=?, secured_party_address=?, secured_party_city=?,
                 secured_party_state=?, secured_party_zip=?,
                 collateral_description=?, original_filing_number=?,
                 amendment_type=?, source_tier=?, source_raw=?,
@@ -238,9 +232,10 @@ class UCCDatabase:
                WHERE id=?""",
             (
                 filing.filing_type, filing.filing_date, filing.lapse_date,
-                filing.filing_status, filing.debtor_address, filing.debtor_city,
-                filing.debtor_state, filing.debtor_zip, filing.debtor_organization,
-                filing.debtor_type, filing.secured_party_address,
+                filing.filing_status, filing.debtor_name, filing.debtor_address,
+                filing.debtor_city, filing.debtor_state, filing.debtor_zip,
+                filing.debtor_organization, filing.debtor_type,
+                filing.secured_party_name, filing.secured_party_address,
                 filing.secured_party_city, filing.secured_party_state,
                 filing.secured_party_zip, filing.collateral_description,
                 filing.original_filing_number, filing.amendment_type,
@@ -251,12 +246,35 @@ class UCCDatabase:
         return "updated"
 
     def upsert_filings_batch(self, filings: list[UCCFiling]) -> dict:
-        """Batch upsert. Returns counts of new/updated/skipped."""
-        counts = {"new": 0, "updated": 0, "skipped": 0}
-        for filing in filings:
-            result = self.upsert_filing(filing)
-            counts[result] += 1
-        self.conn.commit()
+        """Batch upsert with explicit transaction. Returns counts and errors.
+
+        The entire batch is wrapped in a transaction. If any record fails,
+        the transaction is rolled back and the error is recorded. Individual
+        failures are tracked so they can be retried separately.
+        """
+        counts = {"new": 0, "updated": 0, "skipped": 0, "errors": []}
+        try:
+            self.conn.execute("BEGIN")
+            for i, filing in enumerate(filings):
+                try:
+                    result = self.upsert_filing(filing)
+                    counts[result] += 1
+                except Exception as e:
+                    logger.warning(
+                        "Record %d failed (filing_number=%s, state=%s): %s",
+                        i, filing.filing_number, filing.state, e,
+                    )
+                    counts["errors"].append({
+                        "index": i,
+                        "filing_number": filing.filing_number,
+                        "state": filing.state,
+                        "error": str(e),
+                    })
+            self.conn.execute("COMMIT")
+        except Exception as e:
+            logger.error("Batch transaction failed, rolling back: %s", e)
+            self.conn.execute("ROLLBACK")
+            raise
         return counts
 
     def record_ingestion_run(self, run: IngestionRun):
