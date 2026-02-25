@@ -116,12 +116,14 @@ class UCCDatabase:
         UNIQUE(filing_number, state)
     );
 
-    CREATE INDEX IF NOT EXISTS idx_filings_state ON ucc_filings(state);
-    CREATE INDEX IF NOT EXISTS idx_filings_filing_date ON ucc_filings(filing_date);
+    -- Compound indexes for common query patterns
+    CREATE INDEX IF NOT EXISTS idx_filings_state_date ON ucc_filings(state, filing_date);
+    CREATE INDEX IF NOT EXISTS idx_filings_state_status ON ucc_filings(state, filing_status);
+    CREATE INDEX IF NOT EXISTS idx_filings_number_state ON ucc_filings(filing_number, state);
+
+    -- Single-column indexes for standalone lookups
     CREATE INDEX IF NOT EXISTS idx_filings_debtor_name ON ucc_filings(debtor_name);
     CREATE INDEX IF NOT EXISTS idx_filings_secured_party ON ucc_filings(secured_party_name);
-    CREATE INDEX IF NOT EXISTS idx_filings_filing_number ON ucc_filings(filing_number);
-    CREATE INDEX IF NOT EXISTS idx_filings_status ON ucc_filings(filing_status);
     CREATE INDEX IF NOT EXISTS idx_filings_ingested ON ucc_filings(ingested_at);
     CREATE INDEX IF NOT EXISTS idx_filings_lapse ON ucc_filings(lapse_date);
 

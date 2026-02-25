@@ -1,0 +1,6 @@
+# Core dependencies
+requests>=2.28,<3
+
+# Optional: streaming JSON parser for large files (>10MB)
+# Required for memory-efficient Texas Master Unload ingestion
+ijson>=3.2,<4

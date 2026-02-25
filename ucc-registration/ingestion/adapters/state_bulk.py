@@ -176,6 +176,24 @@ CSV_COLUMN_MAPS = {
         "secured_party_state": "secured_party_state",
         "secured_party_zip": "secured_party_zip",
     },
+    # Idaho uses tab-delimited, but same column-map structure works.
+    # Column names are provisional — update after receiving first data file.
+    "ID": {
+        "FileNumber": "filing_number",
+        "FileType": "filing_type",
+        "FileDate": "filing_date",
+        "LapseDate": "lapse_date",
+        "DebtorName": "debtor_name",
+        "DebtorAddress": "debtor_address",
+        "DebtorCity": "debtor_city",
+        "DebtorState": "debtor_state",
+        "DebtorZip": "debtor_zip",
+        "SecuredPartyName": "secured_party_name",
+        "SecuredPartyAddress": "secured_party_address",
+        "SecuredPartyCity": "secured_party_city",
+        "SecuredPartyState": "secured_party_state",
+        "SecuredPartyZip": "secured_party_zip",
+    },
     "AZ": {
         "FilingNo": "filing_number",
         "FilingType": "filing_type",
@@ -309,11 +327,33 @@ class StateBulkAdapter(BaseAdapter):
                 yield UCCFiling(**kwargs)
 
     def _parse_tab_delimited(self, filepath: str) -> Generator[UCCFiling, None, None]:
-        """Parse tab-delimited file (Idaho format)."""
+        """Parse tab-delimited file using explicit column map when available.
+
+        Uses CSV_COLUMN_MAPS for the state if configured (same dict structure
+        works for tab-delimited). Falls back to _parse_csv with delimiter='\t'.
+        """
+        state = self.config.abbreviation
+        column_map = CSV_COLUMN_MAPS.get(state)
+
+        if column_map:
+            logger.info("%s: using explicit column map for tab-delimited parsing", state)
+            yield from self._parse_csv_with_delimiter(filepath, column_map, "\t")
+        else:
+            logger.warning(
+                "%s: no column map for tab-delimited format — "
+                "add an entry to CSV_COLUMN_MAPS after verifying column names",
+                state,
+            )
+            # Fall back to generic CSV parsing with tab delimiter
+            yield from self._parse_csv_with_delimiter(filepath, {}, "\t")
+
+    def _parse_csv_with_delimiter(self, filepath: str, column_map: dict,
+                                  delimiter: str = ",") -> Generator[UCCFiling, None, None]:
+        """Parse a delimited file (CSV or TSV) using a column mapping."""
         now = datetime.now(timezone.utc).isoformat()
 
         with open(filepath, "r", encoding="utf-8-sig") as f:
-            reader = csv.DictReader(f, delimiter="\t")
+            reader = csv.DictReader(f, delimiter=delimiter)
             for row in reader:
                 kwargs = {
                     "state": self.config.abbreviation,
@@ -321,41 +361,30 @@ class StateBulkAdapter(BaseAdapter):
                     "source_raw": json.dumps(row),
                     "ingested_at": now,
                 }
-                # Idaho's exact columns will need verification on first download,
-                # but they typically follow this pattern:
-                for key, value in row.items():
-                    value = value.strip() if value else ""
-                    if not value:
-                        continue
-                    key_lower = key.lower().replace(" ", "_")
-                    if "file" in key_lower and "num" in key_lower:
-                        kwargs["filing_number"] = value
-                    elif "file" in key_lower and "type" in key_lower:
-                        kwargs["filing_type"] = value
-                    elif "file" in key_lower and "date" in key_lower:
-                        kwargs["filing_date"] = value
-                    elif "lapse" in key_lower:
-                        kwargs["lapse_date"] = value
-                    elif "debtor" in key_lower and "name" in key_lower:
-                        kwargs["debtor_name"] = value
-                    elif "debtor" in key_lower and ("addr" in key_lower or "street" in key_lower):
-                        kwargs["debtor_address"] = value
-                    elif "debtor" in key_lower and "city" in key_lower:
-                        kwargs["debtor_city"] = value
-                    elif "debtor" in key_lower and "state" in key_lower:
-                        kwargs["debtor_state"] = value
-                    elif "debtor" in key_lower and "zip" in key_lower:
-                        kwargs["debtor_zip"] = value
-                    elif "secured" in key_lower and "name" in key_lower:
-                        kwargs["secured_party_name"] = value
-                    elif "secured" in key_lower and ("addr" in key_lower or "street" in key_lower):
-                        kwargs["secured_party_address"] = value
-                    elif "secured" in key_lower and "city" in key_lower:
-                        kwargs["secured_party_city"] = value
-                    elif "secured" in key_lower and "state" in key_lower:
-                        kwargs["secured_party_state"] = value
-                    elif "secured" in key_lower and "zip" in key_lower:
-                        kwargs["secured_party_zip"] = value
+                if column_map:
+                    for csv_col, filing_field in column_map.items():
+                        value = row.get(csv_col, "").strip()
+                        if value:
+                            kwargs[filing_field] = value
+                else:
+                    # No explicit map — use fuzzy matching as last resort
+                    for key, value in row.items():
+                        value = value.strip() if value else ""
+                        if not value:
+                            continue
+                        k = key.lower().replace(" ", "_")
+                        if "file" in k and "num" in k:
+                            kwargs.setdefault("filing_number", value)
+                        elif "file" in k and "type" in k:
+                            kwargs.setdefault("filing_type", value)
+                        elif "file" in k and "date" in k:
+                            kwargs.setdefault("filing_date", value)
+                        elif "lapse" in k:
+                            kwargs.setdefault("lapse_date", value)
+                        elif "debtor" in k and "name" in k:
+                            kwargs.setdefault("debtor_name", value)
+                        elif "secured" in k and "name" in k:
+                            kwargs.setdefault("secured_party_name", value)
 
                 if not kwargs.get("filing_number"):
                     continue
