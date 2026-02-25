@@ -10,6 +10,7 @@ import json
 import logging
 import os
 import uuid
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from typing import Optional
 
@@ -82,16 +83,19 @@ class IngestionScheduler:
         with open(self.log_path, "a") as f:
             f.write(json.dumps(event) + "\n")
 
-    def ingest_state(self, state: str, full_refresh: bool = False) -> dict:
+    def ingest_state(self, state: str, full_refresh: bool = False,
+                     db: Optional[UCCDatabase] = None) -> dict:
         """Run the ingestion pipeline for a single state.
 
         Args:
             state: 2-letter state abbreviation.
             full_refresh: If True, ignore last ingestion date and pull everything.
+            db: Optional separate UCCDatabase instance (for thread-safe parallel runs).
 
         Returns:
             dict with run results (records_fetched, new, updated, skipped, etc.)
         """
+        db = db or self.db
         config = self.configs.get(state)
         if not config:
             return {"success": False, "error": f"No config for state {state}"}
@@ -103,7 +107,7 @@ class IngestionScheduler:
             source_tier=config.tier.value,
             started_at=datetime.now(timezone.utc).isoformat(),
         )
-        self.db.record_ingestion_run(run)
+        db.record_ingestion_run(run)
 
         self._log_event({
             "event": "ingestion_start",
@@ -119,7 +123,7 @@ class IngestionScheduler:
             # Determine the "since" date for incremental pulls
             since = None
             if not full_refresh:
-                since = self.db.get_latest_filing_date(state)
+                since = db.get_latest_filing_date(state)
 
             # Fetch, normalize, and store — track committed vs pending counts
             batch = []
@@ -136,7 +140,7 @@ class IngestionScheduler:
                 total_fetched += 1
 
                 if len(batch) >= batch_size:
-                    counts = self.db.upsert_filings_batch(batch)
+                    counts = db.upsert_filings_batch(batch)
                     committed_new += counts["new"]
                     committed_updated += counts["updated"]
                     committed_skipped += counts["skipped"]
@@ -145,7 +149,7 @@ class IngestionScheduler:
 
             # Flush remaining batch
             if batch:
-                counts = self.db.upsert_filings_batch(batch)
+                counts = db.upsert_filings_batch(batch)
                 committed_new += counts["new"]
                 committed_updated += counts["updated"]
                 committed_skipped += counts["skipped"]
@@ -158,7 +162,7 @@ class IngestionScheduler:
             run.records_updated = committed_updated
             run.records_skipped = committed_skipped
             run.status = "completed"
-            self.db.record_ingestion_run(run)
+            db.record_ingestion_run(run)
 
             self._log_event({
                 "event": "ingestion_complete",
@@ -198,7 +202,7 @@ class IngestionScheduler:
             run.records_skipped = committed_skipped
             run.status = "partial" if committed_new + committed_updated > 0 else "failed"
             run.error_message = str(e)
-            self.db.record_ingestion_run(run)
+            db.record_ingestion_run(run)
 
             self._log_event({
                 "event": "ingestion_failed",
@@ -224,59 +228,88 @@ class IngestionScheduler:
                 "records_updated": committed_updated,
             }
 
-    def run_due_states(self) -> list[dict]:
+    def _run_states(self, states: list[str], full_refresh: bool = False,
+                    max_workers: int = 1) -> list[dict]:
+        """Run ingestion for a list of states, optionally in parallel.
+
+        Args:
+            states: List of 2-letter state abbreviations.
+            full_refresh: If True, pull all records (not just incremental).
+            max_workers: Number of parallel threads. 1 = sequential (default).
+                         Each thread gets its own SQLite connection.
+        """
+        if max_workers <= 1:
+            return [self.ingest_state(s, full_refresh=full_refresh)
+                    for s in sorted(states)]
+
+        results = []
+
+        def _ingest_with_own_db(state: str) -> dict:
+            """Each thread gets its own DB connection for write safety."""
+            thread_db = UCCDatabase(self.settings.db_path)
+            try:
+                return self.ingest_state(state, full_refresh=full_refresh,
+                                         db=thread_db)
+            finally:
+                thread_db.close()
+
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = {
+                executor.submit(_ingest_with_own_db, state): state
+                for state in sorted(states)
+            }
+            for future in as_completed(futures):
+                state = futures[future]
+                try:
+                    results.append(future.result())
+                except Exception as e:
+                    logger.error("%s: thread failed: %s", state, e)
+                    results.append({
+                        "success": False, "state": state, "error": str(e),
+                    })
+        return results
+
+    def run_due_states(self, max_workers: int = 1) -> list[dict]:
         """Run ingestion for all states that are due for a refresh.
+
+        Args:
+            max_workers: Number of parallel threads (default 1 = sequential).
 
         Returns:
             List of result dicts, one per state that was processed.
         """
-        results = []
         due_states = [s for s in self.configs if self._should_run(s)]
 
         if not due_states:
             logger.info("No states are due for ingestion.")
-            return results
+            return []
 
         logger.info(
             "%d states due for ingestion: %s",
             len(due_states), ", ".join(due_states),
         )
 
-        for state in sorted(due_states):
-            result = self.ingest_state(state)
-            results.append(result)
+        return self._run_states(due_states, max_workers=max_workers)
 
-        return results
-
-    def run_all(self, full_refresh: bool = False) -> list[dict]:
+    def run_all(self, full_refresh: bool = False, max_workers: int = 1) -> list[dict]:
         """Run ingestion for ALL configured states regardless of schedule.
 
         Args:
             full_refresh: If True, pull all records (not just incremental).
+            max_workers: Number of parallel threads (default 1 = sequential).
         """
-        results = []
         enabled_states = [s for s, c in self.configs.items() if c.enabled]
-
         logger.info("Running ingestion for all %d enabled states", len(enabled_states))
+        return self._run_states(enabled_states, full_refresh=full_refresh,
+                                max_workers=max_workers)
 
-        for state in sorted(enabled_states):
-            result = self.ingest_state(state, full_refresh=full_refresh)
-            results.append(result)
-
-        return results
-
-    def run_tier(self, tier: SourceTier, full_refresh: bool = False) -> list[dict]:
+    def run_tier(self, tier: SourceTier, full_refresh: bool = False,
+                 max_workers: int = 1) -> list[dict]:
         """Run ingestion for all states in a specific tier."""
-        results = []
         tier_states = [s for s, c in self.configs.items() if c.tier == tier and c.enabled]
-
         logger.info("Running tier %s ingestion for %d states", tier.value, len(tier_states))
-
-        for state in sorted(tier_states):
-            result = self.ingest_state(state, full_refresh=full_refresh)
-            results.append(result)
-
-        return results
+        return self._run_states(tier_states, full_refresh=full_refresh,
+                                max_workers=max_workers)
 
     def test_connections(self) -> dict:
         """Test connectivity to all configured data sources."""

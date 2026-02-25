@@ -220,8 +220,14 @@ class StateBulkAdapter(BaseAdapter):
         return None
 
     def _download_file(self, url: str, filename: str) -> str:
-        """Download a file to the local download directory."""
+        """Download a file atomically using a temp file.
+
+        Downloads to a .tmp file first, then renames on success.
+        If the download fails, the temp file is cleaned up so
+        _find_latest_download() won't pick up a corrupt partial file.
+        """
         filepath = os.path.join(self.download_dir, filename)
+        tmp_path = filepath + ".tmp"
         creds = self._get_credentials()
 
         def do_request():
@@ -230,17 +236,26 @@ class StateBulkAdapter(BaseAdapter):
                 user, pwd = creds.split(":", 1)
                 auth = (user, pwd)
 
-            resp = requests.get(
-                url,
-                auth=auth,
-                timeout=self.settings.request_timeout_seconds,
-                stream=True,
-            )
-            resp.raise_for_status()
+            try:
+                resp = requests.get(
+                    url,
+                    auth=auth,
+                    timeout=self.settings.request_timeout_seconds,
+                    stream=True,
+                )
+                resp.raise_for_status()
 
-            with open(filepath, "wb") as f:
-                for chunk in resp.iter_content(chunk_size=8192):
-                    f.write(chunk)
+                with open(tmp_path, "wb") as f:
+                    for chunk in resp.iter_content(chunk_size=8192):
+                        f.write(chunk)
+
+                # Atomic rename on success
+                os.replace(tmp_path, filepath)
+            except Exception:
+                # Clean up partial download
+                if os.path.exists(tmp_path):
+                    os.remove(tmp_path)
+                raise
 
             return filepath
 
@@ -328,8 +343,25 @@ class StateBulkAdapter(BaseAdapter):
                 yield UCCFiling(**kwargs)
 
     def _parse_json_bulk(self, filepath: str, field_map: dict) -> Generator[UCCFiling, None, None]:
-        """Parse a JSON bulk data file (Texas format)."""
+        """Parse a JSON bulk data file using streaming for large files.
+
+        Uses ijson for streaming when available and file is large (>10MB),
+        falls back to json.load() for small files or when ijson is missing.
+        """
         now = datetime.now(timezone.utc).isoformat()
+        file_size = os.path.getsize(filepath)
+
+        if file_size > 10 * 1024 * 1024:  # >10MB — stream
+            try:
+                import ijson
+                yield from self._parse_json_streaming(filepath, field_map, now)
+                return
+            except ImportError:
+                logger.warning(
+                    "ijson not installed — loading %dMB JSON into memory. "
+                    "Install ijson for streaming: pip install ijson",
+                    file_size // (1024 * 1024),
+                )
 
         with open(filepath, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -337,51 +369,87 @@ class StateBulkAdapter(BaseAdapter):
         records = data if isinstance(data, list) else data.get("records", data.get("filings", [data]))
 
         for raw in records:
-            kwargs = {
-                "state": self.config.abbreviation,
-                "source_tier": "state_bulk",
-                "source_raw": json.dumps(raw),
-                "ingested_at": now,
-            }
-            for src_field, dst_field in field_map.items():
-                value = raw.get(src_field, "")
-                if value:
-                    kwargs[dst_field] = str(value).strip()
+            filing = self._json_record_to_filing(raw, field_map, now)
+            if filing:
+                yield filing
 
-            if not kwargs.get("filing_number"):
-                continue
-            if not kwargs.get("filing_type"):
-                kwargs["filing_type"] = "UCC"
+    def _parse_json_streaming(self, filepath: str, field_map: dict, now: str) -> Generator[UCCFiling, None, None]:
+        """Stream JSON records one at a time using ijson."""
+        import ijson
 
-            yield UCCFiling(**kwargs)
+        with open(filepath, "rb") as f:
+            # Try array at root level first (items), then nested keys
+            try:
+                for raw in ijson.items(f, "item"):
+                    filing = self._json_record_to_filing(raw, field_map, now)
+                    if filing:
+                        yield filing
+                return
+            except ijson.common.IncompleteJSONError:
+                pass
+
+        # Fallback: try known nested keys
+        for key in ("records", "filings"):
+            with open(filepath, "rb") as f:
+                try:
+                    for raw in ijson.items(f, f"{key}.item"):
+                        filing = self._json_record_to_filing(raw, field_map, now)
+                        if filing:
+                            yield filing
+                    return
+                except (ijson.common.IncompleteJSONError, StopIteration):
+                    continue
+
+    def _json_record_to_filing(self, raw: dict, field_map: dict, now: str) -> Optional[UCCFiling]:
+        """Convert a single JSON record dict to a UCCFiling."""
+        kwargs = {
+            "state": self.config.abbreviation,
+            "source_tier": "state_bulk",
+            "source_raw": json.dumps(raw),
+            "ingested_at": now,
+        }
+        for src_field, dst_field in field_map.items():
+            value = raw.get(src_field, "")
+            if value:
+                kwargs[dst_field] = str(value).strip()
+
+        if not kwargs.get("filing_number"):
+            return None
+        if not kwargs.get("filing_type"):
+            kwargs["filing_type"] = "UCC"
+
+        return UCCFiling(**kwargs)
 
     def _parse_xml_bulk(self, filepath: str) -> Generator[UCCFiling, None, None]:
-        """Parse XML bulk data (California, Indiana, New York IACA-style).
+        """Parse XML bulk data using iterparse for memory efficiency.
 
-        Handles common IACA XML elements. The exact element names vary
-        by state but generally follow IACA v4.0 conventions.
+        Streams elements one at a time instead of loading the full tree.
+        Handles common IACA XML elements for CA, IN, NY.
         """
         now = datetime.now(timezone.utc).isoformat()
 
-        tree = ET.parse(filepath)
-        root = tree.getroot()
+        # Filing-level element local names (without namespace)
+        filing_local_names = {"Filing", "FinancingStatement", "Document"}
 
-        # Strip namespace if present
+        # Detect namespace from first element
         ns = ""
-        if root.tag.startswith("{"):
-            ns = root.tag.split("}")[0] + "}"
+        for event, elem in ET.iterparse(filepath, events=("start",)):
+            if elem.tag.startswith("{"):
+                ns = elem.tag.split("}")[0] + "}"
+            break
 
-        # Look for filing elements under various possible names
-        filing_tags = [
-            f"{ns}Filing", f"{ns}FinancingStatement", f"{ns}Document",
-            "Filing", "FinancingStatement", "Document",
-        ]
+        # Build the set of tags to match (with and without namespace)
+        filing_tags = set()
+        for name in filing_local_names:
+            filing_tags.add(name)
+            if ns:
+                filing_tags.add(f"{ns}{name}")
 
-        filing_elements = []
-        for tag in filing_tags:
-            filing_elements.extend(root.iter(tag))
+        for event, elem in ET.iterparse(filepath, events=("end",)):
+            tag_local = elem.tag.split("}")[-1] if "}" in elem.tag else elem.tag
+            if tag_local not in filing_local_names:
+                continue
 
-        for elem in filing_elements:
             kwargs = {
                 "state": self.config.abbreviation,
                 "source_tier": "state_bulk",
@@ -444,6 +512,9 @@ class StateBulkAdapter(BaseAdapter):
                 if child is not None and child.text:
                     kwargs["collateral_description"] = child.text.strip()
                     break
+
+            # Release processed element to free memory
+            elem.clear()
 
             if not kwargs.get("filing_number"):
                 continue
@@ -631,7 +702,10 @@ class StateBulkAdapter(BaseAdapter):
                 yield UCCFiling(**kwargs)
 
     def _find_latest_download(self) -> Optional[str]:
-        """Find the most recently modified file in the download directory."""
+        """Find the most recently modified file in the download directory.
+
+        Ignores hidden files and .tmp partial downloads.
+        """
         if not os.path.isdir(self.download_dir):
             return None
 
@@ -640,6 +714,7 @@ class StateBulkAdapter(BaseAdapter):
             for f in os.listdir(self.download_dir)
             if os.path.isfile(os.path.join(self.download_dir, f))
             and not f.startswith(".")
+            and not f.endswith(".tmp")
         ]
         if not files:
             return None
